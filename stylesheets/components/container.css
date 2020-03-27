@@ -1,4 +1,5 @@
 .container {
+  border: solid red 3px;
   margin-top: 50px;
   text-align: center;
   display: flex;
