@@ -53,8 +53,7 @@ git branch -d sexy-feature
 10. Let's code another feature? 
 
 # Where to start when developing a feature?
-1. Create a route </br>
-First you will need to define a route. To do that go to 'config.routes.php' and the following line:
+1. First you will need to define a route. To do that go to 'config.routes.php' and the following line:
 ```
 Route::set('controller_name/action_name.php', function() { Application::CreateView('controller_name', 'action_name'); });
 ```
