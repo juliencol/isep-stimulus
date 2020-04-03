@@ -5,7 +5,7 @@ School project at isep.
 Stimulus is a web application.
 
 # Stack
-The app is built from scratch without the use of any framework. Everything is written in PHP in an MVC structure.
+The app is built from scratch without the use of any framework. Everything is written in PHP in an MVC structure. For the database we use MySQL and PDO.
 
 # Infrastructure
 Not defined yet, we'll see that later.
