@@ -2,7 +2,7 @@
 School project at isep.
 
 # Description
-Stimulus is a B2B web application.
+Stimulus is a web application.
 
 # Stack
 The app is built from scratch without the use of any framework. Everything is written in PHP in an MVC strucutre.
