@@ -41,7 +41,7 @@ git push origin sexy-feature
 
 7. Ask for a review from someone on the team.
 
-8. Once your code is reviewed and merged, delete the branch.
+8. Once your code is reviewed and merged, retrieve the changes to the master branch then delete the feature branch.
 ```bash
 git checkout master
 git pull origin master
