@@ -1,5 +1,3 @@
 <?php
-  Route::set('application.php', function() {
-    Application::CreateView('application');
-  });
+  Route::set('users/index.php', function() { Application::CreateView('users', 'index'); });
 ?>  

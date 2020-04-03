@@ -2,8 +2,4 @@
 @import "components/container.css";
 
 /* Import CSS pages here */
-@import "pages/home.css";
-
-html {
-  border: solid red 1px;
-}
+@import "pages/users/index.css";
