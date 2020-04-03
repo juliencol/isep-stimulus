@@ -1,22 +1,19 @@
 # Context
-School project at isep
+School project at isep.
 
 # Description
-Stimulus is a web application fro businesses. 
+Stimulus is a B2B web application.
 
 # Stack
-The app is built from sratch without the use of any framework. Everything is written in PHP in an MVC strucutre.
+The app is built from scratch without the use of any framework. Everything is written in PHP in an MVC strucutre.
 
 # Infrastructure
-Not defined yet, we'll see later
-
-# App Strucure
-ee
+Not defined yet, we'll see that later.
 
 # Database
-The schema can be accessed [here](https://dbdiagram.io/d/5e58d239a902a329289b2fa3)
+The schema can be accessed [here](https://dbdiagram.io/d/5e58d239a902a329289b2fa3).
 
-# Workflow
+# Development Workflow
 Steps to follow when developing a new feature.
 1. Make sure the user story is crystal clear then drag it to the Work in Progress section in Trello.</br>
 
@@ -55,7 +52,37 @@ git branch -d sexy-feature
 
 10. Let's code another feature? 
 
-# How to make a review
+# Where to start when developing a feature?
+1. Create a route </br>
+First you will need to define a route. To do that go to 'config.routes.php' and the following line:
+```
+Route::set('controller_name/action_name.php', function() { Application::CreateView('controller_name', 'action_name'); });
+```
+
+2. Check if the controller you are working with is already created in app/controller. If not create a new file 'controller_name.php' and declare it inside with the following syntax:
+```
+class Application extends Controller {}
+```
+
+4. Create your view associated with your controller's action in 'app/views/controller_name/action_name.php'. This is where you will write your html.
+
+5. Create a CSS file for your page in app/stylesheets/pages. 
+
+6. Import your CSS file in app/stylesheets/application.css with the following syntax:
+```
+@import "pages/controller_name/action_name.css";
+```
+
+7. Include your CSS file in app/stylesheets/shylesheets.php with the following syntax:
+```
+require("pages/controller_name/action_name.css");
+```
+
+8. If needed, you can always create new css components in app/stylesheets/components. Remember the idea is always to refactor code and user components accross the app instead of rewriting everything. 
+
+If you are just working on a frontend component, you don't need to do all of that.
+
+# How to review code?
 1. Fetch the latest branches 
 ```bash 
 git fetch
