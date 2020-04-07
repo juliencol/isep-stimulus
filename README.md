@@ -96,5 +96,52 @@ git checkout sexy-feature
 
 5. If everything is perfect just merge the pull request on github. If not write a descriptive comments to explain bugs and imperfections.
 
+# Resources 
+Some basic knowledge about web development.
+<table>
+  <tr>
+     <td>
+      <a href="resources/web.md">
+        <img src="resources/images/web.jpg" alt="git and github" width="150" />
+      </a>
+    </td>
+     <td>
+      <a href="resources/terminal.md">
+        <img src="resources/mages/terminal.jpg" alt="git and github" width="150" />
+      </a>
+    </td>
+    <td>
+      <a href="resources/gitandgithub.md">
+        <img src="resources/images/gitandgithub.png" alt="git and github" width="150" />
+      </a>
+    </td>
+     <td>
+      <a href="resources/texteditor.md">
+        <img src="resources/images/texteditor.png" alt="text editor" width="150"/>
+      </a>
+    </td>
+     <td>
+      <a href="resources/htmlandcss.md">
+        <img src="resources/images/htmlandcss.png" alt="git and github" width="150" />
+      </a>
+    </td>
+     <td>
+      <a href="resources/javascript.md">
+        <img src="resources/images/javascript.png" alt="git and github" width="150" />
+      </a>
+    </td>
+    <td>
+      <a href="resources/workflow.md">
+        <img src="resources/mages/workflow.png" alt="team workflow" width="150"/>
+      </a>
+    </td>
+     <td>
+      <a href="resources/php.md">
+        <img src="resources/images/php.png" alt="git and github" width="150" />
+      </a>
+    </td>
+  </tr>
+</table>
+
 
 

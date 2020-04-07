@@ -1,0 +1,1 @@
+fe = 8000;Te = 1 / fe;t = -0.05:Te:0.05;N = length(t);x = zeros(1, N);n = 0;for t = 0:fe:0.005    n = n + 1;    x(n) = 1;endx_fft = 20 * log10(abs(fft(x)));subplot(2, 1, 1);plot(x);xlabel('temps');ylabel('x(t)');title('signal');subplot(2, 1, 2);plot(x_fft);xlabel('temps');ylabel('x_fft(t)');title('fft du signal');
