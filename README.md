@@ -10,9 +10,6 @@ The app is built from scratch without the use of any framework. Everything is wr
 # Infrastructure
 Not defined yet, we'll see that later.
 
-# Database
-The schema can be accessed [here](https://dbdiagram.io/d/5e58d239a902a329289b2fa3).
-
 # Development Workflow
 Steps to follow when developing a new feature.
 1. Make sure the user story is crystal clear then drag it to the Work in Progress section in Trello.</br>
@@ -102,12 +99,12 @@ Some basic knowledge about web development.
   <tr>
      <td>
       <a href="resources/web.md">
-        <img src="resources/images/web.jpg" alt="git and github" width="150" />
+        <img src="resources/images/web.jpg" alt="web" width="150" />
       </a>
     </td>
      <td>
       <a href="resources/terminal.md">
-        <img src="resources/mages/terminal.jpg" alt="git and github" width="150" />
+        <img src="resources/images/terminal.jpg" alt="terminal" width="150" />
       </a>
     </td>
     <td>
@@ -122,22 +119,17 @@ Some basic knowledge about web development.
     </td>
      <td>
       <a href="resources/htmlandcss.md">
-        <img src="resources/images/htmlandcss.png" alt="git and github" width="150" />
+        <img src="resources/images/htmlandcss.png" alt="html and css" width="150" />
       </a>
     </td>
      <td>
       <a href="resources/javascript.md">
-        <img src="resources/images/javascript.png" alt="git and github" width="150" />
-      </a>
-    </td>
-    <td>
-      <a href="resources/workflow.md">
-        <img src="resources/mages/workflow.png" alt="team workflow" width="150"/>
+        <img src="resources/images/javascript.png" alt="js" width="150" />
       </a>
     </td>
      <td>
       <a href="resources/php.md">
-        <img src="resources/images/php.png" alt="git and github" width="150" />
+        <img src="resources/images/php.png" alt="php" width="150" />
       </a>
     </td>
   </tr>
