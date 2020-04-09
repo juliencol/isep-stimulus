@@ -8,6 +8,7 @@ Stimulus is a web application
 PHP and MySQL (no framework)
 
 # Infrastructure
+<<<<<<< HEAD
 Not defined yet
 
 # Development resources
@@ -28,12 +29,12 @@ Not defined yet
   <tr>
      <td>
       <a href="resources/web.md">
-        <img src="resources/images/web.jpg" alt="git and github" width="150" />
+        <img src="resources/images/web.jpg" alt="web" width="150" />
       </a>
     </td>
      <td>
       <a href="resources/terminal.md">
-        <img src="resources/mages/terminal.jpg" alt="git and github" width="150" />
+        <img src="resources/images/terminal.jpg" alt="terminal" width="150" />
       </a>
     </td>
     <td>
@@ -48,17 +49,17 @@ Not defined yet
     </td>
      <td>
       <a href="resources/htmlandcss.md">
-        <img src="resources/images/htmlandcss.png" alt="git and github" width="150" />
+        <img src="resources/images/htmlandcss.png" alt="html and css" width="150" />
       </a>
     </td>
      <td>
       <a href="resources/javascript.md">
-        <img src="resources/images/javascript.png" alt="git and github" width="150" />
+        <img src="resources/images/javascript.png" alt="js" width="150" />
       </a>
     </td>
      <td>
       <a href="resources/php.md">
-        <img src="resources/images/php.png" alt="git and github" width="150" />
+        <img src="resources/images/php.png" alt="php" width="150" />
       </a>
     </td>
   </tr>
