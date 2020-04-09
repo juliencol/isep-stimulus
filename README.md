@@ -8,7 +8,6 @@ Stimulus is a web application
 PHP and MySQL (no framework)
 
 # Infrastructure
-<<<<<<< HEAD
 Not defined yet
 
 # Development resources
