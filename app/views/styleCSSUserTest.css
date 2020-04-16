@@ -21,4 +21,14 @@ h1 {
 button {
     background-color: darkorchid;
     color: white;
+    margin-left: 60px;
+}
+section {
+    display: flex;
+}
+article {
+    background-color: gainsboro;
+    padding: 40px;
+    margin-left: 300px;
+    width: 400px;
 }
