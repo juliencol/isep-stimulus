@@ -1,0 +1,24 @@
+.headerFooter {
+    margin-left: 200px;
+}
+#photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: gainsboro;
+}
+h1 {
+    font-family: Arial;
+    background-color: gainsboro;
+    color: darkorchid;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 240px;
+    font-weight: normal;
+}
+button {
+    background-color: darkorchid;
+    color: white;
+}
