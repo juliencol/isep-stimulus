@@ -1,5 +1,16 @@
 /* Import CSS components here */
 @import "components/container.css";
+@import "components/button_primary.css";
 
 /* Import CSS pages here */
+@import 'pages/routing_error.css';
+
+/* Users */
 @import "pages/users/index.css";
+@import 'pages/users/home.css';
+
+/* Our variables */
+/* Colors */
+:root {
+  --primary-color: #6D1ED1;
+}

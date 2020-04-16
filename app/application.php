@@ -3,8 +3,12 @@
   require_once('stylesheets/stylesheets.php');
 
   function __autoload($class_name) { 
-    if (file_exists('../classes/'.$class_name.'.php')) { require_once '../classes/'.$class_name.'.php'; }
-    if (file_exists('controllers/'.$class_name.'.php')) { require_once 'controllers/'.$class_name.'.php'; }
+    if (file_exists('classes/'.$class_name.'.php')) { 
+      require_once 'classes/'.$class_name.'.php'; 
+    } 
+    if (file_exists('controllers/'.$class_name.'.php')) { 
+      require_once 'controllers/'.$class_name.'.php'; 
+    } 
   }
 ?>
 
@@ -17,7 +21,7 @@
   <link rel="stylesheet" href="stylesheets/application.css?v=<?php echo time(); ?>">
 </head>
 
-<!-- IMPORTANT RULE: do not code anything here, only import files -->
+<!-- IMPORTANT: do not code anything here, only import files -->
 <body>
    <!--Code navbar component in app/components and import it here with require_once 'components/navbar.php';-->
 
@@ -27,8 +31,7 @@
     <!-- Else log him is as user and redirect to user page -->
   <!-- Else redirect to login page  -->
 
-  <!-- Temporary home page -->
-  <?php require_once 'views/users/index.php'; ?>
+  <?php require_once 'views/users/home.php'; ?>
 
   <!--Code footer component in app/components and import it here with 'components/footer.php'; -->
 </body>
