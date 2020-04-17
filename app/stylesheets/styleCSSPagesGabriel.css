@@ -11,14 +11,13 @@ h1 {
     font-family: Arial;
     background-color: darkgrey;
     color: darkorchid;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding: 20px;
     margin-top: 50px;
     font-weight: normal;
     text-align: center;
     font-size: 30px;
+    width: 80%;
+    margin-left: 10%;
 }
 button {
     background-color: darkorchid;
@@ -38,17 +37,20 @@ article {
     margin-left: 0px;
     padding: 20px;
     background-color: gainsboro;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
 }
 .resultTest {
     padding: 25px;
     background-color: gainsboro;
     margin-left: 500px;
     height: 400px;
+    margin-right: 10%;
 }
 .listeTests {
     padding: 20px;
     background-color: gainsboro;
     height: 100px;
     width: 200px;
+    margin-left: 10%;
 }
