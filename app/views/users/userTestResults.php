@@ -1,7 +1,7 @@
 <?php
 ?>
 <html>
-    <link rel="stylesheet" href="../../stylesheets/styleCSSUserTest.css">
+    <link rel="stylesheet" href="../../stylesheets/styleCSSPagesGabriel.css">
     <title>Results</title>
     <div id="container">
     <header>
