@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^([^/]+)/? app/application.php?url=$1 [L,QSA]
+RewriteRule .* app/application.php?url=$1 [L,QSA]
