@@ -1,0 +1,52 @@
+body {
+    height: 600px;
+
+}
+
+#titre {
+    background-color: rgba(173, 173, 173, 0.5); /* correspond au #adadad */
+
+    height: 75px;
+    justify-content: center;
+    color: #7245db;
+}
+
+a, a:visited {
+    color: hsl(258, 68%, 56%);
+}
+
+a:hover {
+    color: #49c0cf;
+}
+
+a:link 
+{ 
+text-decoration:none; 
+} 
+
+
+
+/*///// EQUIPE.CSS /////*/
+
+#presentation-team{
+    text-align: center;
+    
+}
+
+#presentation-text {
+    font-size: large;
+}
+
+#first-row, #second-row{
+    display: flex;
+    flex-direction: row;
+    
+}
+figure img {
+    box-shadow: 3px 3px 3px #adadad;  
+}
+
+figcaption {
+    text-align: center;
+    color: #7245db;
+}
