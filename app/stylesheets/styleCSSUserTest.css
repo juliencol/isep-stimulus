@@ -9,14 +9,16 @@
 }
 h1 {
     font-family: Arial;
-    background-color: gainsboro;
+    background-color: darkgrey;
     color: darkorchid;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 20px;
     padding-top: 20px;
-    margin: 240px;
+    margin-top: 50px;
     font-weight: normal;
+    text-align: center;
+    font-size: 30px;
 }
 button {
     background-color: darkorchid;
@@ -31,4 +33,22 @@ article {
     padding: 40px;
     margin-left: 300px;
     width: 400px;
+}
+.resultTestManquant {
+    margin-left: 0px;
+    padding: 20px;
+    background-color: gainsboro;
+    width: 100%;
+}
+.resultTest {
+    padding: 25px;
+    background-color: gainsboro;
+    margin-left: 500px;
+    height: 400px;
+}
+.listeTests {
+    padding: 20px;
+    background-color: gainsboro;
+    height: 100px;
+    width: 200px;
 }
