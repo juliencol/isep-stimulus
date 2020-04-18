@@ -18,8 +18,14 @@ if (isset($_GET['ban']) AND !empty($_GET['ban'])) {
 
 if (isset($_GET['delete']) AND !empty($_GET['delete'])) {
     $delete = $_GET['delete'];
+
     $req = $bdd->prepare('DELETE FROM users WHERE user_id = ?');
     $req->execute(array($delete));
+
+    echo 'L\'utilisateur a été supprimé. <br /><br />'; 
+    //j'arrive pas à faire "L'utilisateur ... a bien été supprimé"
+    //comment récupérer le nom de l'utilisateur supprimé ?
+
 }
 
 ?>

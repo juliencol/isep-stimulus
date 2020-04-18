@@ -43,7 +43,9 @@
                         <br />
 
                         <label>Sexe : </label>
-                        <input type="text" name="gender" id="gender" maxlength="1" placeholder="F/M/A"  required />
+                        <input type="radio" name="gender" id="female" value="F" required /><label for id="female"> Femme</label>
+                        <input type="radio" name="gender" id="male" value="M" required /><label for id="male"> Homme</label>
+                        <input type="radio" name="gender" id="other" value="A" required /><label for id="other"> Autre</label>
                         <br /> 
 
                         <label>Email : </label>
