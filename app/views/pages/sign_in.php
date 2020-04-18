@@ -7,10 +7,10 @@
 <div class="container text-center sign-in-main-container">
   <h1>Se connecter</h1>
   <p>Vous êtes ?</p>
-  <div class="container">
-    <a href="<?php echo URLROOT; ?>users/sign_in">Utilisateur</a>
-    <a href="<?php echo URLROOT; ?>supervisors/sign_in">Gestionnaire</a>
-    <a href="<?php echo URLROOT; ?>admins/sign_in">Administrateur</a>
+  <div class="container btn-container">
+    <a class="btn-primary" href="<?php echo URLROOT; ?>users/sign_in">Utilisateur</a>
+    <a class="btn-primary" href="<?php echo URLROOT; ?>supervisors/sign_in">Gestionnaire</a>
+    <a class="btn-primary" href="<?php echo URLROOT; ?>admins/sign_in">Administrateur</a>
   </div>
 </div>
 

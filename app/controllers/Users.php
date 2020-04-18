@@ -4,7 +4,7 @@ class Users extends Controller {
       
     }
 
-    public function sign_in() {
+    public function sign_up() {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // process the form
       } else {
@@ -18,12 +18,12 @@ class Users extends Controller {
           'password_error' => '',
           'confirmed_password_error' => ''
         ];
-        $this->view('users/sign_in', $data);
+        $this->view('users/sign_up', $data);
       }
     }
 
-    public function sign_up() {
-      $this->view('users/sign_up');
+    public function sign_in() {
+      $this->view('users/sign_in');
     }
   }
 ?> 

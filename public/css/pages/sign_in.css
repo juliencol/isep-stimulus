@@ -1,3 +1,14 @@
 .sign-in-main-container {
   margin-top: 40px;
 }
+
+.btn-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sign-in-main-container a {
+  margin: 20px;
+}

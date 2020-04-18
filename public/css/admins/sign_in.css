@@ -1,4 +1,4 @@
-.sign-up-form-container {
+.sign-in-form-container {
   border: solid var(--primary-color) 3px;
   padding: 15px;
   display: flex;
@@ -7,12 +7,16 @@
   width: 400px !important;
 }
 
-.sign-up-form-container div {
+.under-container {
+  display: flex;
+}
+
+.sign-in-form-container div {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
-.sign-up-form-container input, label, p {
+.sign-in-form-container input, label, p {
   font-size: 16px;
   color: var(--primary-color);
 }
