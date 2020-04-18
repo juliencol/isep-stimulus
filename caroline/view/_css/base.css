@@ -5,11 +5,16 @@ body {
 
 #titre {
     background-color: rgba(173, 173, 173, 0.5); /* correspond au #adadad */
-
     height: 75px;
+    margin-top: 15px;
+    display: flex;
     justify-content: center;
+    text-align: center;
+    vertical-align: middle;
     color: #7245db;
 }
+
+
 
 a, a:visited {
     color: hsl(258, 68%, 56%);
@@ -28,7 +33,7 @@ text-decoration:none;
 
 /*///// EQUIPE.CSS /////*/
 
-#presentation-team{
+#presentation-team-page{
     text-align: center;
     
 }

@@ -1,13 +1,5 @@
 <?php 
-    //include('./modele/connexion.php');
-    //j'arrive pas à l'appeler
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=appsiteweb_test;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    
-    } catch (Exception $e){
-            die('Erreur : ' . $e->getMessage());
-    }
-    
+    include('../modele/connexion.php');
 ?>
 
 <!DOCTYPE html>
@@ -25,9 +17,10 @@
         <?php include('header.php'); ?>
         
 
-        <section id="presentation-team">
+        <section id="presentation-team-page">
         
             <div id="container">
+                
                 <div id="titre">
                 <h1>L'équipe Stimulus</h1>
                 </div>
