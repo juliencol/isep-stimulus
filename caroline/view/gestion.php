@@ -19,9 +19,9 @@
 
         <section id="gestion-page">
             
-            <div id="container">
+            <div class="container">
 
-                <div id="titre">
+                <div class="titre-page">
                     <h1>Gestion des utilisateurs</h1>
                 </div>
                 <br />

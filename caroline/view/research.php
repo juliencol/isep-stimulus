@@ -19,9 +19,9 @@
 
         <section id="research-page">
 
-            <div id="container">
+            <div class="container">
 
-                <div id="titre">
+                <div id="titre-page">
                     <h1>Page de recherche</h1>
                 </div>
 
