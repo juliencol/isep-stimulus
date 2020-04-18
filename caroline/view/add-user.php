@@ -30,18 +30,16 @@
                     <h3> Ajouter un utilisateur</h3>
 
                     <?php 
-                        if (isset($_POST['submit_add']) AND !empty($_POST['submit_add'])) {
-                            
-                        }
+                        include('../controllers/req-add-user.php');
                     ?>
                     
                     <form method="post" action="">
                         <label>Nom : </label>
-                        <input type="text" name="last_name" id="last_name" placeholder="Jean" required />
+                        <input type="text" name="last_name" id="last_name" placeholder="Dupont" required />
                         <br />
 
                         <label>Prénom : </label>
-                        <input type="text" name="first_name" id="first_name" placeholder="Dupont" required />
+                        <input type="text" name="first_name" id="first_name" placeholder="Jean" required />
                         <br />
 
                         <label>Sexe : </label>
@@ -53,7 +51,7 @@
                         <br />
 
                         <label>Mot de passe : </label>
-                        <input type="text" name="password" id="password" min="8" placeholder="minimum 8 caractères" required />
+                        <input type="password" name="password" id="password" min="8" placeholder="minimum 8 caractères" required />
                         <br />
 
                         <label>Date de naissance : </label>
@@ -65,12 +63,18 @@
                         <br />
 
                         <label>Numéro employé : </label>
-                        <input type="number" name="employee_num" id="employee_num" maxlength="5" placeholder="12345" required />
+                        <input type="number" name="employee_number" id="employee_number" maxlength="5" placeholder="12345" required />
                         <br /><br />    
 
                         <input type="submit" name="submit_add" id="submit_add" value="Ajouter" />
 
                     </form>
+                </div>
+
+                <br />
+
+                <div id="user-list">
+                    <a href="gestion.php">Retour à la liste des utilisateurs</a>
                 </div>
 
             
