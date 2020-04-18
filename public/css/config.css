@@ -1,0 +1,11 @@
+/* Edit fonts below */ 
+
+/* Define CSS variables here */ 
+:root {
+  --primary-color: #6D1ED1;
+}
+
+/* Global changes */ 
+body {
+  background: lightgrey;
+}

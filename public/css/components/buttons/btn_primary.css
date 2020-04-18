@@ -1,0 +1,14 @@
+.btn-primary {
+  color: var(--primary-color);
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  border: 1px solid black;
+  font-size: 24px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}

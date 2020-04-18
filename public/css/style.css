@@ -1,0 +1,6 @@
+/* Import config file here */
+@import 'config.css';
+
+/* Imports CSS components here */
+@import 'components/container.css';
+@import 'components/buttons/btn_primary.css';
