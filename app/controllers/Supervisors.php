@@ -1,5 +1,5 @@
 <?php  
-class Users extends Controller {
+class Supervisors extends Controller {
     public function __construct() {
       
     }
@@ -18,12 +18,7 @@ class Users extends Controller {
           'password_error' => '',
           'confirmed_password_error' => ''
         ];
-        $this->view('users/sign_in', $data);
+        $this->view('supervisors/sign_in', $data);
       }
     }
-
-    public function sign_up() {
-      $this->view('users/sign_up');
-    }
   }
-?> 
