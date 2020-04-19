@@ -1,5 +1,5 @@
 <?php 
-    include('../modele/connexion.php');
+    require('../modele/connexion.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
 
                 <?php 
                 if (isset($_GET['modify']) AND !empty($_GET['modify'])) {
-                    require('../controllers/req-gestion-modify-user.php');
+                    require('../controllers/req-gestion-users-modify.php');
                     
                 ?>
                     <br />

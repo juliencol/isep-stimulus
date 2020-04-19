@@ -1,5 +1,5 @@
 <?php 
-    include('../modele/connexion.php');
+    require('../modele/connexion.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,60 +16,24 @@
     <body>
         <?php include('header.php'); ?>
         
-
         <section id="gestion-page">
             
             <div class="container">
 
                 <div class="titre-page">
-                    <h1>Gestion des utilisateurs</h1>
+                    <h1>Gestions</h1>
                 </div>
                 <br />
 
-                <?php 
-                    require('../controllers/req-gestion.php');
-                ?>
-
-
-                <a href="gestion-add-user.php">Ajouter un utilisateur</a>
-
-                <h3> Liste des utilisateurs </h3>
-
-                <?php 
-                $users = $bdd->query('SELECT * FROM users');
-                $banned = $bdd->query('SELECT * FROM banned');
-                
-
-                echo '<ul>';
-                while ($data = $users->fetch()) {
-                    echo '<li><strong>' . $data['first_name'] . ' ' . $data['last_name'] . '</strong> - '; ?>
-                    <a href="gestion-modify-user.php?modify=<?= $data['user_id'] ?>">Modifier</a> -
-                    <a href="gestion.php?delete=<?= $data['user_id'] ?>">Supprimer</a> -
-                    <a href="gestion.php?ban=<?= $data['email'] ?>">Bannir</a>
-                    <br />
-                    <?php 
-                    echo 'Entreprise : ' . $data['company_name'] . '<br />'; 
-                    echo 'Numéro employé : ' . $data['employee_number'] . '<br />';
-                    echo 'Date de naissance : ' . $data['birthdate'] . " / Sexe : " . $data['gender'] . '<br />';
-                    echo 'Email : ' . $data['email'] . '</li><br />';   
-                
-                }
-                echo '</ul>';
-                $users->closeCursor();
-
-                ?>
-
-                <h3> Liste des adresses mails bannies </h3>
-
-            
+                <h2> <a href="gestion-users.php">Gestion des utilisateurs</a> </h2>
+                <h2> <a href="###">Gestion de la Foire Aux Questions</a> </h2>
+                <h2> <a href="###">Gestion des Conditions Générales d'Utilisation</a> </h2>
 
             </div>
         </section>
 
-        
         <?php include('footer.php'); ?>
         
-
     </body>
     
 </html>

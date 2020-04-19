@@ -1,5 +1,5 @@
 <?php 
-    include('../modele/connexion.php');
+    require('../modele/connexion.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
                     <h3> Ajouter un utilisateur</h3>
 
                     <?php 
-                        require('../controllers/req-add-user.php');
+                        require('../controllers/req-gestion-users-add.php');
                     ?>
                     
                     <form method="post" action="">

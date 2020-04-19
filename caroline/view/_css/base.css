@@ -11,9 +11,13 @@ body {
     justify-content: center;
     text-align: center;
     vertical-align: middle;
+    font-size: large;
     color: #7245db;
 }
 
+h2 {
+    font-size: large;
+}
 
 
 a, a:visited {
@@ -25,7 +29,7 @@ a:hover {
 }
 
 a:link { 
-    text-decoration:none; 
+    text-decoration: none; 
 } 
 
 
