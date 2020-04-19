@@ -1,43 +1,7 @@
-<?php 
-    include('../modele/connexion.php');
-?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="_css/header.css" />
-        <link rel="stylesheet" href="_css/footer.css" />
-        <link rel="stylesheet" href="_css/base.css" />
-        <title> STIMULUS - gestion - modification</title>
-        
-    </head>
-
-    <body>
-        <?php require('header.php'); ?>
-        
-
-        <section id="gestion-page">
-            
-            <div class="container">
-
-                <div class="titre-page">
-                    <h1>Gestion des utilisateurs</h1>
-                </div>
-                <br />
-
-                <h3> Modification d'un utilisateur </h3>
-
-                <?php 
-                if (isset($_GET['modify']) AND !empty($_GET['modify'])) {
-                    require('../controllers/req-gestion-modify-user.php');
-                    
-                ?>
-                    <br />
-
-
-
-                    <form method="post" action="">
+<section id="gestion-page">
+  <div class="container">
+    <h3> Modification d'un utilisateur </h3>
+      <form method="post" action="">
                         <label>Prénom : </label>
                         <strong><?php echo $first_name; ?></strong><br />
                         <label><em>Nouveau prénom :</em> </label> 
@@ -92,25 +56,15 @@
                         <input type="submit" name="submit_modify" id="submit_modify" value="Modifier" />
                         <br /><br />
                         
-                    </form>
-
-                <?php    
-                } 
-                $user->closeCursor();?>
-
-                <div class="user-list">
-                    <a href="gestion.php">Retour à la liste des utilisateurs</a>
-                </div>
-                <br /><br />
-
-
-            </div>
-        </section>
+      </form>
+    <div class="user-list">
+      <a href="gestion.php">Retour à la liste des utilisateurs</a>
+    </div>
+  </div>
+</section>
 
         
-        <?php include('footer.php'); ?>
+       
         
 
-    </body>
-    
-</html>
+   

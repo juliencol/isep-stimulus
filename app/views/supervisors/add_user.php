@@ -1,39 +1,11 @@
-<?php 
-    include('../modele/connexion.php');
-?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="_css/header.css" />
-        <link rel="stylesheet" href="_css/footer.css" />
-        <link rel="stylesheet" href="_css/base.css" />
-        <title> STIMULUS - gestion - ajout</title>
-        
-    </head>
-
-    <body>
-        <?php include('header.php'); ?>
-        
-
-        <section id="add-user-page">
-            
-            <div id="container">
-
-                <div id="titre">
-                    <h1>Gestion des utilisateurs</h1>
-                </div>
-                <br />
-
-                <div id="add-section">
-                    <h3> Ajouter un utilisateur</h3>
-
-                    <?php 
-                        require('../controllers/req-add-user.php');
-                    ?>
-                    
-                    <form method="post" action="">
+ <section id="add-user-page">
+    <div id="container">
+      <div id="titre">
+        <h1>Gestion des utilisateurs</h1>
+      </div>
+      <div id="add-section">
+        <h3> Ajouter un utilisateur</h3>
+        <form method="post" action="">
                         <label>Nom : </label>
                         <input type="text" name="last_name" id="last_name" placeholder="Dupont" required />
                         <br />
@@ -70,25 +42,14 @@
 
                         <input type="submit" name="submit_add" id="submit_add" value="Ajouter" />
 
-                    </form>
-                </div>
-
-                <br />
-
-                <div class="user-list">
-                    <a href="gestion.php">Retour à la liste des utilisateurs</a>
-                </div>
-
-            
-
-            </div>
-        </section>
-        <br />
-
-        
-        <?php include('footer.php'); ?>
-        
-
-    </body>
+        </form>
+      </div>
+      <div class="user-list">
+          <a href="gestion.php">Retour à la liste des utilisateurs</a>
+      </div>      
+  </div>
+</section>
     
-</html>
+
+        
+      

@@ -1,4 +1,8 @@
 header {
+    position: relative;
+    top: -10px;
+    right: -5px;
+    left: -5px;
     box-shadow: 3px 3px 3px #adadad;  
 }
 header #container {
