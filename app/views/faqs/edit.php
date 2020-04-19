@@ -1,5 +1,6 @@
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
+<style> <?php include APPROOT . '/../public/css/faqs/index.css'; ?> </style>
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
@@ -82,4 +83,3 @@
   </div>
 </div>
 
-<?php require APPROOT . '/views/inc/footer.php'; ?>
