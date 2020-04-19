@@ -30,7 +30,7 @@
                     <h3> Ajouter un utilisateur</h3>
 
                     <?php 
-                        include('../controllers/req-add-user.php');
+                        require('../controllers/req-add-user.php');
                     ?>
                     
                     <form method="post" action="">
@@ -75,7 +75,7 @@
 
                 <br />
 
-                <div id="user-list">
+                <div class="user-list">
                     <a href="gestion.php">Retour à la liste des utilisateurs</a>
                 </div>
 

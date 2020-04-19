@@ -27,11 +27,11 @@
                 <br />
 
                 <?php 
-                    include('../controllers/req-gestion.php');
+                    require('../controllers/req-gestion.php');
                 ?>
 
 
-                <a href="add-user.php">Ajouter un utilisateur</a>
+                <a href="gestion-add-user.php">Ajouter un utilisateur</a>
 
                 <h3> Liste des utilisateurs </h3>
 
@@ -43,7 +43,7 @@
                 echo '<ul>';
                 while ($data = $users->fetch()) {
                     echo '<li><strong>' . $data['first_name'] . ' ' . $data['last_name'] . '</strong> - '; ?>
-                    <a href="gestion.php?modify=<?= $data['user_id'] ?>">Modifier</a> -
+                    <a href="gestion-modify-user.php?modify=<?= $data['user_id'] ?>">Modifier</a> -
                     <a href="gestion.php?delete=<?= $data['user_id'] ?>">Supprimer</a> -
                     <a href="gestion.php?ban=<?= $data['email'] ?>">Bannir</a>
                     <br />

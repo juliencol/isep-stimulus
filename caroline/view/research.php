@@ -26,7 +26,7 @@
                 </div>
 
                 <?php 
-                    include('../controllers/req-research.php');
+                    require('../controllers/req-research.php');
                 ?>
 
                 <h3>Qui voulez-vous rechercher ?</h3>
@@ -70,9 +70,10 @@
                         echo '</ul>';
         
                     } else {
-                        echo 'Aucun résultat pour <em>' . $research . '</em>';
+                        echo 'Aucun résultat pour <em>' . $research . '</em>.<br /><br />';
                     }
                 }
+                
                 
                 
                 //AFFINER RECHERCHE NE FONCTIONNE PAS LOL
@@ -96,6 +97,8 @@
                 }
                 */
                 ?>
+
+
 
             </div>
         </section>
