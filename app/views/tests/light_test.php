@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Sound test</title>
-	<link rel="stylesheet" type="text/css" href="sound_test_1.css">
-</head>
-<body>
+<?php require APPROOT . '/../public/css/style.php'; ?>
+<style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
+<style> <?php include APPROOT . '/../public/css/tests/index.css'; ?> </style>
 
-	<header>
-		
-	</header>
-
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
 	<h1>Temps de réaction à une lumière </h1>
 	
@@ -28,10 +20,3 @@
 
 	</div>
 
-	<footer>
-		
-	</footer>
-
-</body>
-
-</html>

@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Sound test</title>
-	<link rel="stylesheet" type="text/css" href="sound_test_1.css">
-</head>
-<body>
+<?php require APPROOT . '/../public/css/style.php'; ?>
+<style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
+<style> <?php include APPROOT . '/../public/css/tests/sound_test.css'; ?> </style>
 
-	<header>
-		
-	</header>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
-
-	<h1>Temps de réaction à un son</h1>
+<h1>Temps de réaction à un son</h1>
 	
 	<p class="text_explicatif">
 		Ce test dure approximativement 2 minutes. <br> <br>
@@ -28,10 +20,3 @@
 
 	</div>
 
-	<footer>
-		
-	</footer>
-
-</body>
-
-</html>
