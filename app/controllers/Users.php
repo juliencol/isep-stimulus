@@ -90,5 +90,17 @@ class Users extends Controller {
     public function sign_in() {
       $this->view('users/sign_in');
     }
+
+    public function notifications() {
+      $this->view('users/notifications');
+    }
+
+    public function profile() {
+      $this->view('users/profile');
+    }
+
+    public function test_results() {
+      $this->view('users/test_results');
+    }
   }
 ?> 
