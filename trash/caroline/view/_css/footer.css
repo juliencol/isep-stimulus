@@ -1,0 +1,21 @@
+footer {
+    background-color: #FAFAFA;
+    box-shadow: 3px 3px 3px #adadad;  
+}
+footer div {
+    display: flex;
+    justify-content: center;
+}
+
+footer #footer_section {
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer a, a:visited {
+    color: #7245db;
+}
+
+footer #footer_section a:hover {
+    color: #49c0cf;
+}
