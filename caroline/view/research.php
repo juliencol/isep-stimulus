@@ -30,24 +30,22 @@
                 ?>
 
                 <h3>Qui voulez-vous rechercher ?</h3>
-                <form method="post" action="">
+                <form name="research-form" method="post" action="">
                     <input type="search" name="research" placeholder="Recherche..." />
                     <input type="submit" name="submit_research" value="Rechercher" />
                 </form>
 
                 <h4>Affiner la recherche : </h4>
-                <form method="post">
-                    <p> Sexe :
+                <form name="refine-form" method="get" action="">
+                    <label>Sexe : </label>
                     <input type="radio" name="gender" value="female" id="female" /><label for="female"> Femme</label>
                     <input type="radio" name="gender" value="male" id="male" /><label for="male"> Homme</label>
                     <input type="radio" name="gender" value="other" id="other" /><label for="other"> Autre</label>
-                    </p>
 
-                    <p>Nom de l'entreprise :
+                    <label>Nom de l'entreprise :</label>
                     <input type="text" name="company" />
-                    </p>
 
-                    <input type="submit" name="submit_refine" value="Affiner" />
+                    <input type="submit" name="submit_refine" id="submit_refine" value="Affiner" />
                 </form>
 
 
@@ -76,15 +74,16 @@
                 
                 
                 
-                //AFFINER RECHERCHE NE FONCTIONNE PAS LOL
-                /*
+                
+                
                 if (isset($_POST['submit_refine'])) {
                     if (isset($_POST['gender'])) {
                         if ($_POST['gender'] = 'female') {
+                            
                             $female = $bdd->query('SELECT * FROM users WHERE gender = "F"'); 
 
                             echo '<ul>';
-                            while ($r = $results->fetch()) { 
+                            while ($r = $female->fetch()) { 
                                 echo '<li><strong>' . $r['first_name'] . ' ' . $r['last_name'] . '</strong><br />';
                                 echo 'Entreprise : ' . $r['company_name'] . '<br />'; 
                                 echo 'Numéro employé : ' . $r['employee_number'] . '<br />';
@@ -95,7 +94,7 @@
                         }
                     }
                 }
-                */
+                
                 ?>
 
 

@@ -35,8 +35,7 @@
                 ?>
                     <br />
 
-
-
+                    
                     <form method="post" action="">
                         <label>Prénom : </label>
                         <strong><?php echo $first_name; ?></strong><br />
