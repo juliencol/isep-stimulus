@@ -4,11 +4,13 @@
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<div class="banner">
-</div>
 
 <div class="container main-container">
-  <div class="container login-container">
+  <div class="container top-container">
+    <h1>Infinite Measures</h1>
+    <p>Le système qui vous aide à mesurer vos réflexes</p>
+  </div>
+  <div class="container middle-container">
     <div class="container container-left">
       <p>Vous souhaitez consulter vos résultats ?</p>
       <p><strong>Connectez vous !</strong></p>
