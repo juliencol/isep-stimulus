@@ -1,5 +1,10 @@
+/** We import every css components and configs files here **/
+
 /* Import config file here */
 @import 'config.css';
+
+/* Import CSS libraries here */
+@import 'bootstrap.css';
 
 /* Imports CSS components here */
 @import 'components/container.css';

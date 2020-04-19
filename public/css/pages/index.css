@@ -1,27 +1,17 @@
-.banner {
-  background-image: url(https://res.cloudinary.com/isep/image/upload/v1587053224/stimulus/Screen_Shot_2020-04-16_at_18.06.26_bgffpw.png);
-  background-size: cover;
-  background-position: center;
-  padding: 400px 0;
-  margin: -10px -10px 0 -10px;
-}
-
-@media (max-width: 600px) {
-  .banner {
-    display: none;
-  }
+.top-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .main-container {
-  margin-top: 30px;
   text-align: center;
   margin-bottom: 200px;
 }
 
-.login-container {
+.middle-container {
   margin: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -30,13 +20,26 @@
   align-items: center;
 }
 
+.container h1 {
+  font-size: 32px;
+  color: var(--primary-color);
+}
+
 .container p {
   font-size: 24px;
   color: var(--primary-color);
-
 }
 
 .container a {
-  border: solid black 1px;
+  border: solid var(--primary-color) 3px;
   margin-top: 150px;
 }  
+
+@media (max-width: 768px) {
+  .middle-container {
+    flex-wrap: wrap;
+  }
+  .middle-container div {
+    margin: 20px;
+  }
+}

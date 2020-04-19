@@ -1,11 +1,11 @@
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
-<style> <?php include APPROOT . '/../public/css/users/sign_in.css'; ?> </style>
+<style> <?php include APPROOT . '/../public/css/admins/sign_in.css'; ?> </style>
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
-  <h1>Se connecter en tant qu'utilisateur</h1>
+  <h1>Se connecter en tant qu'administrateur </h1>
   <div class="container sign-in-form-container">
     <form action="<?php echo URLROOT; ?>/users/sign_in" method="post">
       <div class="under-container">
