@@ -2,7 +2,6 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/sign_in.css'; ?> </style>
 
-<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
   <h1>Se connecter en tant qu'utilisateur</h1>
@@ -20,10 +19,12 @@
         </div>
       </div>
       <div>
-        <input type="submit" class="btn-primary" value="Confirmer">
+        <a href="<?php echo URLROOT; ?>/users/profile" class="btn-primary" >Confirmer</a>
       </div>
     </form>
   </div>
 </div> 
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
+
+

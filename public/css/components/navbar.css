@@ -3,14 +3,14 @@ header {
     top: -10px;
     right: -5px;
     left: -5px;
+    background-color: #fafafa;
+    padding: 50px 0px;
     box-shadow: 3px 3px 3px #adadad;  
 }
 header #container {
-    background-color: #fafafa;
     text-align: center;
 }
 header #navbar {
-    background-color: #fafafa;
     width: 100%;
     height: 50px;
     display: flex;
@@ -29,6 +29,7 @@ header #logo {
 
 
 header #navbar_menu {
+    display: flex;
     justify-content: center;
 }
 

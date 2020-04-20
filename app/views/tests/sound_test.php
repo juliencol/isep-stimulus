@@ -16,7 +16,7 @@
 		
 	<div id="bouton">
 
-		<a href="sound_test_code.php">Commencer le test</a>	
+		<a href="<?php echo URLROOT; ?>tests/test_confirmation"">Commencer le test</a>	
 
 	</div>
 

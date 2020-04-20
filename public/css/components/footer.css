@@ -1,6 +1,7 @@
 footer {
-    position: relative;
-    bottom: -30px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
     margin-top: 50px;
     border-top: solid var(--primary-color) 3px;
     box-shadow: 3px 3px 3px #adadad;  
@@ -13,6 +14,7 @@ footer div {
 footer #footer_section {
     align-items: center;
     justify-content: space-between;
+    margin: 20px 30px;
 }
 
 footer a, a:visited, p {
@@ -20,5 +22,5 @@ footer a, a:visited, p {
 }
 
 footer img {
-  width: 80px;
+  width: 60px;
 }

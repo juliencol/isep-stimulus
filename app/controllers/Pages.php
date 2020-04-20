@@ -11,6 +11,10 @@ class Pages extends Controller {
     public function sign_in() {
       $this->view('pages/sign_in');
     }
+
+    public function team() {
+       $this->view('pages/team');
+    }
   }
 ?> 
   

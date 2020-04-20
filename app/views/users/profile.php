@@ -1,5 +1,9 @@
-<?php
-?>
+<?php require APPROOT . '/../public/css/style.php'; ?>
+<style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
+<style> <?php include APPROOT . '/../public/css/users/profile.css'; ?> </style>
+
+
+
 <html>
     <link rel="stylesheet" href="../../stylesheets/styleCSSPagesGabriel.css">
     <title>USER Profile</title>
@@ -8,19 +12,21 @@
         </header>
         <section>
             <aside>
-                <div id="photo"></div>
+                <img id="photo" src="https://res.cloudinary.com/isep/image/upload/v1587367413/stimulus/julien_ar3pu3.jpg"/>
                 <button>Changer la photo</button>
             </aside>
             <article>
                 <h2>UTILISATEUR</h2>
-                <p>Nom : Prénom : </p>
-                <p>Date de naissance : </p>
-                <p>Numéro d'employé : </p>
-                <p>Entreprise : </p>
+                <p>Nom: Colombain</p>
+                <p>Prénom: Julien</p>
+                <p>Date de naissance : 09/09/1999</p>
+                <p>Numéro d'employé : 10484</p>
+                <p>Entreprise : ISEP</p>
                 <button>Editer le profil</button>
             </article>
         </section>
-        <h1 onclick="">Consulter les résultats de ses tests</h1>
+        <a class="btn-primary"  href="<?php echo URLROOT; ?>tests">Tests</a>
+        <a class="btn-primary" href="<?php echo URLROOT; ?>tests">Résultats</a>
         <footer></footer>
     </div>
 

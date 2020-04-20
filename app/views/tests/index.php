@@ -9,15 +9,15 @@
 <div class="test">
 	
 	<div id="test_1">
-		<a href="sound_test_1.php"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_sound_test_hps8y3.png"> <br> <h3>Temps de réaction à un son</h3></a>
+		<a href="<?php echo URLROOT; ?>tests/sound_test"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_sound_test_hps8y3.png"> <br> <h3>Temps de réaction à un son</h3></a>
 	</div>
 
 	<div id="test_2">
-		<a href="micro_test_1.php"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_micro_test_lrllre.png"> <br> <h3>Capacité à reproduire un son</h3></a>	
+		<a href="<?php echo URLROOT; ?>tests/microphone_test"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_micro_test_lrllre.png"> <br> <h3>Capacité à reproduire un son</h3></a>	
 	</div>
 
 	<div id="test_3">
-		<a href="light_test_1.php"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_light_test_xkrkfs.png"> <br> <h3>Temps de réaction à une lumière</h3></a>
+		<a href="<?php echo URLROOT; ?>tests/light_test"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_light_test_xkrkfs.png"> <br> <h3>Temps de réaction à une lumière</h3></a>
 	</div>
 
 </div>

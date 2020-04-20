@@ -12,7 +12,7 @@
 
 	<br><br><br>
 
-	<p><a href="#">Retour au profil </a></p>
+	<p><a href="<?php echo URLROOT; ?>users/profile">Retour au profil </a></p>
 
 </div>
 

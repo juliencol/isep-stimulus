@@ -2,8 +2,6 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/pages/index.css'; ?> </style>
 
-<?php require APPROOT . '/views/inc/header.php'; ?>
-
 
 <div class="container main-container">
   <div class="container top-container">

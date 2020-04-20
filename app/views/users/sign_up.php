@@ -2,7 +2,6 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/sign_up.css'; ?> </style>
 
-<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
   <h1>Créer un compte</h1>
@@ -25,7 +24,7 @@
       </div>
       <div>
         <label for="email"><strong>Adresse email *</strong></label>
-        <input type="text" name="email" class="<?php echo (!empty($data['email_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
+        <input type="email" name="email" class="<?php echo (!empty($data['email_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
         <span><?php echo $data['email_error']; ?></span>
       </div>
       <div>

@@ -15,6 +15,10 @@
     line-height: 0;
 }
 
+html {
+     margin-bottom: 300px;
+}
+
 
 
 table, tbody{
@@ -23,7 +27,6 @@ table, tbody{
     margin: 30px;
     table-layout: auto;
     border-style: none;
-
 }
 thead,tfoot{
     background-color: rgba(187, 158, 224, 0.24);

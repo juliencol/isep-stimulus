@@ -13,7 +13,7 @@
 		
 	<div id="bouton">
 
-		<a href="test_confirmation.php">Terminer le test</a>	
+		<a href="<?php echo URLROOT; ?>tests/test_confirmation" class="btn-primary">Terminer le test</a>	
 
 	</div>
 

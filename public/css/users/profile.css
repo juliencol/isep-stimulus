@@ -1,0 +1,56 @@
+.headerFooter {
+    margin-left: 200px;
+}
+#photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: gainsboro;
+}
+h1 {
+    font-family: Arial;
+    background-color: darkgrey;
+    color: darkorchid;
+    padding: 20px;
+    margin-top: 50px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 30px;
+    width: 80%;
+    margin-left: 10%;
+}
+button {
+    background-color: darkorchid;
+    color: white;
+    margin-left: 60px;
+}
+section {
+    display: flex;
+}
+article {
+    background-color: gainsboro;
+    padding: 40px;
+    margin-left: 300px;
+    width: 400px;
+}
+.resultTestManquant {
+    margin-left: 0px;
+    padding: 20px;
+    background-color: gainsboro;
+    width: 80%;
+    margin-left: 10%;
+}
+.resultTest {
+    padding: 25px;
+    background-color: gainsboro;
+    margin-left: 500px;
+    height: 400px;
+    margin-right: 10%;
+}
+.listeTests {
+    padding: 20px;
+    background-color: gainsboro;
+    height: 100px;
+    width: 200px;
+    margin-left: 10%;
+} 
