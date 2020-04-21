@@ -1,0 +1,36 @@
+h1 {
+    margin: 80px;
+    font-size: 32px;
+    color: var(--primary-color);
+    text-align: center;
+
+}
+section {
+    display: flex;
+}
+article, aside {
+    margin-left: 200px;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    border: solid black 2px;
+}
+article {
+    padding: 200px;
+}
+aside {
+    padding-left: 72px;
+    padding-right: 72px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 80px;
+    margin-top: 30px;
+}
+abbr {
+    margin-left: 200px;
+    border-radius: 10px 10px 10px 10px;
+    border: solid black 2px;
+    padding-right: 560px;
+    padding-left: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
