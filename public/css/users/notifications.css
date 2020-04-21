@@ -4,6 +4,12 @@ h1 {
     color: var(--primary-color);
     text-align: center;
 }
-.resultTestManquant {
-
+.results {
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 10px 10px;
+    padding: 20px;
+    margin: 50px;
+    padding-left: 100px;
+    border:  2px solid black;
 }

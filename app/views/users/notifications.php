@@ -9,9 +9,11 @@
 <div id="container">
     <header></header>
     <h1>Notifications</h1>
-    <article class="resultTestManquant">
-        <p style="font-weight: bold">Vous n'avez jamais commencé de test.</p>
+    <article class="results">
+        <p>Vous n'avez jamais commencé de test.</p>
     </article>
     <footer></footer>
 </div>
 </html>
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>
