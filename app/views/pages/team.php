@@ -1,3 +1,4 @@
+<?php include '../../config/config.php';?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/pages/team.css'; ?> </style>

@@ -1,7 +1,9 @@
 <?php
 ?>
+<?php include '../../config/config.php';?>
+<?php require APPROOT . '/../public/css/style.php'; ?>
+<style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <html>
-<link rel="stylesheet" href="../../stylesheets/styleCSSPagesGabriel.css">
 <title>USER Notifications</title>
 <div id="container">
     <header></header>
