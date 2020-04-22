@@ -13,11 +13,13 @@
     </header>
     <h1>Temps de réaction à un son</h1>
         <section>
+            <?php ?>
             <abbr>Aucun test n'a été effectué</abbr>
         </section>
     <h1>Capacité à reproduire un son</h1>
         <section>
             <spin>
+                <?php ?>
                 <aside>
                     <p>Test numéro 0 <br /> Fait le ../../....</p>
                     <br><br>
@@ -28,6 +30,14 @@
                 </aside>
             </spin>
             <article>
+                <table>
+                    <caption>Capacité à reproduire un son :</caption>
+                    <tr>
+                        <th>Numéro de test</th>
+                        <th>Score</th>
+                    </tr>
+                    <?php ?>
+                </table>
                 <br><br>
             </article>
         </section>
@@ -35,6 +45,7 @@
         <section>
             <spin>
                 <aside>
+                    <?php ?>
                     <p>Test numéro 0</p>
                     <br><br>
                 </aside>

@@ -15,7 +15,10 @@ article, aside {
     border: solid black 2px;
 }
 article {
-    padding: 200px;
+    padding-left: 96px;
+    padding-right: 96px;
+    padding-top: 40px;
+    padding-bottom: 64px;
 }
 aside {
     padding-left: 72px;
@@ -33,4 +36,13 @@ abbr {
     padding-left: 32px;
     padding-top: 32px;
     padding-bottom: 32px;
+}
+table, th, td {
+    border: 2px solid var(--primary-color);
+}
+th, td {
+    padding-right: 24px;
+}
+caption {
+    padding: 16px;
 }
