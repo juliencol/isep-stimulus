@@ -12,7 +12,7 @@
     <h1>Notifications</h1>
     <article class="results">
         <p>Vous n'avez jamais commencé de test.</p>
-        <?php  ?>
+        <?php ?>
     </article>
     <footer></footer>
 </div>

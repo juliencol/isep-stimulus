@@ -33,8 +33,8 @@
                 <table>
                     <caption>Capacité à reproduire un son :</caption>
                     <tr>
-                        <th>Numéro de test</th>
-                        <th>Score</th>
+                        <th>Numéro de test :</th>
+                        <th>Score :</th>
                     </tr>
                     <?php ?>
                 </table>
