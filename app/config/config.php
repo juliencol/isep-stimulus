@@ -6,6 +6,6 @@
   define('DB_NAME', 'stimulus');
 
   define('APPROOT', dirname(dirname(__FILE__)));
-  define('URLROOT', 'http://localhost:8888/isep-stimulus/');
+  define('URLROOT', 'http://localhost/isep-stimulus/');
   define('SITENAME', 'Infinite Measures');
 ?>
