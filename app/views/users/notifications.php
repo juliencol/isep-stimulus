@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 ?>
 <?php include '../../config/config.php';?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
@@ -10,10 +10,13 @@
 <div id="container">
     <header></header>
     <h1>Notifications</h1>
-    <article class="results">
-        <p>Vous n'avez jamais commencé de test.</p>
-        <?php ?>
-    </article>
+
+        <?php
+        $nbreTests = "SELECT COUNT (*) FROM tests WHERE user_id = $SESSION['id'] AND description = 'en attente'";
+        for($i = 0; $i < $nbreTests; $i++) { ?>
+            <article class="results">Vous devez réaliser un test : test du <?php echo "SELECT title FROM test WHERE ..."?></article>
+        <?php }
+        ?>
     <footer></footer>
 </div>
 </html>
