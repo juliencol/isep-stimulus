@@ -1,5 +1,5 @@
-<?php include '../../config/config.php';?>
-<?php require APPROOT . '/../public/css/style.php'; ?>
+
+<?php require_once APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/pages/index.css'; ?> </style>
 

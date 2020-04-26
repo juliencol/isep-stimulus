@@ -10,6 +10,8 @@
     }
     public function view($view, $data = []) {
       if (file_exists('../app/views/' . $view . '.php')) {
+        extract($data);
+        $data=$data;
         require_once '../app/views/' . $view . '.php';
       } else {
         die("Error: the view you're looking for does not appear to exist");

@@ -27,6 +27,7 @@
 
       // Create PDO instance
       try {
+        
         $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
       } catch(PDOException $e) {
         $this->error = $e->getMessage();
@@ -36,7 +37,9 @@
 
     // Prepare statement with query
     public function query($sql) {
+      
       $this->stmt = $this->dbh->prepare($sql);
+      
     }
 
     // Bind values
@@ -61,7 +64,13 @@
 
     // Execute the prepared statement
     public function execute() {
+      try{
       return $this->stmt->execute();
+      }
+      catch (PDOException $e){
+        $this->error = $e->getMessage();
+        echo $this->error;
+      }
     }
 
     // Get result set as array of objects
