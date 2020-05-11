@@ -1,8 +1,10 @@
+<?php require_once APPROOT . '/../app/config/config.php';?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/faqs/index.css'; ?> </style>
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
+
 
 
 <header class="titre">
@@ -11,46 +13,32 @@
     </h1>
 </header>
 
-
-    <table> 
-        <thead>
-             <tr>
-                 <td>
-                    Sujet 1
-                 </td>
-             </tr>
-        </thead>
-    <tbody>
-        <tr>
-            <td>Question 1 ?</td>
-        </tr>
-        <tr>
-            <td class="reponse">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad possimus voluptatum provident molestiae quod. Incidunt quod ipsa, sunt nam exercitationem, a soluta sequi quo est praesentium quia deleniti alias numquam?
-            </td>
-        </tr>
-    </tbody>
-    </table>
-
-    <table> 
-        <thead>
-             <tr>
-                 <td>
-                Sujet 2
-                 </td>
-             </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Question 2 ?</td>
-        </tr>
-        <tr>
-            <td class="reponse">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad possimus voluptatum provident molestiae quod. Incidunt quod ipsa, sunt nam exercitationem, a soluta sequi quo est praesentium quia deleniti alias numquam?
-            </td>
-        </tr>
-    </tbody>
-    </table>
+<?php foreach($data as $faq_question): ?>
+        <table> 
+            <thead>
+                 <tr>
+                     <td>
+                     <?= $faq_question->subject ?>
+                     </td>
+                 </tr>
+            </thead>
+        <tbody>
+            <tr>
+            
+                <td>
+                <?= $faq_question->title ?>
+                
+                </td>
+            
+            </tr>
+            <tr>
+                <td class="reponse">
+                <?= $faq_question->answer ?>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <?php endforeach ; ?>
 
 
 

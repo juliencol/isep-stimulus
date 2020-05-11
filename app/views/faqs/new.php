@@ -1,3 +1,4 @@
+<?php require_once APPROOT . '/../app/config/config.php';?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/faqs/index.css'; ?> </style>
@@ -6,32 +7,48 @@
 
 <div class="container">
   <h1>Modifier la FAQ</h1>
-  
-  <form class="form" action="FAQ_adminGestion.html">
+  <?php 
+  if(!empty($data)){
+  foreach($data as $questions): ?>
+  <form class="form" method="post" >
       <div class="form">
       <div>
-          <input type="text" name="Sujet" id="sujet" placeholder="Sujet">
+      <?php $sujet=$questions->title;?>
+          <input type="text" name="Sujet" id="sujet" placeholder="Sujet" value="<?=$sujet?>">
       </div>
       <div>
-          <input type="text" name="Question" id="question" placeholder="Question">
+      <?php $question=$questions->subject;?>
+          <input type="text" name="Question" id="question" value="<?=$question?>">
       </div>
       <div>
-          <textarea name="message" id="message" cols="100" rows="20" placeholder="Message"></textarea>
+      <?php $title=$questions->answer;?>
+          <textarea name="Message" id="message" cols="100" rows="20" placeholder="Message"><?=$title?></textarea>
       </div>
       </div>
       <input type="submit" value="Enregistrer">
   </form>
+  <?php endforeach;}
+  else{ ?>
+    <form class="form" method="post" >
+    <div class="form">
+    <div>
+    
+        <input type="text" name="Sujet" id="sujet" placeholder="Sujet">
+    </div>
+    <div>
+        <input type="text" name="Question" id="question" placeholder="Question">
+    </div>
+    <div>
+        <textarea name="Message" id="message" cols="100" rows="20" placeholder="Message"></textarea>
+    </div>
+    </div>
+    <input type="submit" value="Enregistrer">
+</form>
+  <?php } ?>
+  
   
   <div class="clear" style="clear:both"></div>
-  <footer class="footer">  
-      <nav class="footerGauche">
-          <a href="">Nous contacter</a>
-          <a href="">CGU et Mentions légales</a>
-      </nav>
-      <nav class="footerDroite">
-          <a href="">Copyright Stimulus Inc.</a>
-      </nav>
-  </footer>
+  
   </body>
   </html>
 </div>
