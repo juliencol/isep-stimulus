@@ -21,7 +21,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET first_name = :new_first_name WHERE user_id = :user_id');
         $user->execute(array(
             'new_first_name' => $new_first_name,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
 
         echo 'Le <strong>prénom</strong> a bien été modifié. <br />';
@@ -32,7 +32,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET last_name = :new_last_name WHERE user_id = :user_id');
         $user->execute(array(
             'new_last_name' => $new_last_name,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
         echo 'Le <strong>nom</strong> a bien été modifié. <br/>';
     }
@@ -42,7 +42,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET gender = :new_gender WHERE user_id = :user_id');
         $user->execute(array(
             'new_gender' => $new_gender,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
         echo 'Le <strong>sexe</strong> a bien été modifié. <br/>';
     }
@@ -52,7 +52,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET birthdate = :new_birthdate WHERE user_id = :user_id');
         $user->execute(array(
             'new_birthdate' => $new_birthdate,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
         echo 'La <strong>date de naissance</strong> a bien été modifiée. <br/>';
     }
@@ -62,7 +62,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET company_name = :new_company_name WHERE user_id = :user_id');
         $user->execute(array(
             'new_company_name' => $new_company_name,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
         echo 'Le <strong>nom de l\'entreprise</strong> a bien été modifié. <br/>';
     }
@@ -72,7 +72,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET employee_number = :new_employee_number WHERE user_id = :user_id');
         $user->execute(array(
             'new_employee_number' => $new_employee_number,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
         echo 'Le <strong>numéro employé</strong> a bien été modifié. <br/>';
     }
@@ -82,7 +82,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET email = :new_email WHERE user_id = :user_id');
         $user->execute(array(
             'new_email' => $new_email,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
         echo 'L\'<strong>adresse email</strong> a bien été modifiée. <br/>';
     }
@@ -92,7 +92,7 @@ if (isset($_POST['submit_modify']) AND !empty($_POST['submit_modify'])) {
         $user = $bdd->prepare('UPDATE users SET password = :new_password WHERE user_id = :user_id');
         $user->execute(array(
             'new_password' => $new_password,
-            'user_id' => $modify,
+            'user_id' => $modify
         ));
         echo 'Le <strong>mot de passe</strong> a bien été modifié. <br/>';
     }
