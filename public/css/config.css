@@ -1,15 +1,27 @@
-/* Edit fonts below */ 
+/* Fonts */ 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
 
 
 
-/* Define CSS variables here */ 
+/* CSS variables */ 
 :root {
   --primary-color: #6D1ED1;
 }
 
 
 
-/* Global changes */ 
+/* Global CSS theme */ 
 body {
   background: lightgrey;
 }
+
+p {
+  font-size: 16px;
+}
+

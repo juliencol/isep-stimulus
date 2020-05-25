@@ -1,26 +1,37 @@
 footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    margin-top: 50px;
-    border-top: solid var(--primary-color) 3px;
-    box-shadow: 3px 3px 3px #adadad;  
-}
-footer div {
+    border-top: solid var(--primary-color) 1px;
+    margin-top: 30px;
+    padding: 1rem 0 1rem 0;
+    position: relative;
+    bottom: 0;
     display: flex;
+    text-align: center;
     justify-content: center;
-}
-
-footer #footer_section {
     align-items: center;
-    justify-content: space-between;
-    margin: 20px 30px;
 }
 
-footer a, a:visited, p {
+footer p, a {
+    margin: 0 40px;
     color: var(--primary-color);
 }
 
-footer img {
-  width: 60px;
+footer a {
+    text-decoration: underline;
 }
+
+footer a:hover {
+   color: black;
+}
+
+footer img {
+    width: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+  }
+  footer a, p {
+      margin: 0 30px;
+  }
+} 

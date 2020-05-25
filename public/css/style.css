@@ -9,3 +9,10 @@
 /* Imports CSS components here */
 @import 'components/container.css';
 @import 'components/buttons/btn_primary.css';
+
+/* Imports CSS pages here */
+@import 'users/notifications.css';
+@import 'users/profile.css';
+@import 'users/sign_in.css';
+@import 'users/sign_up.css';
+@import 'users/test_results.css';

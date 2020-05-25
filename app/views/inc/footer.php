@@ -2,25 +2,14 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/components/footer.css'; ?> </style>
   
-  <footer>
-    <div id="footer_section">
-      <div id="contact">
-        <a href="<?php echo URLROOT; ?>pages/team">Nous contacter</a>
-     </div>
-    <div id="cgu">
-      <a  href="<?php echo URLROOT; ?>cgus">Conditons générales d'utilisation</a>
-    </div>
-    <div id="logo">
-      <img src="https://res.cloudinary.com/isep/image/upload/v1587331391/stimulus/Infinite_measures_qao75a.png" alt ="stimulus_logo" target ="_blank" title = "Stimulus Logo" class="photo"/>
-    </div>
-    <div id="cgu">
-      <a  href="<?php echo URLROOT; ?>faqs">FAQ</a>
-    </div>
-    <div id="inc">
-      <p>Copyright Stimulus Inc.</p>
-    </div>
-    </div>
-  </footer>
-  <script src="<?php echo URLROOT?>/js/main.js"></script>
+<footer class="footer border-top d-flex flex-column justify-content-center align-items-center">
+  <a href="<?php echo URLROOT; ?>pages/team">Développeurs</a>
+  <a href="#">Contact</a>
+  <a href="<?php echo URLROOT; ?>cgus">CGU</a>
+  <a href="<?php echo URLROOT; ?>faqs">FAQ</a>
+  <p>© Infinite Measures</p>
+  <img src="https://res.cloudinary.com/isep/image/upload/v1587331391/stimulus/Infinite_measures_qao75a.png" alt ="stimulus_logo" target ="_blank" title = "Stimulus Logo" class="photo"/>
+</footer>
+<script src="<?php echo URLROOT?>/js/main.js"></script>
 </body>
 </html>
