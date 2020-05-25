@@ -100,7 +100,8 @@ class Users extends Controller {
     }
 
     public function test_results() {
-      $this->view('users/test_results');
+        $test_results = $this->userModel->findUserByEmail('enriquezgabriel426@gmail.com');
+        $this->view('users/test_results');
     }
   }
 ?> 
