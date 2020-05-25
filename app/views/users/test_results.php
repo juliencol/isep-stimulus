@@ -1,7 +1,7 @@
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/test_results.css'; ?> </style>
-<?php //require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <html>
     <title>Results</title>
