@@ -15,7 +15,7 @@
     <button>Modifier le profil</button>
     <div class="profile-btn">
         <a class="btn-primary"  href="<?php echo URLROOT; ?>tests">Tests</a>
-        <a class="btn-primary" href="<?php echo URLROOT; ?>tests">Résultats</a>
+        <a class="btn-primary" href="<?php echo URLROOT; ?>/users/test_results">Résultats</a>
     </div>
 </div> 
 
