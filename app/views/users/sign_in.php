@@ -12,6 +12,8 @@
                 <div>
                     <label for="name"><strong>Adresse email *</strong></label>
                     <input type="text" name="name" <?php echo (!empty($data['name_error'])) ? 'is-invalid' : ''; ?> value="<?php echo $data['name'] ?>" >
+                    <?php
+                    ?>
                     <span><?php echo $data['name_error']; ?></span>
                 </div>
                 <div>

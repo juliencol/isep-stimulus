@@ -1,7 +1,7 @@
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/test_results.css'; ?> </style>
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php //require APPROOT . '/views/inc/header.php'; ?>
 
 <html>
     <title>Results</title>
@@ -11,7 +11,7 @@
     <h1>Temps de réaction à un son</h1>
         <section>
             <?php foreach ($data as $test_done) {?>
-                <h1><?= $test_done->first_name?></h1>
+                <h1><?= $test_done->title?></h1>
             <?php }?>
             <abbr>Aucun test n'a été effectué</abbr>
         </section>
