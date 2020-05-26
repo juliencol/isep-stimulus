@@ -36,7 +36,7 @@
     }
 
     public function findTest1NeedsOfUser($email) {
-      $this->db->query("SELECT tests FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à un son'");
+      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à un son'");
       $this->db->bind(':email', $email);
       return $test1_needs=$this->db->resultSet();
     }
