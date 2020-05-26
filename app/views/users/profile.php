@@ -5,6 +5,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container profile-container">
+    <a class="btn-primary" href="<?php echo URLROOT; ?>/users/notifications">Notifications</a>
     <h2>Profil Utilisateur</h2>
      <img id="photo" class="profile-picture" src="https://res.cloudinary.com/isep/image/upload/v1587367413/stimulus/julien_ar3pu3.jpg"/>
     <p>Nom: Colombain</p>
