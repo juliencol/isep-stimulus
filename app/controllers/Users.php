@@ -92,7 +92,8 @@ class Users extends Controller {
     }
 
     public function notifications() {
-      $this->view('users/notifications');
+        $notifications = $this->userModel->findNotificationsOfUser($data["name"]);
+        $this->view('users/notifications', $notifications);
     }
 
     public function profile() {
@@ -100,8 +101,12 @@ class Users extends Controller {
     }
 
     public function test_results() {
-        $test_results = $this->userModel->findTest1NeedsOfUser($data['name']);
-        $this->view('users/test_results', $test_results);
+        $test_results1 = $this->userModel->findTests1OfUser($data['name']);
+        $this->view('users/test_results', $test_results1);
+        $test_results2 = $this->userModel->findTests2OfUser($data['name']);
+        $this->view('users/test_results', $test_results2);
+        $test_results3 = $this->userModel->findTests3OfUser($data['name']);
+        $this->view('users/test_results', $test_results3);
     }
   }
 ?> 

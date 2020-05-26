@@ -35,12 +35,22 @@
       }
     }
 
-    public function findTestsNeedOfUser($email) {
+    public function findTests1OfUser($email) {
       $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à un son'");
-      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Capacité à reproduire un son'");
-      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à une lumière'");
       $this->db->bind(':email', $email);
       return $test1_needs=$this->db->resultSet();
+    }
+    public function findTests2OfUser($email) {
+      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = $email AND users.id = tests.user_id AND tests.title = 'Capacité à reproduire un son'");
+      return $test2_needs=$this->db->resultSet();
+    }
+    public function findTests3OfUser($email) {
+      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à une lumière'");
+      return $test3_needs=$this->db->resultSet();
+    }
+    public function findNotificationsOfUser($email) {
+      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = $email AND users.id = tests.user_id AND tests.score = null");
+      return $notifications=$this->db->resultSet();
     }
   }
 ?> 
