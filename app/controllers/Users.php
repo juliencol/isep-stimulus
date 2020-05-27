@@ -122,7 +122,7 @@ class Users extends Controller {
                 'confirmed_password_error' => ''
             ];
         }
-        $notifications = $this->userModel->findNotificationsOfUser($data["name"]);
+        $notifications = $this->userModel->findNotificationsOfUser($data["email"]);
         $this->view('users/notifications', $notifications);
     }
 

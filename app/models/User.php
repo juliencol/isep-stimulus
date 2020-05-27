@@ -49,7 +49,7 @@
       return $test3_needs=$this->db->resultSet();
     }
     public function findNotificationsOfUser($email) {
-      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = $email AND users.id = tests.user_id AND tests.score = null");
+      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = $email AND users.id = tests.user_id AND tests.score = null ");
       return $notifications=$this->db->resultSet();
     }
   }
