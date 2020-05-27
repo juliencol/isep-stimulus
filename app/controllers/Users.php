@@ -1,5 +1,7 @@
 <?php  
 class Users extends Controller {
+    private $data;
+    private $test_done;
     public function __construct() {
       $this->userModel = $this->model('User');
     }
@@ -92,6 +94,34 @@ class Users extends Controller {
     }
 
     public function notifications() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'first_name' => trim($_POST['first_name']),
+                'last_name' => trim($_POST['last_name']),
+                'birthday_date' => trim($_POST['birthday_date']),
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+                'confirmed password' => trim($_POST['confirmed_password']),
+                'first_name_error' => '',
+                'last_name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirmed_password_error' => ''
+            ];
+        }else {
+            $data = [
+                'name' => '',
+                'email' => '',
+                'password' => '',
+                'confirmed password' => '',
+                'name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirmed_password_error' => ''
+            ];
+        }
         $notifications = $this->userModel->findNotificationsOfUser($data["name"]);
         $this->view('users/notifications', $notifications);
     }
@@ -101,12 +131,38 @@ class Users extends Controller {
     }
 
     public function test_results() {
-        $test_results1 = $this->userModel->findTests1OfUser($data['name']);
-        $this->view('users/test_results', $test_results1);
-        $test_results2 = $this->userModel->findTests2OfUser($data['name']);
-        $this->view('users/test_results', $test_results2);
-        $test_results3 = $this->userModel->findTests3OfUser($data['name']);
-        $this->view('users/test_results', $test_results3);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'first_name' => trim($_POST['first_name']),
+                'last_name' => trim($_POST['last_name']),
+                'birthday_date' => trim($_POST['birthday_date']),
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+                'confirmed password' => trim($_POST['confirmed_password']),
+                'first_name_error' => '',
+                'last_name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirmed_password_error' => ''
+            ];
+        }else {
+            $data = [
+                'name' => '',
+                'email' => '',
+                'password' => '',
+                'confirmed password' => '',
+                'name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirmed_password_error' => ''
+            ];
+        }
+        $test_results1 = $this->userModel->findTests1OfUser($data['email']);
+        $test_results2 = $this->userModel->findTests2OfUser($data['email']);
+        $test_results3 = $this->userModel->findTests3OfUser($data['email']);
+        $this->view('users/test_results', $test_results1, $test_results2, $test_results3);
     }
   }
 ?> 

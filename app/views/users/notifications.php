@@ -10,8 +10,10 @@
     <header></header>
     <h1>Notifications</h1>
 
-        <?php
-        ?>
+        <?php foreach ($data as $notification) {?>
+            <p>Vous devez effectuer : le test numéro <?= $notification->number?>, qui correspond à :
+            <?= $notification->title?></p>
+        <?php} ?>
     <footer></footer>
 </div>
 </html>

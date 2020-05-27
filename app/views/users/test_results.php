@@ -11,22 +11,20 @@
     <h1>Temps de réaction à un son</h1>
         <section>
             <?php foreach ($data as $test_done) {?>
-                <h1><?= $test_done->title?></h1>
+                <p>Vous avez effectué le test : <?= $test_done->title?></p>
             <?php }?>
             <abbr>Aucun test n'a été effectué</abbr>
         </section>
     <h1>Capacité à reproduire un son</h1>
         <section>
             <spin>
-                <?php ?>
-                <aside>
-                    <p>Test numéro 0 <br /> Fait le ../../....</p>
-                    <br><br>
-                </aside>
-                <aside>
-                    <p>Test numéro 1</p>
-                    <br><br>
-                </aside>
+                <?php foreach ($data as $test_done) {?>
+                    <aside>
+                        <p>Test numéro <?= $test_done->number?> fait le <?= $test_done->date?><br>
+                        Le score obtenu était de <?= $test_done->score?></p>
+                        <br><br>
+                    </aside>
+                <?php }?>
             </spin>
             <article>
                 <table>
@@ -35,7 +33,10 @@
                         <th>Numéro de test </th>
                         <th>Score </th>
                     </tr>
-                    <?php ?>
+                    <?php foreach ($data as $test_done) {?>
+                        <td><?= $test_done->number?></td>
+                        <td><?= $test_done->score?></td>
+                   <?php  }?>
                 </table>
                 <br><br>
             </article>
@@ -43,11 +44,13 @@
     <h1>Temps de réaction à une lumière</h1>
         <section>
             <spin>
+                <?php foreach ($data as $test_done) {?>
                 <aside>
-                    <?php ?>
-                    <p>Test numéro 0</p>
+                    <p>Test numéro <?= $test_done->number?><br>
+                    Fait le <?= $test_done->date?></p>
                     <br><br>
                 </aside>
+                    <?php }?>
             </spin>
             <article>
                 <br><br>
