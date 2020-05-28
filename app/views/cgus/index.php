@@ -6,14 +6,19 @@
 
 <div class="container">
   <h1>Conditions générales d'utilisation</h1>
-  <table>
-      <tr>
-          <td>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit quod corporis qui quidem quasi enim dolorem dolore ut, fugit sunt beatae rem? Dignissimos incidunt sunt temporibus mollitia veniam ratione?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis corrupti cum a eaque hic. Recusandae corrupti dignissimos soluta quia? Blanditiis, rem enim unde ipsa quaerat iure excepturi aspernatur corrupti adipisci?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eum cum repellat adipisci minus quos quod cupiditate tempora. Saepe quam alias porro temporibus ipsam voluptas quisquam, sint excepturi minima corrupti Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit illo excepturi quibusdam nisi obcaecati nulla, maxime minus incidunt assumenda facilis itaque qui unde. Provident dolore totam placeat animi et error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, mollitia architecto facilis fuga officiis quod reiciendis accusantium sed cumque. Voluptatibus eaque magni at dolor reprehenderit neque laudantium est incidunt accusantium?
-          </td>
-      </tr>
-  </table>
-</div>
+  <?php foreach($data as $cgu):?>
+    
+    <table>
+        <tr>
+            <td>
+            <?= $cgu->content ?>
+            </td>
+        </tr>
+    </table>
+  
+    <div class="clear" style="clear:both"></div>
+  </div>
+  <?php endforeach ; ?>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
 

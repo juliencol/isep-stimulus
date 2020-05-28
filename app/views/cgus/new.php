@@ -6,19 +6,22 @@
 
 <div class="container">
   <h1>Modifier les conditions générales d'utilisation</h1>
-  <input class="buttonModif" type=submit onclick=window.location.href='./new'; value='Modifier' name="newCGU" />
-  <?php foreach($data as $cgu):?>
-    
+  <?php 
+  if(!empty($data)){
+  foreach($data as $cgu): ?>
+ <form class="form" method="post" >
   <table>
       <tr>
           <td>
-          <?= $cgu->content ?>
+          <?php $cgu=$cgu->content;?>
+          <textarea name="cgu" id="cgu" cols="100" rows="20" placeholder="CGU"><?=$cgu?></textarea>          
           </td>
       </tr>
   </table>
-
   <div class="clear" style="clear:both"></div>
 </div>
-<?php endforeach ; ?>
+<input type="submit" value="Enregistrer">
+</form>
+<?php endforeach;} ?>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
