@@ -68,6 +68,11 @@ CREATE TABLE `faq_questions` (
   `subject` varchar(255)
 );
 
+CREATE TABLE 'cgu' (
+  `id` integer,
+  `text` varchar(255)
+);
+
 ALTER TABLE `users` ADD FOREIGN KEY (`supervisor_id`) REFERENCES `supervisors` (`id`);
 
 ALTER TABLE `supervisors` ADD FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`);
