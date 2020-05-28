@@ -11,7 +11,7 @@
 </header>
   
       <input class="buttonAjout" type=button onclick=window.location.href='./new'; value='Ajouter une question' />
-    <div class='body'>
+    <div class='body under-container'>
       <?php foreach($data as $faq_question): ?>
         <table> 
             <thead>

@@ -5,40 +5,42 @@
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
+<div class="container">
 
-
-<header class="titre">
-    <h1>
-        Foire aux questions
-    </h1>
-</header>
-
-<?php foreach($data as $faq_question): ?>
-        <table> 
-            <thead>
-                 <tr>
-                     <td>
-                     <?= $faq_question->subject ?>
-                     </td>
-                 </tr>
-            </thead>
-        <tbody>
-            <tr>
-            
-                <td>
-                <?= $faq_question->title ?>
+    <header class="titre">
+        <h1>
+            Foire aux questions
+        </h1>
+    </header>
+    
+    <?php foreach($data as $faq_question): ?>
+            <table> 
+                <thead>
+                     <tr>
+                         <td>
+                         <?= $faq_question->subject ?>
+                         </td>
+                     </tr>
+                </thead>
+            <tbody>
+                <tr>
                 
-                </td>
-            
-            </tr>
-            <tr>
-                <td class="reponse">
-                <?= $faq_question->answer ?>
-                </td>
-            </tr>
-        </tbody>
-        </table>
-        <?php endforeach ; ?>
+                    <td>
+                    <?= $faq_question->title ?>
+                    
+                    </td>
+                
+                </tr>
+                <tr>
+                    <td class="reponse">
+                    <?= $faq_question->answer ?>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <?php endforeach ; ?>
+</div>
+
 
 
 

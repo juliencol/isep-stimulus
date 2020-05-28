@@ -1,13 +1,11 @@
-<?php include '../../config/config.php';?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/tests/index.css'; ?> </style>
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<h1>Sélectionnez votre test</h1>
-
 <div class="test">
+	<h1>Sélectionnez votre test</h1>
 	
 	<div id="test_1">
 		<a href="<?php echo URLROOT; ?>tests/sound_test"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_sound_test_hps8y3.png"> <br> <h3>Temps de réaction à un son</h3></a>
@@ -20,7 +18,6 @@
 	<div id="test_3">
 		<a href="<?php echo URLROOT; ?>tests/light_test"><img src="https://res.cloudinary.com/isep/image/upload/v1587337102/stimulus/image_light_test_xkrkfs.png"> <br> <h3>Temps de réaction à une lumière</h3></a>
 	</div>
-
 </div>
 
 

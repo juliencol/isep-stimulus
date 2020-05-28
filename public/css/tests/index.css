@@ -1,11 +1,8 @@
-
-body
-{
-	text-align: center;
+.test {
+	margin-top: 120px;
 }
 
-h1
-{
+h1 {
 	margin-top: 130px;
 	color: rgb(115, 37, 214);
 	margin-bottom: 100px;
@@ -13,18 +10,15 @@ h1
 }
 
 
-.test img
-{
+.test img {
 	width: 100px;
 	height: 100px;
 }
 
-.test a 
-{
+.test a {
 	text-decoration: none;
 	color: rgb(115, 37, 214);
 }
-
 
 .test img:hover
 {
@@ -32,21 +26,18 @@ h1
 	height: 110px;
 }
 
-#test_1 
-{
+#test_1 {
 	width: 300px;
 	margin-left: 320px;
 	float: left;
 }
 
-#test_2 
-{
+#test_2 {
 	width: 300px;
 	float: left;
 }
 
-#test_3 
-{
+#test_3 {
 	width: 300px;
 	float: left;
 }
