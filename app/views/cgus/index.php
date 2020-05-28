@@ -1,4 +1,4 @@
-<?php include '../../config/config.php';?>
+<?php require_once APPROOT . '/../app/config/config.php';?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 
