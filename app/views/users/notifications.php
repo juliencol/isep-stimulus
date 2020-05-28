@@ -13,7 +13,7 @@
         <?php foreach ($data as $notification) {?>
             <p>Vous devez effectuer : le test numéro <?= $notification->number?>, qui correspond à :
             <?= $notification->title?></p>
-        <?php} ?>
+        <?php } ?>
     <footer></footer>
 </div>
 </html>
