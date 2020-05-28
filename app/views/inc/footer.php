@@ -8,7 +8,7 @@
   <a href="<?php echo URLROOT; ?>cgus">CGU</a>
   <a href="<?php echo URLROOT; ?>faqs">FAQ</a>
   <p>© Infinite Measures</p>
-  <img src="https://res.cloudinary.com/isep/image/upload/v1587331391/stimulus/Infinite_measures_qao75a.png" alt ="stimulus_logo" target ="_blank" title = "Stimulus Logo" class="photo"/>
+  <img src="https://res.cloudinary.com/isep/image/upload/v1587331391/stimulus/Infinite_measures_qao75a.png" alt ="stimulus_logo" target ="_blank" title = "Infinite Measures Logo" class="photo"/>
 </footer>
 <script src="<?php echo URLROOT?>/js/main.js"></script>
 </body>
