@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 28 mai 2020 à 14:14
+-- Généré le :  ven. 29 mai 2020 à 13:31
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -52,14 +52,24 @@ CREATE TABLE IF NOT EXISTS `cgu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 
 --
--- Déchargement des données de la table `cgu`
+-- Structure de la table `faq_invisble`
 --
 
-INSERT INTO `cgu` (`id`, `content`) VALUES
-(1, 'CGU');
+DROP TABLE IF EXISTS `faq_invisble`;
+CREATE TABLE IF NOT EXISTS `faq_invisble` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `supervisor_id` int(11) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `answer` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `supervisor_id` (`supervisor_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -76,13 +86,14 @@ CREATE TABLE IF NOT EXISTS `faq_questions` (
   `subject` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `supervisor_id` (`supervisor_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `faq_questions`
 --
 
 INSERT INTO `faq_questions` (`id`, `supervisor_id`, `title`, `answer`, `subject`) VALUES
+(24, NULL, 'a', 'a', 'a'),
 (18, NULL, 'ezzaez', 'eazeaza', 'eazea');
 
 -- --------------------------------------------------------
