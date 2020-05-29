@@ -7,7 +7,7 @@
     }
 
     public function findUserByEmail($email) {
-      $this->db->query('SELECT * FROM users WHERE email = :email ');
+      $this->db->query('SELECT * FROM users WHERE users.email = :email');
       $this->db->bind(':email', $email);
       $row = $this->db->single();
 
@@ -36,20 +36,23 @@
     }
 
     public function findTests1OfUser($email) {
-      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à un son'");
+      $this->db->query("SELECT users.id, tests.Type FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND Type = 'time_sound') ");
       $this->db->bind(':email', $email);
       return $test1_needs=$this->db->resultSet();
     }
     public function findTests2OfUser($email) {
-      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = $email AND users.id = tests.user_id AND tests.title = 'Capacité à reproduire un son'");
+      $this->db->query("SELECT * FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Capacité à reproduire un son'");
+      $this->db->bind(':email', $email);
       return $test2_needs=$this->db->resultSet();
     }
     public function findTests3OfUser($email) {
-      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à une lumière'");
+      $this->db->query("SELECT * FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à une lumière'");
+      $this->db->bind(':email', $email);
       return $test3_needs=$this->db->resultSet();
     }
     public function findNotificationsOfUser($email) {
-      $this->db->query("SELECT tests.number FROM tests, users WHERE users.email = $email AND users.id = tests.user_id AND tests.score = null ");
+      $this->db->query("SELECT * FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.score = null ");
+      $this->db->bind(':email', $email);
       return $notifications=$this->db->resultSet();
     }
   }
