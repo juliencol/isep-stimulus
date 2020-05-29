@@ -6,18 +6,22 @@
 
 <html>
     <title>Results</title>
-    <div id="container">
+    <div class="container">
     <header>
     </header>
         <br><br>
     <h1>Temps de réaction à un son</h1>
-        <?php  ?>
-        <!---<section>
 
-                <p>Vous avez effectué le test : </p>
+        <form method="post">
+            <input type="hidden" name="email" value="<?php echo $_SESSION["email"]; ?>">
+            <input type="submit" value="Voir les résultats de ses tests">
+        </form>
+        <?php foreach ($data as $info) { ?>
+            <aside>Vous avez effectué un test de type <?php echo $info["Type"]."<br>"; ?></aside>
+        <?php } ?>
 
-            <abbr>Aucun test n'a été effectué</abbr>
-        </section>
+        <?php //print_r($time_sound); ?>
+        <!---
     <h1>Capacité à reproduire un son</h1>
         <section>
             <spin>
