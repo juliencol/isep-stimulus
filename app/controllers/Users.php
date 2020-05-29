@@ -135,15 +135,6 @@ class Users extends Controller {
     public function test_results() {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            /*$data = [
-                0=> ['email'=>trim($_POST["email"]),
-                'error_email'=> "",
-                'id1' => "",
-                'type1' => "",
-                'id2' => "",
-                'type2' => "",
-                'id3' =>"",
-                'type3' =>""]];*/
             if(empty($_POST["email"])) {
                 $data = [
                     'error' =>'Problème !!!'
@@ -152,8 +143,8 @@ class Users extends Controller {
             } else {
                 if ($this->userModel->findUserByEmail($_POST['email'])) {
                     echo "Ok";
-                    $test_results = $this->userModel->findTests1OfUser(trim($_POST['email']));
-                    $time_sound = json_decode(json_encode($test_results), true);
+                    $test_results1 = $this->userModel->findTests1OfUser(trim($_POST['email']));
+                    $time_sound = json_decode(json_encode($test_results1), true);
                     print_r($time_sound);
                     $data= $time_sound;
                     echo "<br>".$data[0]['Type']."<br>";
