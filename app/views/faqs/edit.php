@@ -3,7 +3,7 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/faqs/index.css'; ?> </style>
 
-<?php require APPROOT . '/views/inc/header.php'; ?>
+ <?php require APPROOT . '/views/inc/header.php'; ?> 
 
 
 <header class="titre">
@@ -42,28 +42,48 @@
               <ul>
                   <li>
                   <form method="post">
-                  <button class="button" type=submit name="idQuestion" value=<?php echo($num)?> >Supprimer </button>
-                  </form>
+                  <button class="button" type=submit name="idSupp" value=<?php echo($num)?> >Supprimer </button>
+                  
                   </li>
                   
                   <li>
-                  <form method="post" action='./new'>
+                  
                   <button class="button" type=submit name="newQuestion" value=<?php echo($num)?> >Modifier </button>
-                  </form>
+                  
                   </li>
                   <li>
+                  
+                  <?php $visible=$faq_question->visible; ?>
                   <?php
-                  $name='Question'.$num;
+                    $name='Question'.$num;
                   ?>
-                      <input type="radio" name='<?php echo($name) ?>' id='visible'checked/>
+                 <?php if ($visible==1){ ?>
+                    
+                  
+                      <input type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id='visible'checked/>
                       <label for="visible">Visible</label>
-                      <input type="radio" name='<?php echo($name) ?>' id="invisible">
+                   
+                    
+                      <input onchange='this.form.submit()' type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id="invisible" />
                       <label for="invisible">Invisible</label>
+                      
+                 <?php } ?>
+                 <input type="hidden" name="idQuestion" value=<?php echo($num)?> />
+                 
+                 <?php if ($visible==0){ ?>
+                     <input onchange='this.form.submit()' type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id='visible' />
+                      <label for="visible">Visible</label>
+
+                      <input type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id="invisible" checked />
+                      <label for="invisible">Invisible</label>
+                <?php } ?>
                   </li>
+                  </form>
               </ul>
           </aside>
         <?php endforeach ; ?>
-    </div>
+
+  
  
 
           <?php require APPROOT . '/views/inc/footer.php'; ?>

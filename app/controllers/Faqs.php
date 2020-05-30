@@ -1,6 +1,7 @@
 <?php  
 class Faqs extends Controller {
   private $faq_question;
+  private $faq_invisible;
  
   private $data;
 
@@ -12,6 +13,7 @@ class Faqs extends Controller {
 
     public function index() {
       $faq_questions=$this->faqModel->Question();
+      $faq_invisible=$this->faqModel->QuestionInvisible();
 
       $this->view('faqs/index',$faq_questions);
     }
@@ -78,22 +80,89 @@ class Faqs extends Controller {
 
     public function edit() {
       $faq_questions=$this->faqModel->Question();
-      
-      
+      $faq_invisible=$this->faqModel->QuestionInvisible();
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $num=$_POST['idQuestion'];
-       
+        if (isset ($_POST['idSupp'])){
+        
+        
         
         
       
-      if ($this->faqModel->removeQuestion($num)) {
+      if ($this->faqModel->removeQuestion($num) && $this->faqModel->removeQuestionInvisible($num)) {
         echo'supprimé';
         redirect('faqs/edit');
       }
-     
+    }
+    $name='Question'.$num;
+    $numVisible=$_POST[$name];
+    
+    if (!isset ($_POST['idSupp'])){
+
+      if($numVisible==1){
+      
+        $question=$this->faqModel->uneQuestion($num);
+        foreach($question as $question){
+        $sujet=$question->subject;
+        $titre=$question->title;
+        $reponse=$question->answer;
+        
+        $data = [
+          'id'=> trim($num),
+          'supervisor_id'=>NULL,
+          'title' => trim($titre),
+          'subject' => trim($sujet),
+          'answer' => trim($reponse),
+        ];
+      
+        $this->faqModel->addQuestionInvisible($data);  
+        if($this->faqModel->removeQuestion($num)){
+          redirect('faqs/edit');
+        }
+      }
+        
+
+      }
+
+      if($numVisible==0){
+       
+        $question1=$this->faqModel->uneQuestionInvisible($num);
+        
+        foreach($question1 as $question1){
+        $sujet1=$question1->subject;
+        $titre1=$question1->title;
+        $reponse1=$question1->answer;
+        
+      
+        $data = [
+          'id'=> trim($num),
+          'supervisor_id'=>NULL,
+          'title' => trim($titre1),
+          'subject' => trim($sujet1),
+          'answer' => trim($reponse1),
+        ];
+      
+        $this->faqModel->addQuestion($data);  
+        if($this->faqModel->removeQuestionInvisible($num)){
+          redirect('faqs/edit');
+        }
+      }
+      
 
     }
-      $this->view('faqs/edit',$faq_questions);
+     
+  }
+
+    }
+      
+     
+      
+     
+    
+
+    $faq=array_merge($faq_questions, $faq_invisible);
+      $this->view('faqs/edit',$faq);
+    
       
     }
   }
