@@ -16,8 +16,11 @@
             <input type="submit" value="Regarder les résultats de ses tests" name="validation">
         </form>
         <br><br>
-       <?php  if (isset($_POST["validation"])) { ?>
-            <h1>Temps de réaction à un son</h1>
+       <?php  if (isset($_POST["validation"])) {
+           if(!isset($data['absence_time_sound'])) {
+               echo $data['error_email'];
+           } else { ?>
+               <h1>Temps de réaction à un son</h1>
 
         <?php
 
@@ -26,7 +29,10 @@
                 <aside>Vous avez effectué un test de type <?php echo $info["Type"]."<br> le ".$info['date']." et vous avez obtenu un score de ".$info['score']; ?></aside>
             <?php }
         } else {
-            echo $data['error_time_sound'];
+            if(isset($data['absence_time_sound'])) {
+                echo $data['absence_time_sound'];
+            }
+
         } ?>
 
 
@@ -61,7 +67,10 @@
                 </table>
             </article>
                     <?php } else {
-                        echo $data['error_reproduct_sound'];
+                        if(isset($data['absence_reproduct_sound'])) {
+                            echo $data['absence_reproduct_sound'];
+                        }
+
                     } ?>
 
                 <br><br>
@@ -77,7 +86,10 @@
                     </aside>
                <?php }
             } else {
-                echo $data['error_time_light'];
+                if(isset($data['absence_time_light'])) {
+                    echo $data['absence_time_light'];
+                }
+
             }?>
             <spin>
 
@@ -91,6 +103,9 @@
     <footer>
 
     </footer>
+         <?php  }
+           ?>
+
       <?php  } ?>
 
 </div>
