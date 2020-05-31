@@ -3,7 +3,7 @@
 <style> <?php include APPROOT . '/../public/css/tests/test_confirmation.css'; ?> </style>
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
-
+<br><br>
 <h1>Les résultats du test ont été enregistrés avec succès </h1>
 
 <div id="bouton">

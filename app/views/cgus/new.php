@@ -5,23 +5,23 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
-  <h1>Modifier les conditions générales d'utilisation</h1>
-  <?php 
-  if(!empty($data)){
-  foreach($data as $cgu): ?>
- <form class="form" method="post" >
-  <table>
-      <tr>
-          <td>
-          <?php $cgu=$cgu->content;?>
-          <textarea name="cgu" id="cgu" cols="100" rows="20" placeholder="CGU"><?=$cgu?></textarea>          
-          </td>
-      </tr>
-  </table>
-  <div class="clear" style="clear:both"></div>
+    <h1>Modifier les conditions générales d'utilisation</h1>
+    <?php
+    if(!empty($data)){
+    foreach($data as $cgu): ?>
+    <form class="form" method="post" >
+        <table>
+            <tr>
+                <td>
+                    <?php $cgu=$cgu->content;?>
+                    <textarea name="cgu" id="cgu" cols="100" rows="20" placeholder="CGU"><?=$cgu?></textarea>
+                </td>
+            </tr>
+        </table>
+        <div class="clear" style="clear:both"></div>
 </div>
 <input type="submit" value="Enregistrer">
-</form>
+    </form>
 <?php endforeach;} ?>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

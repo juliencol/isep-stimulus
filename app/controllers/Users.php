@@ -1,5 +1,9 @@
 <?php  
 class Users extends Controller {
+    private $data;
+    private $time_sound;
+    private $reproduct_sound;
+    private $time_light;
     public function __construct() {
       $this->userModel = $this->model('User');
     }
@@ -92,7 +96,36 @@ class Users extends Controller {
     }
 
     public function notifications() {
-      $this->view('users/notifications');
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'first_name' => trim($_POST['first_name']),
+                'last_name' => trim($_POST['last_name']),
+                'birthday_date' => trim($_POST['birthday_date']),
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+                'confirmed password' => trim($_POST['confirmed_password']),
+                'first_name_error' => '',
+                'last_name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirmed_password_error' => ''
+            ];
+        }else {
+            $data = [
+                'name' => '',
+                'email' => '',
+                'password' => '',
+                'confirmed password' => '',
+                'name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirmed_password_error' => ''
+            ];
+        }
+        $notifications = $this->userModel->findNotificationsOfUser($data["email"]);
+        $this->view('users/notifications', $notifications);
     }
 
     public function profile() {
@@ -100,7 +133,65 @@ class Users extends Controller {
     }
 
     public function test_results() {
-      $this->view('users/test_results');
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            if(empty($_POST["email"])) {
+                $data = [
+                    'error' =>'Problème !!!'
+                ];
+                $this->view('users/test_results', $data);
+            } else {
+                if ($this->userModel->findUserByEmail($_POST['email'])) {
+                    $test_results1 = $this->userModel->findTests1OfUser(trim($_POST['email']));
+                    $time_sound = json_decode(json_encode($test_results1), true);
+                    $test_results2 = $this->userModel->findTests2OfUser(trim($_POST['email']));
+                    $test_results3 = $this->userModel->findTests3OfUser(trim($_POST['email']));
+                    $time_light = json_decode(json_encode($test_results3), true);
+                    $data= [
+                        'time_sound' => $time_sound,
+                        'reproduct_sound' => $test_results2,
+                        'time_light' => $time_light,
+                        'error_time_sound' => "Vous n'avez pas effectué de test de temps de réaction à un son",
+                        'error_reproduct_sound' => "Vous n'avez pas effectué de test de capacité à reproduire un son",
+                        'error_time_light' => "Vous n'avez pas effectué de test de temps de réaction à une lumière"
+                    ];
+                    $this->view('users/test_results', $data);
+                } else {
+                    $data = [
+                        'error_email' => "Veuillez entrer une adresse email valide"
+                    ];
+                    $this->view('users/test_results', $data);
+                }
+            }
+        } else {
+            $data = [
+                'debut' => ' '
+            ];
+            $this->view('users/test_results', $data);
+        }
+
+
+        /*print_r($test_results1[0]);
+        print_r($test_results1[0]);
+
+
+            /*$data = [
+                'first_name' => trim($_SESSION['first_name']),
+                'last_name' => trim($_SESSION['last_name']),
+                'birthday_date' => trim($_SESSION['birthday_date']),
+                'email' => trim($_SESSION['email']),
+                'password' => trim($_SESSION['password']),
+                'confirmed password' => trim($_SESSION['confirmed_password']),
+                'first_name_error' => '',
+                'last_name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirmed_password_error' => ''
+            ];
+        $test_results1 = $this->userModel->findTests1OfUser('enriquezgabriel426@gmail.com');
+        $test_results2 = $this->userModel->findTests2OfUser($data['email']);
+        $test_results3 = $this->userModel->findTests3OfUser($data['email']);
+        $this->view('users/test_results', $test_results1);*/
     }
   }
 ?> 

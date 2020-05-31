@@ -18,6 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+
 --
 -- Base de données :  `stimulus`
 --
@@ -145,6 +146,10 @@ CREATE TABLE IF NOT EXISTS `supervisors` (
 DROP TABLE IF EXISTS `tests`;
 CREATE TABLE IF NOT EXISTS `tests` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
+=======
+  `Type` varchar(255) DEFAULT NULL,
+>>>>>>> test_results
   `user_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
