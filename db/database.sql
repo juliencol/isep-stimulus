@@ -146,10 +146,7 @@ CREATE TABLE IF NOT EXISTS `supervisors` (
 DROP TABLE IF EXISTS `tests`;
 CREATE TABLE IF NOT EXISTS `tests` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-<<<<<<< HEAD
-=======
   `Type` varchar(255) DEFAULT NULL,
->>>>>>> test_results
   `user_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
