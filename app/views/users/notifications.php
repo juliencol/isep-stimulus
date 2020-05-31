@@ -9,11 +9,25 @@
 <div id="container">
     <header></header>
     <h1>Notifications</h1>
+    <form method="post">
+        <input type="hidden" name="email" value="<?php echo $_SESSION["email"]?>">
+        <input type="submit" value="Regarder ses notifications" name="validation">
+    </form>
+    <?php if(isset($_POST["validation"])) {
+        if(!empty($data['notifications'])) {
+            foreach ($data['notifications'] as $notification) {?>
+                <p>Vous devez effectuer : le test numéro <?= $notification->number?>, de type :
+                    <?= $notification->Type?></p>
+            <?php }
+        } else {
+            if(isset($data['absence_notifications'])) {
+                echo $data['absence_notifications'];
+            } else {
+                echo $data['error_email'];
+            }
+        }
+    } ?>
 
-        <?php foreach ($data as $notification) {?>
-            <p>Vous devez effectuer : le test numéro <?= $notification->number?>, qui correspond à :
-            <?= $notification->title?></p>
-        <?php } ?>
     <footer></footer>
 </div>
 </html>

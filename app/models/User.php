@@ -51,7 +51,7 @@
       return $test3_needs=$this->db->resultSet();
     }
     public function findNotificationsOfUser($email) {
-      $this->db->query("SELECT * FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.score = null ");
+      $this->db->query("SELECT users.id, tests.Type, tests.description, tests.number FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND score IS NULL ) ");
       $this->db->bind(':email', $email);
       return $notifications=$this->db->resultSet();
     }
