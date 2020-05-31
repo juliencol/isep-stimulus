@@ -1,169 +1,169 @@
 <?php
 class Faqs extends Controller {
-  private $faq_question;
-  private $faq_invisible;
+    private $faq_question;
+    private $faq_invisible;
 
-  private $data;
+    private $data;
 
-  public function __construct() {
-    $this->faqModel = $this->model('Faq');
-  }
-
-
-
-  public function index() {
-    $faq_questions=$this->faqModel->Question();
-    $faq_invisible=$this->faqModel->QuestionInvisible();
-
-    $this->view('faqs/index',$faq_questions);
-  }
-
-  public function new() {
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $errors=[];
-      if(isset($_POST['Sujet'])){
-
-        $data = [
-            'id'=> NULL,
-            'supervisor_id'=>NULL,
-            'title' => trim($_POST['Sujet']),
-            'subject' => trim($_POST['Question']),
-            'answer' => trim($_POST['Message']),
-        ];
+    public function __construct() {
+        $this->faqModel = $this->model('Faq');
+    }
 
 
-        if (empty($data['title'])){
-          $errors['title']='Titre obligatoire';
 
+    public function index() {
+        $faq_questions=$this->faqModel->Question();
+        $faq_invisible=$this->faqModel->QuestionInvisible();
+
+        $this->view('faqs/index',$faq_questions);
+    }
+
+    public function new() {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $errors=[];
+            if(isset($_POST['Sujet'])){
+
+                $data = [
+                    'id'=> NULL,
+                    'supervisor_id'=>NULL,
+                    'title' => trim($_POST['Sujet']),
+                    'subject' => trim($_POST['Question']),
+                    'answer' => trim($_POST['Message']),
+                ];
+
+
+                if (empty($data['title'])){
+                    $errors['title']='Titre obligatoire';
+
+                }
+                if (empty($data['subject'])){
+                    $errors['subject']='Sujet obligatoire';
+
+                }
+                if (empty($data['answer'])){
+                    $errors['answer']='Message obligatoire';
+
+                }
+
+                if(empty($errors)){
+
+                    if ($this->faqModel->addQuestion($data)){
+                        redirect('faqs/edit');
+                    }
+                    else{
+                        echo 'erreur';
+                    }
+
+                }
+
+
+
+            }
+            else{
+                $num1=$_POST['newQuestion'];
+                $question=$this->faqModel->modifQuestion($num1);
+                $this->faqModel->removeQuestion($num1);
+                $this->view('faqs/new',$question);
+
+            }
         }
-        if (empty($data['subject'])){
-          $errors['subject']='Sujet obligatoire';
-
-        }
-        if (empty($data['answer'])){
-          $errors['answer']='Message obligatoire';
-
-        }
-
         if(empty($errors)){
-
-          if ($this->faqModel->addQuestion($data)){
-            redirect('faqs/edit');
-          }
-          else{
-            echo 'erreur';
-          }
-
+            $this->view('faqs/new');
         }
 
 
 
-      }
-      else{
-        $num1=$_POST['newQuestion'];
-        $question=$this->faqModel->modifQuestion($num1);
-        $this->faqModel->removeQuestion($num1);
-        $this->view('faqs/new',$question);
 
-      }
-    }
-    if(empty($errors)){
-      $this->view('faqs/new');
+
     }
 
-
-
-
-
-  }
-
-  public function edit() {
-    $faq_questions=$this->faqModel->Question();
-    $faq_invisible=$this->faqModel->QuestionInvisible();
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $num=$_POST['idQuestion'];
-      if (isset ($_POST['idSupp'])){
+    public function edit() {
+        $faq_questions=$this->faqModel->Question();
+        $faq_invisible=$this->faqModel->QuestionInvisible();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $num=$_POST['idQuestion'];
+            if (isset ($_POST['idSupp'])){
 
 
 
 
 
-        if ($this->faqModel->removeQuestion($num) && $this->faqModel->removeQuestionInvisible($num)) {
-          echo'supprimé';
-          redirect('faqs/edit');
-        }
-      }
-      $name='Question'.$num;
-      $numVisible=$_POST[$name];
-
-      if (!isset ($_POST['idSupp'])){
-
-        if($numVisible==1){
-
-          $question=$this->faqModel->uneQuestion($num);
-          foreach($question as $question){
-            $sujet=$question->subject;
-            $titre=$question->title;
-            $reponse=$question->answer;
-
-            $data = [
-                'id'=> trim($num),
-                'supervisor_id'=>NULL,
-                'title' => trim($titre),
-                'subject' => trim($sujet),
-                'answer' => trim($reponse),
-            ];
-
-            $this->faqModel->addQuestionInvisible($data);
-            if($this->faqModel->removeQuestion($num)){
-              redirect('faqs/edit');
+                if ($this->faqModel->removeQuestion($num) && $this->faqModel->removeQuestionInvisible($num)) {
+                    echo'supprimé';
+                    redirect('faqs/edit');
+                }
             }
-          }
+            $name='Question'.$num;
+            $numVisible=$_POST[$name];
+
+            if (!isset ($_POST['idSupp'])){
+
+                if($numVisible==1){
+
+                    $question=$this->faqModel->uneQuestion($num);
+                    foreach($question as $question){
+                        $sujet=$question->subject;
+                        $titre=$question->title;
+                        $reponse=$question->answer;
+
+                        $data = [
+                            'id'=> trim($num),
+                            'supervisor_id'=>NULL,
+                            'title' => trim($titre),
+                            'subject' => trim($sujet),
+                            'answer' => trim($reponse),
+                        ];
+
+                        $this->faqModel->addQuestionInvisible($data);
+                        if($this->faqModel->removeQuestion($num)){
+                            redirect('faqs/edit');
+                        }
+                    }
 
 
-        }
+                }
 
-        if($numVisible==0){
+                if($numVisible==0){
 
-          $question1=$this->faqModel->uneQuestionInvisible($num);
+                    $question1=$this->faqModel->uneQuestionInvisible($num);
 
-          foreach($question1 as $question1){
-            $sujet1=$question1->subject;
-            $titre1=$question1->title;
-            $reponse1=$question1->answer;
+                    foreach($question1 as $question1){
+                        $sujet1=$question1->subject;
+                        $titre1=$question1->title;
+                        $reponse1=$question1->answer;
 
 
-            $data = [
-                'id'=> trim($num),
-                'supervisor_id'=>NULL,
-                'title' => trim($titre1),
-                'subject' => trim($sujet1),
-                'answer' => trim($reponse1),
-            ];
+                        $data = [
+                            'id'=> trim($num),
+                            'supervisor_id'=>NULL,
+                            'title' => trim($titre1),
+                            'subject' => trim($sujet1),
+                            'answer' => trim($reponse1),
+                        ];
 
-            $this->faqModel->addQuestion($data);
-            if($this->faqModel->removeQuestionInvisible($num)){
-              redirect('faqs/edit');
+                        $this->faqModel->addQuestion($data);
+                        if($this->faqModel->removeQuestionInvisible($num)){
+                            redirect('faqs/edit');
+                        }
+                    }
+
+
+                }
+
             }
-          }
-
 
         }
 
-      }
+
+
+
+
+
+        $faq=array_merge($faq_questions, $faq_invisible);
+        $this->view('faqs/edit',$faq);
+
 
     }
-
-
-
-
-
-
-    $faq=array_merge($faq_questions, $faq_invisible);
-    $this->view('faqs/edit',$faq);
-
-
-  }
 }
-?>
+?> 
