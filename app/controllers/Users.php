@@ -142,12 +142,19 @@ class Users extends Controller {
                 $this->view('users/test_results', $data);
             } else {
                 if ($this->userModel->findUserByEmail($_POST['email'])) {
-                    echo "Ok";
                     $test_results1 = $this->userModel->findTests1OfUser(trim($_POST['email']));
                     $time_sound = json_decode(json_encode($test_results1), true);
-                    print_r($time_sound);
-                    $data= $time_sound;
-                    echo "<br>".$data[0]['Type']."<br>";
+                    $test_results2 = $this->userModel->findTests2OfUser(trim($_POST['email']));
+                    $test_results3 = $this->userModel->findTests3OfUser(trim($_POST['email']));
+                    $time_light = json_decode(json_encode($test_results3), true);
+                    $data= [
+                        'time_sound' => $time_sound,
+                        'reproduct_sound' => $test_results2,
+                        'time_light' => $time_light,
+                        'error_time_sound' => "Vous n'avez pas effectué de test de temps de réaction à un son",
+                        'error_reproduct_sound' => "Vous n'avez pas effectué de test de capacité à reproduire un son",
+                        'error_time_light' => "Vous n'avez pas effectué de test de temps de réaction à une lumière"
+                    ];
                     $this->view('users/test_results', $data);
                 } else {
                     $data = [
@@ -158,17 +165,9 @@ class Users extends Controller {
             }
         } else {
             $data = [
-                'email' => '',
-                'error_email'=> "",
-                'id1' => "",
-                'type1' => "",
-                'id2' => "",
-                'type2' => "",
-                'id3' =>"",
-                'type3' =>""
+                'debut' => ' '
             ];
-            echo 'BONJOUR !!!';
-            $this->view('users/test_results');
+            $this->view('users/test_results', $data);
         }
 
 

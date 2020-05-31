@@ -36,17 +36,17 @@
     }
 
     public function findTests1OfUser($email) {
-      $this->db->query("SELECT users.id, tests.Type FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND Type = 'time_sound') ");
+      $this->db->query("SELECT users.id, tests.Type, tests.description, tests.date, tests.score FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND Type = 'time_sound') ");
       $this->db->bind(':email', $email);
       return $test1_needs=$this->db->resultSet();
     }
     public function findTests2OfUser($email) {
-      $this->db->query("SELECT * FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Capacité à reproduire un son'");
+      $this->db->query("SELECT users.id, tests.Type, tests.description, tests.number, tests.date, tests.score FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND Type = 'reproduct_sound') ");
       $this->db->bind(':email', $email);
       return $test2_needs=$this->db->resultSet();
     }
     public function findTests3OfUser($email) {
-      $this->db->query("SELECT * FROM tests, users WHERE users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de réaction à une lumière'");
+      $this->db->query("SELECT users.id, tests.Type, tests.description, tests.date, tests.score FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND Type = 'time_light') ");
       $this->db->bind(':email', $email);
       return $test3_needs=$this->db->resultSet();
     }
