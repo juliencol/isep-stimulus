@@ -36,59 +36,6 @@
             </td>
         </tr>
         </tbody>
-<<<<<<< HEAD
-        </table>
-        <?php $num=$faq_question->id ?>
-        <aside class="sidebar">
-              <ul>
-                  <li>
-                  <form method="post">
-                  <button class="button" type=submit name="idSupp" value=<?php echo($num)?> >Supprimer </button>
-                  
-                  </li>
-                  
-                  <li>
-                  
-                  <button class="button" type=submit name="newQuestion" value=<?php echo($num)?> >Modifier </button>
-                  
-                  </li>
-                  <li>
-                  
-                  <?php $visible=$faq_question->visible; ?>
-                  <?php
-                    $name='Question'.$num;
-                  ?>
-                 <?php if ($visible==1){ ?>
-                    
-                  
-                      <input type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id='visible'checked/>
-                      <label for="visible">Visible</label>
-                   
-                    
-                      <input onchange='this.form.submit()' type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id="invisible" />
-                      <label for="invisible">Invisible</label>
-                      
-                 <?php } ?>
-                 <input type="hidden" name="idQuestion" value=<?php echo($num)?> />
-                 
-                 <?php if ($visible==0){ ?>
-                     <input onchange='this.form.submit()' type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id='visible' />
-                      <label for="visible">Visible</label>
-
-                      <input type="radio" name='<?php echo($name) ?>' value=<?php echo($visible)?> id="invisible" checked />
-                      <label for="invisible">Invisible</label>
-                <?php } ?>
-                  </li>
-                  </form>
-              </ul>
-          </aside>
-        <?php endforeach ; ?>
-
-  
- 
-
-          <?php require APPROOT . '/views/inc/footer.php'; ?>
-=======
     </table>
     <?php $num=$faq_question->id ?>
     <aside class="sidebar">
@@ -138,6 +85,5 @@
 
 
 
->>>>>>> test_results
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
