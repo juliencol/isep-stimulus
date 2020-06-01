@@ -17,7 +17,7 @@
         if(!empty($data['notifications'])) {
             foreach ($data['notifications'] as $notification) {?>
                 <p>Vous devez effectuer : le test numéro <?= $notification->number?>, de type :
-                    <?= $notification->Type?></p>
+                    <?= $notification->title?></p>
             <?php }
         } else {
             if(isset($data['absence_notifications'])) {

@@ -1,4 +1,4 @@
-<?php  
+<?php
 class Users extends Controller {
     private $data;
     private $time_sound;
@@ -208,14 +208,12 @@ class Users extends Controller {
             } else {
                 if ($this->userModel->findUserByEmail($_POST['email'])) {
                     $test_results1 = $this->userModel->findTests1OfUser(trim($_POST['email']));
-                    $time_sound = json_decode(json_encode($test_results1), true);
                     $test_results2 = $this->userModel->findTests2OfUser(trim($_POST['email']));
                     $test_results3 = $this->userModel->findTests3OfUser(trim($_POST['email']));
-                    $time_light = json_decode(json_encode($test_results3), true);
                     $data= [
-                        'time_sound' => $time_sound,
+                        'time_sound' => $test_results1,
                         'reproduct_sound' => $test_results2,
-                        'time_light' => $time_light,
+                        'time_light' => $test_results3,
                         'absence_time_sound' => "Vous n'avez pas effectué de test de temps de réaction à un son",
                         'absence_reproduct_sound' => "Vous n'avez pas effectué de test de capacité à reproduire un son",
                         'absence_time_light' => "Vous n'avez pas effectué de test de temps de réaction à une lumière"

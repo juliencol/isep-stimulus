@@ -7,10 +7,7 @@
 <html>
     <title>Results</title>
     <div class="container">
-    <header>
-    </header>
         <br><br>
-
         <form method="post">
             <input type="hidden" name="email" value="<?php echo $_SESSION["email"]; ?>">
             <input type="submit" value="Regarder les résultats de ses tests" name="validation">
@@ -26,7 +23,7 @@
 
         if(!empty($data['time_sound'])) {
             foreach ($data['time_sound'] as $info) { ?>
-                <aside>Vous avez effectué un test de type <?php echo $info["Type"]."<br> le ".$info['date']." et vous avez obtenu un score de ".$info['score']; ?></aside>
+                <aside>Vous avez effectué un test de type <?php echo $info->title."<br> le ".$info->date." et vous avez obtenu un score de ".$info->score; ?></aside>
             <?php }
         } else {
             if(isset($data['absence_time_sound'])) {
@@ -44,7 +41,7 @@
                         <spin>
                             <?php foreach ($data['reproduct_sound'] as $info) { ?>
                                 <aside>
-                                    Vous avez effectué un test de type <?php echo $info->Type."<br> le ".$info->date." et vous avez obtenu un score de ".$info->score; ?>
+                                    Vous avez effectué un test <?php echo $info->title."<br> le ".$info->date." et vous avez obtenu un score de ".$info->score; ?>
                                 </aside>
                             <?php  }?>
 
@@ -81,7 +78,7 @@
             <?php if(!empty($data['time_light'])) {
                 foreach ($data['time_light'] as $info) { ?>
                     <aside>
-                        Vous avez effectué un test de type <?php echo $info["Type"]."<br> le ".$info['date']." et vous avez obtenu un score de ".$info['score']; ?>
+                        Vous avez effectué un test de type <?php echo $info->title."<br> le ".$info->date." et vous avez obtenu un score de ".$info->score; ?>
                         <br><br>
                     </aside>
                <?php }
