@@ -10,7 +10,6 @@
       $this->db->query('SELECT * FROM users WHERE users.email = :email');
       $this->db->bind(':email', $email);
       $row = $this->db->single();
-
       if ($this->db->rowCount() > 0) {
         return true;
       } else {
@@ -18,8 +17,10 @@
       }
     }
 
-    public function register($data) {
-      $this->db->query('INSERT INTO users (last_name, first_name, birthday_date, email, password) VALUES(:last_name, :first_name, :email, :password)');
+    public function sign_up($data) {
+      // Make query
+      $this->db->query('INSERT INTO users (last_name, first_name, birthday_date, email, password) VALUES(:last_name, :first_name, :birthday_date, :email, :password)');
+
       // Bind values
       $this->db->bind('last_name', $data['last_name']);
       $this->db->bind('first_name', $data['first_name']);

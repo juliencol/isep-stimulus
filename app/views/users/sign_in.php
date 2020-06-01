@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div>
-                <a href="<?php echo URLROOT; ?>/users/profile" class="btn-primary" >Confirmer</a>
+                <a href="#" class="btn-primary" >Confirmer</a>
             </div>
             <input type="submit">
         </form>
