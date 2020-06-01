@@ -11,10 +11,9 @@
      <img id="photo" class="profile-picture" src="https://res.cloudinary.com/isep/image/upload/v1587367413/stimulus/julien_ar3pu3.jpg"/>
     <p>Nom: Colombain</p>
     <?php
-    if(isset($_POST["email"]) && isset($_POST["mdp"])) {
+    if(isset($_POST["email"])) {
         echo $_POST["email"];
         $_SESSION["email"] = $_POST["email"];
-        $_SESSION["mdp"] = $_POST["mdp"];
     } else {
         echo "Pas d'email entré";
     }?><br>
@@ -28,7 +27,6 @@
         <a class="btn-primary" href="<?php echo URLROOT; ?>/users/test_results">Résultats</a>
     </div>
 </div>
-
 
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

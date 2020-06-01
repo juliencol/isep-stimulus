@@ -4,6 +4,7 @@ class Users extends Controller {
     private $time_sound;
     private $reproduct_sound;
     private $time_light;
+
     public function __construct() {
       $this->userModel = $this->model('User');
     }
@@ -26,63 +27,58 @@ class Users extends Controller {
           'confirmed_password_error' => ''
         ];
 
-        // Validations
         if (empty($data['last_name'])) {
-          $data['last_name_error'] = "Entrez votre prénom";
+          $data['last_name_error'] = "Entrez nom de famille svp";
         }
          if (empty($data['first_name'])) {
-          $data['first_name_error'] = "Entrez votre nom";
+          $data['first_name_error'] = "Entrez votre prénom svp";
         }
          if (empty($data['birthday_date'])) {
-          $data['birthday_date_error'] = "Entrez votre date de naissance";
+          $data['birthday_date_error'] = "Entrez votre date de naissance svp";
+        }
+        if (empty($data['password'])) {
+          $data['password_error'] = "Entrez un mot de passe svp";
         }
          if (empty($data['email'])) {
-          $data['email_error'] = "Entrez une adresse email valide";
+          $data['email_error'] = "Entrez une adresse email valide svp";
         } else {
           if ($this->userModel->findUserByEmail($data['email'])) {
             $data['email_error'] = "Cette adresse email est déjà utilisée"; 
           }
         }
          if (empty($data['password'])) {
-          $data['email_error'] = "Entrez un mot de passe valide";
-        } elseif (strlen($data['password'] < 8)) {
-           $data['email_error'] = "Votre mot de passe doit contenir au moins 8 caratères";
-        }
-        if (empty($data['confirmed_password'])) {
-          $data['confirmed_password_error'] = "Confirmez votre mot de passe";
-        } else {
-          if ($data['password'] != $data['confirmed_password']) {
-            $data['confirmed_password_error'] = "Les mots de passes sont différents";
-          }
+          $data['password_error'] = "Entrez un mot de passe valide";
         }
 
         // Make sure errors are empty
-        if (empty($data['email_error']) && empty($data['name_error']) && empty($data['password_error']) && empty($data['confirmed_password_error']) ) {
+        if (empty($data['last_name_error']) && empty($data['first_name_error']) && empty($data['email_error']) && empty($data['name_error']) && empty($data['password_error']) && empty($data['confirmed_password_error']) ) {
           // Validated
-
 
           // Hash password
           $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
           
           // Register user
-          if ($this->userModel->register($data)) {
-           redirect('users/sign_in');
+          if ($this->userModel->sign_up($data)) {
+            redirect('users/sign_in');
+            print_r('Compte créé avec succès');
           } else { 
             die("Une erreur est survenue");
           }
           
-
         } else {
           $this->view('users/sign_up', $data);
         }
  
       } else {
-        $data = [
-          'name' => '',
+         $data = [
+          'first_name' => '',
+          'last_name' => '',
+          'birthday_date' => '',
           'email' => '',
           'password' => '',
           'confirmed password' => '',
-          'name_error' => '',
+          'first_name_error' => '',
+          'last_name_error' => '',
           'email_error' => '',
           'password_error' => '',
           'confirmed_password_error' => ''
@@ -91,8 +87,79 @@ class Users extends Controller {
       }
     }
 
-    public function sign_in() {
-      $this->view('users/sign_in');
+   public function sign_in(){
+      // Check for POST
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Sanitize POST data
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        
+        $data =[
+          'email' => trim($_POST['email']),
+          'password' => trim($_POST['password']),
+          'email_error' => '',
+          'password_error' => '',      
+        ];
+
+        // Validations
+        if(empty($data['email'])){
+          $data['email_error'] = 'Entrez votre adresse email svp';
+        }
+        if(empty($data['password'])){
+          $data['password_error'] = 'Entrez votre mot de passe svp';
+        }
+
+        // Check for user/email
+        if($this->userModel->findUserByEmail($data['email'])){
+        } else {
+          $data['email_error'] = 'Utilisateur non trouvé';
+        }
+
+        // Make sure errors are empty
+        if(empty($data['email_error']) && empty($data['password_error'])){
+          // Check and set logged in user
+          $loggedInUser = $this->userModel->sign_in($data['email'], $data['password']);
+
+          if($loggedInUser){
+            // Create Session
+            $this->createUserSession($loggedInUser);
+          } else {
+            $data['password_error'] = 'Mot de passe incorrect';
+
+            $this->view('users/sign_in', $data);
+          }
+        } else {
+          // Load view with errors
+          $this->view('users/sign_in', $data);
+        }
+
+
+      } else {
+        // Init data
+        $data =[    
+          'email' => '',
+          'password' => '',
+          'email_err' => '',
+          'password_err' => '',        
+        ];
+
+        // Load view
+        $this->view('users/sign_in', $data);
+      }
+    }
+
+    public function createUserSession($user){
+      $_SESSION['user_id'] = $user->id;
+      $_SESSION['user_email'] = $user->email;
+      $_SESSION['user_name'] = $user->name;
+      redirect('users/profile');
+    }
+
+    public function logout(){
+      unset($_SESSION['user_id']);
+      unset($_SESSION['user_email']);
+      unset($_SESSION['user_name']);
+      session_destroy();
+      redirect('users/sign_in');
     }
 
     public function notifications() {
