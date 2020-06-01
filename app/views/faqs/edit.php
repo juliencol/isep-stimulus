@@ -3,7 +3,7 @@
     <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
     <style> <?php include APPROOT . '/../public/css/faqs/index.css'; ?> </style>
 
- <?php require APPROOT . '/views/inc/header.php'; ?> 
+ <?php //require APPROOT . '/views/inc/header.php'; ?> 
 
 
     <header class="titre">
@@ -48,7 +48,7 @@
 
             <li>
 
-                <button class="button" type=submit name="newQuestion" value=<?php echo($num)?> >Modifier </button>
+                <button formaction ='./new' class="button" type=submit name="newQuestion" value=<?php echo($num)?> >Modifier </button>
 
             </li>
             <li>
