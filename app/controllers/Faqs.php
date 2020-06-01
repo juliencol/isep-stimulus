@@ -12,8 +12,7 @@ class Faqs extends Controller {
 
 
     public function index() {
-        $faq_questions=$this->faqModel->Question();
-        $faq_invisible=$this->faqModel->QuestionInvisible();
+        $faq_questions=$this->faqModel->QuestionVisible();
 
 
         $this->view('faqs/index',$faq_questions);
@@ -81,7 +80,7 @@ class Faqs extends Controller {
 
     public function edit() {
         $faq_questions=$this->faqModel->Question();
-        $faq_invisible=$this->faqModel->QuestionInvisible();
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $num=$_POST['idQuestion'];
             if (isset ($_POST['idSupp'])){
@@ -90,7 +89,7 @@ class Faqs extends Controller {
 
 
 
-                if ($this->faqModel->removeQuestion($num) && $this->faqModel->removeQuestionInvisible($num)) {
+                if ($this->faqModel->removeQuestion($num)) {
                     echo'supprimé';
                     redirect('faqs/edit');
                 }
@@ -114,10 +113,12 @@ class Faqs extends Controller {
                             'title' => trim($titre),
                             'subject' => trim($sujet),
                             'answer' => trim($reponse),
+                            'visible' => trim(0),
                         ];
 
-                        $this->faqModel->addQuestionInvisible($data);
+                        
                         if($this->faqModel->removeQuestion($num)){
+                            $this->faqModel->addQuestion($data);
                             redirect('faqs/edit');
                         }
                     }
@@ -127,7 +128,7 @@ class Faqs extends Controller {
 
                 if($numVisible==0){
 
-                    $question1=$this->faqModel->uneQuestionInvisible($num);
+                    $question1=$this->faqModel->uneQuestion($num);
 
                     foreach($question1 as $question1){
                         $sujet1=$question1->subject;
@@ -141,10 +142,12 @@ class Faqs extends Controller {
                             'title' => trim($titre1),
                             'subject' => trim($sujet1),
                             'answer' => trim($reponse1),
+                            'visible' => trim(1),
                         ];
 
-                        $this->faqModel->addQuestion($data);
-                        if($this->faqModel->removeQuestionInvisible($num)){
+                        
+                        if($this->faqModel->removeQuestion($num)){
+                            $this->faqModel->addQuestion($data);
                             redirect('faqs/edit');
                         }
                     }
@@ -161,8 +164,8 @@ class Faqs extends Controller {
 
 
 
-        $faq=array_merge($faq_questions, $faq_invisible);
-        $this->view('faqs/edit',$faq);
+       
+        $this->view('faqs/edit',$faq_questions);
 
 
     }

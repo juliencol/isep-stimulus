@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 29 mai 2020 à 13:31
+-- Généré le :  lun. 01 juin 2020 à 14:22
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -17,7 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
 
 --
 -- Base de données :  `stimulus`
@@ -53,24 +52,14 @@ CREATE TABLE IF NOT EXISTS `cgu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
--- Structure de la table `faq_invisble`
+-- Déchargement des données de la table `cgu`
 --
 
-DROP TABLE IF EXISTS `faq_invisble`;
-CREATE TABLE IF NOT EXISTS `faq_invisble` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `supervisor_id` int(11) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `answer` varchar(255) DEFAULT NULL,
-  `subject` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `supervisor_id` (`supervisor_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+INSERT INTO `cgu` (`id`, `content`) VALUES
+(17, 'zezezezeze');
 
 -- --------------------------------------------------------
 
@@ -85,17 +74,20 @@ CREATE TABLE IF NOT EXISTS `faq_questions` (
   `title` varchar(255) DEFAULT NULL,
   `answer` varchar(255) DEFAULT NULL,
   `subject` varchar(255) DEFAULT NULL,
+  `visible` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   KEY `supervisor_id` (`supervisor_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `faq_questions`
 --
 
-INSERT INTO `faq_questions` (`id`, `supervisor_id`, `title`, `answer`, `subject`) VALUES
-(24, NULL, 'a', 'a', 'a'),
-(18, NULL, 'ezzaez', 'eazeaza', 'eazea');
+INSERT INTO `faq_questions` (`id`, `supervisor_id`, `title`, `answer`, `subject`, `visible`) VALUES
+(53, NULL, 'ezezez', 'ezezezesdsd', 'dsdsdsdsd', 1),
+(51, NULL, 'zeze', 'eeaez', 'eze', 0),
+(55, NULL, 'alooo', 'alooooo', 'alooo', 1),
+(61, NULL, 'rrerere', 'erererererezezeze', 'rerer', 1);
 
 -- --------------------------------------------------------
 
@@ -109,10 +101,18 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `user_id` int(11) DEFAULT NULL,
   `object` varchar(255) DEFAULT NULL,
   `content` varchar(255) DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
+  `date` datetime DEFAULT current_timestamp(),
+  `id_Question` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `messages`
+--
+
+INSERT INTO `messages` (`id`, `user_id`, `object`, `content`, `date`, `id_Question`) VALUES
+(1, NULL, 'ezaeazeaz', 'eazeaeae', '2020-05-30 17:30:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,6 @@ CREATE TABLE IF NOT EXISTS `supervisors` (
 DROP TABLE IF EXISTS `tests`;
 CREATE TABLE IF NOT EXISTS `tests` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Type` varchar(255) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
