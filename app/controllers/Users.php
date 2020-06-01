@@ -87,26 +87,79 @@ class Users extends Controller {
       }
     }
 
-    public function sign_in() {
-      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-      } else {
-        $data = [
-          'first_name' => '',
-          'last_name' => '',
-          'birthday_date' => '',
-          'email' => '',
-          'password' => '',
-          'confirmed password' => '',
-          'first_name_error' => '',
-          'last_name_error' => '',
+   public function sign_in(){
+      // Check for POST
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Sanitize POST data
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        
+        $data =[
+          'email' => trim($_POST['email']),
+          'password' => trim($_POST['password']),
           'email_error' => '',
-          'password_error' => '',
-          'confirmed_password_error' => ''
+          'password_error' => '',      
         ];
 
-        $this->view('users/sign_in');
+        // Validations
+        if(empty($data['email'])){
+          $data['email_error'] = 'Entrez votre adresse email svp';
+        }
+        if(empty($data['password'])){
+          $data['password_error'] = 'Entrez votre mot de passe svp';
+        }
+
+        // Check for user/email
+        if($this->userModel->findUserByEmail($data['email'])){
+        } else {
+          $data['email_error'] = 'Utilisateur non trouvé';
+        }
+
+        // Make sure errors are empty
+        if(empty($data['email_error']) && empty($data['password_error'])){
+          // Check and set logged in user
+          $loggedInUser = $this->userModel->sign_in($data['email'], $data['password']);
+
+          if($loggedInUser){
+            // Create Session
+            $this->createUserSession($loggedInUser);
+          } else {
+            $data['password_error'] = 'Mot de passe incorrect';
+
+            $this->view('users/sign_in', $data);
+          }
+        } else {
+          // Load view with errors
+          $this->view('users/sign_in', $data);
+        }
+
+
+      } else {
+        // Init data
+        $data =[    
+          'email' => '',
+          'password' => '',
+          'email_err' => '',
+          'password_err' => '',        
+        ];
+
+        // Load view
+        $this->view('users/sign_in', $data);
       }
+    }
+
+    public function createUserSession($user){
+      $_SESSION['user_id'] = $user->id;
+      $_SESSION['user_email'] = $user->email;
+      $_SESSION['user_name'] = $user->name;
+      redirect('users/profile');
+    }
+
+    public function logout(){
+      unset($_SESSION['user_id']);
+      unset($_SESSION['user_email']);
+      unset($_SESSION['user_name']);
+      session_destroy();
+      redirect('users/sign_in');
     }
 
     public function notifications() {
