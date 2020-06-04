@@ -139,8 +139,8 @@ class Users extends Controller {
         $data =[    
           'email' => '',
           'password' => '',
-          'email_err' => '',
-          'password_err' => '',        
+          'email_error' => '',
+          'password_error' => '',        
         ];
 
         // Load view
