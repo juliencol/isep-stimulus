@@ -38,5 +38,17 @@
         <i class="fas fa-user-circle"></i>
         <p>Profil</p>
       </a>
+      <?php if(isset($_SESSION['user_id'])) : ?>
+        <a href="<?php echo URLROOT; ?>/users/logout">
+          <i class="fad fa-sign-out"></i>
+          <p>Se déconnecter</p>
+        </a>
+      <?php else : ?>
+        <a href="<?php echo URLROOT; ?>/users/sign_in">
+          <i class="far fa-sign-in-alt"></i>
+          <p>Se connecter</p>
+        </a>
+      <?php endif; ?>
     </div>
-  </header>
+  </header> 
+ 
