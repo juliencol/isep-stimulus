@@ -28,7 +28,7 @@
           <textarea name="Message" id="message" cols="100" rows="20" placeholder="Message"><?=$title?></textarea>
       </div>
       </div>
-      <input type="submit" value="Enregistrer">
+      <input class="btn-primary" type="submit" value="Enregistrer">
   </form>
   <?php endforeach;}
   else{ ?>
@@ -47,7 +47,7 @@
         <textarea name="Message" id="message" cols="100" rows="20" placeholder="Message"></textarea>
     </div>
     </div>
-    <input type="submit" value="Enregistrer">
+    <input class="btn-primary" type="submit" value="Enregistrer">
 </form>
   <?php } ?>
   
