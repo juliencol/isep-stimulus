@@ -16,6 +16,7 @@
         return false;
       }
     }
+
     public function findUserById($id) {
       $this->db->query('SELECT * FROM users WHERE users.id = :id');
       $this->db->bind(':id', $id);
@@ -28,17 +29,13 @@
     }
 
     public function sign_up($data) {
-      // Make query
       $this->db->query('INSERT INTO users (last_name, first_name, birthday_date, email, password) VALUES(:last_name, :first_name, :birthday_date, :email, :password)');
-
-      // Bind values
       $this->db->bind('last_name', $data['last_name']);
       $this->db->bind('first_name', $data['first_name']);
       $this->db->bind('birthday_date', $data['birthday_date']);
       $this->db->bind('email', $data['email']);
       $this->db->bind('password', $data['password']);
 
-      // Execute
       if ($this->db->execute()) {
         return true;
       } else {
@@ -81,5 +78,13 @@
       $this->db->bind(':id', $id);
       return $notifications=$this->db->resultSet();
     }
+
+    public function getUserById($id) {
+      $this->db->query('SELECT * FROM users WHERE id = :id');
+      $this->db->bind(':id', $id);
+      $row = $this->db->single(); 
+      return $row;
+    }
   }
-?> 
+
+?>  

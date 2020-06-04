@@ -12,7 +12,7 @@
 
 	<br><br><br>
 
-	<p><a href="<?php echo URLROOT; ?>users/profile">Retour au profil </a></p>
+	<p><a href="<?php echo URLROOT; ?>users/profile/<?php echo $_SESSION['user_id']; ?>">Retour au profil </a></p>
 
 </div>
 

@@ -90,7 +90,7 @@ class Users extends Controller {
       }
     }
 
-   public function sign_in(){
+   public function sign_in() {
       // Check for POST
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST data
@@ -154,7 +154,8 @@ class Users extends Controller {
       $_SESSION['user_id'] = $user->id;
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
-      redirect('users/profile');
+      $route = 'users/profile/' . $_SESSION['user_id'];
+      redirect($route);  
     }
 
     public function logout(){
@@ -194,13 +195,17 @@ class Users extends Controller {
         }
     }
 
-    public function profile()
-    {
+    public function profile($id) {
+      $user = $this->userModel->getUserById($id);
+      $data = [
+        'user' => $user
+      ];
+
         if (!isLoggedIn()) {
             redirect('users/sign_in');
         }
-        $this->view('users/profile');
-    }
+        $this->view('users/profile', $data);
+    }  
 
     public function test_results()
     {
