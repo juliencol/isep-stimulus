@@ -163,46 +163,50 @@ class Users extends Controller {
       redirect('');
     }
 
-    public function isLoggedIn() {
-      return isset($_SESSION['user_id']);
-    } 
-
     public function notifications() {
+      if (!isLoggedIn()) { 
+        redirect('users/sign_in'); 
+      } else {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            if(empty($_POST["email"])) {
-                $data = [
-                    'error_email' =>"Vous n'avez pas entré d'adresse email"
-                ];
-                $this->view('users/notifications', $data);
-            } else {
-                if ($this->userModel->findUserByEmail($_POST['email'])) {
-                    $notifications = $this->userModel->findNotificationsOfUser(trim($_POST['email']));
-                    $data= [
-                        'notifications' =>$notifications,
-                        'absence_notifications' => "Vous n'avez pas de notifications"
-                    ];
-                    $this->view('users/notifications', $data);
-                } else {
-                    $data = [
-                        'error_email' => "Veuillez entrer une adresse email valide"
-                    ];
-                    $this->view('users/notifications', $data);
-                }
-            }
+          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+          if(empty($_POST["email"])) {
+                  $data = [
+                      'error_email' =>"Vous n'avez pas entré d'adresse email"
+                  ];
+                  $this->view('users/notifications', $data);
+          } else {
+                  if ($this->userModel->findUserByEmail($_POST['email'])) {
+                      $notifications = $this->userModel->findNotificationsOfUser(trim($_POST['email']));
+                      $data= [
+                          'notifications' =>$notifications,
+                          'absence_notifications' => "Vous n'avez pas de notifications"
+                      ];
+                      $this->view('users/notifications', $data);
+                  } else {
+                      $data = [
+                          'error_email' => "Veuillez entrer une adresse email valide"
+                      ];
+                      $this->view('users/notifications', $data);
+                  }
+          }
         } else {
-            $data = [
-                'debut' => ' '
-            ];
-            $this->view('users/notifications', $data);
+              $data = [
+                  'debut' => ' '
+              ];
+              $this->view('users/notifications', $data);
         }
+      }
     }
 
     public function profile() {
+      if (!isLoggedIn()) { redirect('users/sign_in'); }
       $this->view('users/profile');
     }
 
     public function test_results() {
+      if (!isLoggedIn()) { 
+        redirect('users/sign_in'); 
+      } else {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             if(empty($_POST["email"])) {
@@ -237,6 +241,13 @@ class Users extends Controller {
             ];
             $this->view('users/test_results', $data);
         }
+      }
     }
+
+    private
+
+    function isLoggedIn() {
+      return isset($_SESSION['user_id']);
+    } 
   }
 ?> 

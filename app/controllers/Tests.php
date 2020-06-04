@@ -1,7 +1,7 @@
 <?php  
 class Tests extends Controller {
     public function __construct() {
-      
+      if (!isLoggedIn()) { redirect('users/sign_in'); }
     }
 
     public function index() {

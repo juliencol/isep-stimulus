@@ -3,6 +3,7 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/sign_in.css'; ?> </style>
 
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
     <p class="text-center"><?php flash('register_success'); ?></p>
