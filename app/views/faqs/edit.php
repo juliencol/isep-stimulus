@@ -10,7 +10,7 @@
     <h1>Modifier la FAQ</h1>
     
     <div>
-    <input class="buttonAjout" type=button onclick=window.location.href='./new'; value='Ajouter une question' />
+    <input class="btn-primary" type=button onclick=window.location.href='./new'; value='Ajouter une question' />
     </div>
     <div class='body-under-container'>
 <?php foreach($data as $faq_question): ?>
@@ -44,13 +44,13 @@
         <ul>
             <li>
                 <form method="post">
-                    <button class="button" type=submit name="idSupp" value=<?php echo($num)?> >Supprimer </button>
+                    <button class="btn-primary" type=submit name="idSupp" value=<?php echo($num)?> >Supprimer </button>
 
             </li>
 
             <li>
 
-                <button formaction ='./new' class="button" type=submit name="newQuestion" value=<?php echo($num)?> >Modifier </button>
+                <button formaction ='./new' class="btn-primary" type=submit name="newQuestion" value=<?php echo($num)?> >Modifier </button>
 
             </li>
             <li>
