@@ -1,15 +1,19 @@
 .btn-primary {
-  color: var(--primary-color);
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  border: 1px solid black;
-  font-size: 16px;
-  text-decoration: none;
+    all: unset;
+    cursor: pointer;
+    background: white;
+    color: black;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 36px;
+    box-shadow: 2px 5px 10px #e4e4e4;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    transition: background 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-color);
-  color: white;
+    background-color: var(--primary-color);
+    color: white;
 }

@@ -4,7 +4,7 @@
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<div class="container main-container">
+<div class="container">
   <h1>Contacter nous</h1>
   <form method="post" action="mail_2.php">
 		

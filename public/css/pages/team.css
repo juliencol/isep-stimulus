@@ -6,20 +6,8 @@
     color: #7245db;
 }
 
-a, a:visited {
-    color: hsl(258, 68%, 56%);
-}
-
-a:hover {
-    color: #49c0cf;
-}
-
-a:link { 
-    text-decoration:none; 
-} 
-
 #presentation-team-page {
-    text-align: center;   
+    text-align: center;
 }
 
 #presentation-text {
@@ -34,14 +22,15 @@ a:link {
     margin-right: auto;
 }
 
-#first-row, #second-row{
+#first-row,
+#second-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 figure img {
-    box-shadow: 3px 3px 3px #adadad;  
+    box-shadow: 3px 3px 3px #adadad;
 }
 
 figcaption {
@@ -50,5 +39,5 @@ figcaption {
 }
 
 img {
-  width: 200px;
+    width: 200px;
 }

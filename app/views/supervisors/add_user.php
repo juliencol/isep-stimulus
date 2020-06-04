@@ -4,8 +4,7 @@
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<section class="container main-container" id="add-user-page">
-    <div id="container">
+    <div class="container">
       <div id="titre">
         <h1>Gestion des utilisateurs</h1>
       </div>
@@ -46,15 +45,14 @@
                         <input type="number" name="employee_number" id="employee_number" maxlength="5" placeholder="12345" required />
                         <br /><br />    
 
-                        <input type="submit" name="submit_add" id="submit_add" value="Ajouter" />
+                        <input type="submit" class="btn-primary" name="submit_add" id="submit_add" value="Ajouter" />
 
         </form>
       </div>
       <div class="user-list">
-          <a href="gestion.php">Retour à la liste des utilisateurs</a>
+          <a class="btn-primary" href="gestion.php">Retour à la liste des utilisateurs</a>
       </div>      
   </div>
-</section>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
     

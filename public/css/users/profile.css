@@ -1,13 +1,23 @@
-.profile-container {
+.col-photo {
+    flex: 2;
+    padding: 1em;
+}
+
+.col-info {
+    flex: 4;
+    padding: 2em;
+    margin-right: 2em;
+    background: #e6e6e6;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
 .profile-picture {
-    width: 100px;
-    margin-top: -50px;
+    width: 300px;
+    border-radius: 50%;
 }
 
 .profile-btn {

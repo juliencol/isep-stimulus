@@ -6,7 +6,7 @@
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<div class="container main-container" id="container">
+<div class="container" id="container">
     <h1>Notifications</h1>
     <form method="post">
         <input type="hidden" name="email" value="<?php echo $_SESSION["email"]?>">

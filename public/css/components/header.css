@@ -3,8 +3,7 @@ header {
     top: 0;
     right: 0;
     left: 0;
-    margin-bottom: 130px;
-    padding: 16px 0px;
+    padding: 12px 0px;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -28,6 +27,9 @@ header a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin: 0 10px;
 }
 
 header i {
@@ -35,16 +37,16 @@ header i {
 }
 
 @media only screen and (max-width: 600px) {
-  header {
-    justify-content: center;
-    flex-direction: column;
-  }
-  header p, a, i {
-      margin: 1px;
-  }
-  header .left-links {
-      flex-direction: column;
-  }
+    header {
+        justify-content: center;
+        flex-direction: column;
+    }
+    header p,
+    a,
+    i {
+        margin: 1px;
+    }
+    header .left-links {
+        flex-direction: column;
+    }
 }
-
-  

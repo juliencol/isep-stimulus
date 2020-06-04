@@ -5,9 +5,9 @@
 
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<div class="container main-container">
+<div class="container">
   <h1>Infinite Measures</h1>
-  <p class="one-liner">Le système qui vous aide à mesurer vos réflexes</p>
+  <p>Le système qui vous aide à mesurer vos réflexes</p>
   <img src="https://www.assurementauto.fr/images/dossiers/2020-03/jeune-conducteur-145844.jpg" alt="">
   <div class="middle-container">
     <div class="container-left">

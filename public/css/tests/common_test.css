@@ -1,0 +1,15 @@
+.test_header {
+    background-color: rgb(202, 202, 202);
+    color: rgb(115, 37, 214);
+    width: 700px;
+    padding: 25px;
+    margin: 50px auto;
+}
+
+.text_explicatif {
+    background-color: rgb(237, 237, 237);
+    width: 700px;
+    text-align: justify;
+    margin: 30px auto;
+    padding: 30px;
+}
