@@ -1,18 +1,20 @@
 <?php require_once APPROOT . '/../app/config/config.php';?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
     <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
-    <style> <?php include APPROOT . '/../public/css/faqs/index.css'; ?> </style>
+    <style> <?php include APPROOT . '/../public/css/faqs/edit.css'; ?> </style>
 
- <?php //require APPROOT . '/views/inc/header.php'; ?> 
+ <?php require APPROOT . '/views/inc/header.php'; ?> 
 
 
-    <header class="titre">
-        <h1>Modifier la FAQ</h1>
-    </header>
-
+ <div class="container">
+    <h1>Modifier la FAQ</h1>
+    
+    <div>
     <input class="buttonAjout" type=button onclick=window.location.href='./new'; value='Ajouter une question' />
-    <div class='body under-container'>
+    </div>
+    <div class='body-under-container'>
 <?php foreach($data as $faq_question): ?>
+    <div>
     <table>
         <thead>
         <tr>
@@ -38,7 +40,7 @@
         </tbody>
     </table>
     <?php $num=$faq_question->id ?>
-    <aside class="sidebar">
+    
         <ul>
             <li>
                 <form method="post">
@@ -78,12 +80,12 @@
                     <label for="invisible">Invisible</label>
                 <?php } ?>
             </li>
-            </form>
+                </form>
         </ul>
-    </aside>
+        </div>
 <?php endforeach ; ?>
-
-
+    </div>
+</div>
 
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

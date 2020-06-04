@@ -24,30 +24,7 @@ td {
 
 }
 
-.topbar .HeaderDroite {
-    float: right;
-}
 
-.topbar img {
-    height: 30px;
-}
-
-
-
-.topbar .HeaderGauche {
-    float: left;
-}
-
-.topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.topbar a:hover {
-    color: black;
-}
 
 .button {
     text-align: center;
@@ -62,7 +39,11 @@ td {
     margin-bottom:10px;
 
 }
-
+.button:hover,input[type=submit]:hover{
+    border-style: solid;
+    border-color: #6913D8;
+    color: #6913D8;
+}
 .sidebar {
     float: right;
     padding-top: 15px;
