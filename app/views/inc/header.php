@@ -20,7 +20,7 @@
         <i class="fas fa-home"></i>
         <p>Accueil</p>
       </a>
-      <a href="#">
+      <a href="supervisors/search">
         <i class="fas fa-search"></i>
         <p>Rechercher</p>
       </a>

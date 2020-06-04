@@ -3,21 +3,19 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/pages/index.css'; ?> </style>
 
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container main-container">
-  <div class="container top-container">
-    <h1>Infinite Measures</h1>
-    <p>Le système qui vous aide à mesurer vos réflexes</p>
-  </div>
-  <div class="container middle-container">
-    <div class="container container-left">
-      <p>Vous souhaitez consulter vos résultats ?</p>
-      <p><strong>Connectez vous !</strong></p>
+  <h1>Infinite Measures</h1>
+  <p class="one-liner">Le système qui vous aide à mesurer vos réflexes</p>
+  <img src="https://www.assurementauto.fr/images/dossiers/2020-03/jeune-conducteur-145844.jpg" alt="">
+  <div class="middle-container">
+    <div class="container-left">
+      <p>Consulter vos résultats ?</p>
       <a href="<?php echo URLROOT; ?>pages/sign_in" class="btn-primary">Se connecter</a>
     </div>
-     <div class="container container-right">
-      <p>Pas encore de compte chez nous ?</p>
-      <p><strong>Inscrivez vous !</strong></p>
+     <div class="container-right">
+      <p>Pas encore de compte ?</p>
       <a href="<?php echo URLROOT; ?>users/sign_up" class="btn-primary">S'inscrire</a>
     </div>
   </div>
