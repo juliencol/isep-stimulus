@@ -1,0 +1,40 @@
+textarea {
+	height: 300px;
+	margin-bottom: 20px;
+	text-align: justify;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.contact {
+	color: rgb(115, 37, 214);
+	width: 700px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+
+#expediteur {
+	height: 30px;
+}
+
+#objet {
+	height: 30px;
+}
+
+form {
+	color: rgb(153,153,153);
+}
+
+#envoyer {
+	margin-top: 0px;
+	margin-bottom: 80px;
+}
+
+#bouton {
+	border-radius: 5px; 
+	padding-left: 25px; 
+	padding-right: 25px;
+	padding-top: 15px;  
+	padding-bottom: 15px; 
+}
