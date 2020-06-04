@@ -6,7 +6,7 @@
 
 <div class="container">
     <h1>Modifier les conditions générales d'utilisation</h1>
-    <input class="buttonModif" type=submit onclick=window.location.href='./new'; value='Modifier' name="newCGU" />
+    <input class="btn-primary" type=submit onclick=window.location.href='./new'; value='Modifier' name="newCGU" />
     <?php foreach($data as $cgu):?>
 
     <table>

@@ -36,7 +36,7 @@ else{?>
         </table>
         <div class="clear" style="clear:both"></div>
 </div>
-<input type="submit" value="Enregistrer">
+<input class="btn-primary"  type="submit" value="Enregistrer">
     </form>
 <?php } ?>
 <?php require APPROOT . '/views/inc/footer.php'; ?>
