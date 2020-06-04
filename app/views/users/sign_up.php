@@ -21,7 +21,7 @@
       </div>
       <div>
         <label for="birthday_date"><strong>Data de naissance *</strong></label>
-        <input type="date" name="birthday_date" <?php echo (!empty($data['birthday_date_error'])) ? 'is-invalid' : ''; ?> value="<?php echo $data['name'] ?>" >
+        <input type="date" name="birthday_date" <?php echo (!empty($data['birthday_date_error'])) ? 'is-invalid' : ''; ?> value="<?php echo $data['last_name'] ?>" >
         <p><span class="error-message"><?php echo $data['birthday_date_error']; ?></span></p>
       </div>
       <div>
