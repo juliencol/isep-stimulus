@@ -8,18 +8,18 @@
 <div class="container text-center">
     <h1>Conditions générales d'utilisation</h1>
     <?php foreach($data as $cgu):?>
-        <table>
+        <table class="col-info">
             <tr>
                 <td>
                     <p> <?= $cgu->content ?></p>
                 </td>
             </tr>
         </table>
-        <div class="clear" style="clear:both"></div>
     <?php endforeach ; ?>
-    <a class="edit-link" href="<?php echo URLROOT; ?>cgus/edit">Modifier les conditions générales d'utilisation</a>
+    <div class="links">
+        <a class="btn btn-primary" href="<?php echo URLROOT; ?>cgus/edit">Modifier les conditions générales d'utilisation</a>
+    </div>
 </div>
-
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
 

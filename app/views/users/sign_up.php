@@ -3,6 +3,7 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/sign_up.css'; ?> </style>
 
+<?php require APPROOT . '/views/inc/header.php'; ?> 
 
 <div class="container">
   <h1>Créer un compte</h1>

@@ -3,6 +3,7 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/supervisors/sign_in.css'; ?> </style>
 
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
   <h1>Se connecter en tant que gestionnaire </h1>
