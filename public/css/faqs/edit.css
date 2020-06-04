@@ -2,18 +2,7 @@
     box-sizing: border-box;
 }
 
-.titre {
-    background-color:rgba(196, 196, 196, 0.90);
-    color: #6913D8;
-    font-family: "Roboto",sans-serif;
-    text-align: center;
-    margin : 50px;
-    margin-right: 30px;
-    margin-left: 30px;
-    font-size: 15px;
-    padding: 15px;
-    line-height: 0;
-}
+
 
 html {
      margin-bottom: 300px;
@@ -25,8 +14,10 @@ table, tbody{
     border: 1px solid #333;
     background-color: rgba(228, 228, 228, 0.50);
     margin: 30px;
-    table-layout: auto;
+    /*table-layout: auto;*/
     border-style: none;
+    /*width:calc(100%-400px);*/
+    float: left;
 }
 thead,tfoot{
     background-color: rgba(187, 158, 224, 0.24);
@@ -36,18 +27,9 @@ body{
     line-height: 1.4;
     font-family:"Roboto",sans-serif;
     margin:0;
-    align-items: center;
+    
 }
-.bodyTable{
-    width:calc(100%-400px);
-    float: left;
-}
-.body{
-   display: flex;
-}
-.reponse{
-    text-align: justify;
-}
+
 td{
     padding: 8px;
     padding-left: 30px;
@@ -55,52 +37,8 @@ td{
 
 }
 
-.topbar .HeaderDroite{
-    float: right;
-}
-.topbar img{
-    height: 30px;
-}
-.topbar a{
-    padding: 10px;
-    text-decoration: none;
-    color: #6913D8;
-}
-.topbar .HeaderGauche{
-    float: left;
-}
-.topbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    /*width: 100%;*/
-}
 
-.topbar a:hover{
-    color: black;
-}
-.footer a{
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-footer a:hover{
-    color: #6913D8;
-}
-.footer .footerGauche{
-    float: left;
-}
-.footer .footerDroite{
-    float: right;
-}
-.topbar,.footer{
-    margin-right: 10px;
-    margin-left: 10px;
-}
-.footer{
-    clear: both;
-}
+
 .button{
     text-align: center;
     font-size: 20px;
@@ -116,15 +54,17 @@ footer a:hover{
 }
 
 .sidebar{
-    float: right;
+    /*float: right;*/
     padding-top: 15px;
     top: 0px;
     right: 0px;
 }
-.sidebar ul{
+ul{
+    margin-top: 50px;
     list-style: none;
 }
 .buttonAjout{
+    
     text-align: center;
     font-size: 20px;
     padding-left: 30px;
@@ -160,3 +100,11 @@ input[type=submit]{
     margin-bottom:10px;
     margin-left: 30px;
 }
+.body-under-container{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.body-under-container>* {
+    flex: 1 1 60%;
+  }
