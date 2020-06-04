@@ -1,19 +1,22 @@
 section {
     display: flex;
+    justify-content: center;
 }
-article,
-aside {
+
+article, aside {
     margin-left: 200px;
     background-color: white;
     border-radius: 10px 10px 10px 10px;
     border: solid black 2px;
 }
+
 article {
     padding-left: 96px;
     padding-right: 96px;
     padding-top: 40px;
     padding-bottom: 64px;
 }
+
 aside {
     padding-left: 72px;
     padding-right: 72px;
@@ -22,6 +25,7 @@ aside {
     height: 80px;
     margin-top: 30px;
 }
+
 abbr {
     margin-left: 200px;
     border-radius: 10px 10px 10px 10px;
@@ -31,16 +35,16 @@ abbr {
     padding-top: 32px;
     padding-bottom: 32px;
 }
-table,
-th,
-td {
+
+table, th, td {
     border: 2px solid var(--primary-color);
     border-collapse: collapse;
 }
-th,
-td {
+
+th, td {
     padding-right: 24px;
 }
+
 caption {
     padding: 16px;
 }
