@@ -1,4 +1,5 @@
 .sign-up-form-container {
+    margin-top: 0px;
     border: solid var(--primary-color) 3px;
     padding: 15px;
     display: flex;

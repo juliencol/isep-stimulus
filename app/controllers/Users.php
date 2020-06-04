@@ -195,16 +195,16 @@ class Users extends Controller {
         }
     }
 
-    public function profile($id) {
-      $user = $this->userModel->getUserById($id);
-      $data = [
-        'user' => $user
-      ];
-
-        if (!isLoggedIn()) {
-            redirect('users/sign_in');
-        }
+    public function profile() {
+      if (!isLoggedIn()) {
+        redirect('users/sign_in');
+      } else {
+        $user = $this->userModel->getUserById($id);
+        $data = [
+          'user' => $user
+        ];
         $this->view('users/profile', $data);
+      }
     }  
 
     public function test_results()
