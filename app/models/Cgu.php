@@ -27,7 +27,6 @@ class Cgu {
     public function modifCGU($id){
         $this->db->query('SELECT * FROM cgu WHERE id= :id');
         $this->db->bind(':id',$id);
-        var_dump($id);
         return $cgu=$this->db->resultSet();
 
 

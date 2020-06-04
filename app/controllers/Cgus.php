@@ -23,7 +23,7 @@ class Cgus extends Controller {
             $errors = [];
             $data = [
                 'id'=> NULL,
-                'content'=> trim($_POST['cgu']),
+                'content'=> htmlspecialchars(trim($_POST['cgu'])),
           ];  
           if ($this->cguModel->addCGU($data)) {
             redirect('cgus/edit');
