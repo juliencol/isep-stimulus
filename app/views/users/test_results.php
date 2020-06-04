@@ -8,14 +8,10 @@
     <title>Results</title>
     <div class="container">
         <br><br>
-        <form method="post">
-            <input type="hidden" name="email" value="<?php echo $_SESSION["email"]; ?>">
-            <input type="submit" value="Regarder les résultats de ses tests" name="validation">
-        </form>
         <br><br>
-       <?php  if (isset($_POST["validation"])) {
+       <?php
            if(!isset($data['absence_time_sound'])) {
-               echo $data['error_email'];
+               echo $data['error_id'];
            } else { ?>
                <h1>Temps de réaction à un son</h1>
 
@@ -103,7 +99,6 @@
          <?php  }
            ?>
 
-      <?php  } ?>
 
 </div>
 
