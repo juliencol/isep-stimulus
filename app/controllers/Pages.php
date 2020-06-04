@@ -15,6 +15,10 @@ class Pages extends Controller {
     public function team() {
        $this->view('pages/team');
     }
+
+    public function contact() {
+      $this->view('pages/contact');
+    }
   }
 ?> 
   

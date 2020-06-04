@@ -6,13 +6,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
-
-    <header class="titre">
-        <h1>
-            Foire aux questions
-        </h1>
-    </header>
-    
+    <h1>Foire aux questions</h1>
     <?php foreach($data as $faq_question): ?>
             <table> 
                 <thead>
@@ -24,12 +18,9 @@
                 </thead>
             <tbody>
                 <tr>
-                
                     <td>
                     <?= $faq_question->title ?>
-                    
                     </td>
-                
                 </tr>
                 <tr>
                     <td class="reponse">
@@ -38,10 +29,10 @@
                 </tr>
             </tbody>
             </table>
-            <?php endforeach ; ?>
+    <?php endforeach ; ?>
+    <a href="<?php echo URLROOT; ?>/faqs/new">Poser une question</a>
+    <a href="<?php echo URLROOT; ?>/faqs/edit">Gérer la FAQ</a>
 </div>
-
-
 
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

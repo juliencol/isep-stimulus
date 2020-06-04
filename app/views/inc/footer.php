@@ -4,7 +4,7 @@
   
 <footer class="footer border-top d-flex flex-column justify-content-center align-items-center">
   <a href="<?php echo URLROOT; ?>pages/team">Développeurs</a>
-  <a href="#">Contact</a>
+  <a href="<?php echo URLROOT; ?>pages/contact">Contact</a>
   <a href="<?php echo URLROOT; ?>cgus">CGU</a>
   <a href="<?php echo URLROOT; ?>faqs">FAQ</a>
   <p>© Infinite Measures</p>
