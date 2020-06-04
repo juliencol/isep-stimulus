@@ -19,12 +19,13 @@ class Users extends Controller {
           'birthday_date' => trim($_POST['birthday_date']),
           'email' => trim($_POST['email']),
           'password' => trim($_POST['password']),
-          'confirmed password' => trim($_POST['confirmed_password']),
+          'confirmed_password' => trim($_POST['confirmed_password']),
           'first_name_error' => '',
           'last_name_error' => '',
           'email_error' => '',
           'password_error' => '',
-          'confirmed_password_error' => ''
+          'confirmed_password_error' => '',
+          'birthday_date_error' => ''
         ];
 
         if (empty($data['last_name'])) {
@@ -77,12 +78,13 @@ class Users extends Controller {
           'birthday_date' => '',
           'email' => '',
           'password' => '',
-          'confirmed password' => '',
+          'confirmed_password' => '',
           'first_name_error' => '',
           'last_name_error' => '',
           'email_error' => '',
           'password_error' => '',
-          'confirmed_password_error' => ''
+          'confirmed_password_error' => '',
+          'birthday_date_error' => ''
         ];
         $this->view('users/sign_up', $data);
       }
