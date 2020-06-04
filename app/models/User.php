@@ -6,9 +6,9 @@
       $this->db = new Database;
     }
 
-    public function findUserByEmail($email) {
-      $this->db->query('SELECT * FROM users WHERE users.email = :email');
-      $this->db->bind(':email', $email);
+    public function findUserById($id) {
+      $this->db->query('SELECT * FROM users WHERE users.id = :id');
+      $this->db->bind(':id', $id);
       $row = $this->db->single();
       if ($this->db->rowCount() > 0) {
         return true;
@@ -48,27 +48,27 @@
       }
     }
 
-    public function findTests1OfUser($email) {
-      $this->db->query("SELECT users.id, tests.title, tests.description, tests.date, tests.score FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de reaction a un son' AND tests.score IS NOT NULL ) ");
-      $this->db->bind(':email', $email);
+    public function findTests1OfUser($id) {
+      $this->db->query("SELECT users.id, tests.title, tests.description, tests.date, tests.score FROM users INNER JOIN tests ON (users.id = :id AND users.id = tests.user_id AND tests.title = 'Temps de reaction a un son' AND tests.score IS NOT NULL ) ");
+      $this->db->bind(':id', $id);
       return $test1_needs=$this->db->resultSet();
     }
 
-    public function findTests2OfUser($email) {
-      $this->db->query("SELECT users.id, tests.title, tests.description, tests.number, tests.date, tests.score FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND tests.title = 'Capacite a reproduire un son'  AND tests.score IS NOT NULL ) ");
-      $this->db->bind(':email', $email);
+    public function findTests2OfUser($id) {
+      $this->db->query("SELECT users.id, tests.title, tests.description, tests.number, tests.date, tests.score FROM users INNER JOIN tests ON (users.id = :id AND users.id = tests.user_id AND tests.title = 'Capacite a reproduire un son'  AND tests.score IS NOT NULL ) ");
+      $this->db->bind(':id', $id);
       return $test2_needs=$this->db->resultSet();
     }
 
-    public function findTests3OfUser($email) {
-      $this->db->query("SELECT users.id, tests.title, tests.description, tests.date, tests.score FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND tests.title = 'Temps de reaction a une lumiere' AND tests.score IS NOT NULL )");
-      $this->db->bind(':email', $email);
+    public function findTests3OfUser($id) {
+      $this->db->query("SELECT users.id, tests.title, tests.description, tests.date, tests.score FROM users INNER JOIN tests ON (users.id = :id AND users.id = tests.user_id AND tests.title = 'Temps de reaction a une lumiere' AND tests.score IS NOT NULL )");
+      $this->db->bind(':id', $id);
       return $test3_needs=$this->db->resultSet();
     }
     
-    public function findNotificationsOfUser($email) {
-      $this->db->query("SELECT users.id, tests.title, tests.description, tests.number FROM users INNER JOIN tests ON (users.email = :email AND users.id = tests.user_id AND score IS NULL ) ");
-      $this->db->bind(':email', $email);
+    public function findNotificationsOfUser($id) {
+      $this->db->query("SELECT users.id, tests.title, tests.description, tests.number FROM users INNER JOIN tests ON (users.id = :id AND users.id = tests.user_id AND score IS NULL ) ");
+      $this->db->bind(':id', $id);
       return $notifications=$this->db->resultSet();
     }
   }

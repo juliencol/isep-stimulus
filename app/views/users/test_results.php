@@ -1,4 +1,3 @@
-<?php session_start()?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/test_results.css'; ?> </style>
@@ -8,14 +7,10 @@
     <title>Results</title>
     <div class="container">
         <br><br>
-        <form method="post">
-            <input type="hidden" name="email" value="<?php echo $_SESSION["email"]; ?>">
-            <input type="submit" value="Regarder les résultats de ses tests" name="validation">
-        </form>
         <br><br>
-       <?php  if (isset($_POST["validation"])) {
+       <?php
            if(!isset($data['absence_time_sound'])) {
-               echo $data['error_email'];
+               echo $data['error_id'];
            } else { ?>
                <h1>Temps de réaction à un son</h1>
 
@@ -64,9 +59,9 @@
                 </table>
             </article>
                     <?php } else {
-                        if(isset($data['absence_reproduct_sound'])) {
-                            echo $data['absence_reproduct_sound'];
-                        }
+                        if(isset($data['absence_reproduct_sound'])) { ?>
+                            <?php echo $data['absence_reproduct_sound']; ?>
+                        <?php }
 
                     } ?>
 
@@ -88,14 +83,7 @@
                 }
 
             }?>
-            <spin>
 
-
-
-            </spin>
-            <article>
-                <br><br>
-            </article>
         </section>
     <footer>
 
@@ -103,7 +91,6 @@
          <?php  }
            ?>
 
-      <?php  } ?>
 
 </div>
 
