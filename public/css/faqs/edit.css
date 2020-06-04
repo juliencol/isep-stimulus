@@ -16,8 +16,7 @@ table, tbody{
     margin: 30px;
     /*table-layout: auto;*/
     border-style: none;
-    /*width:calc(100%-400px);*/
-    float: left;
+   
 }
 thead,tfoot{
     background-color: rgba(187, 158, 224, 0.24);
