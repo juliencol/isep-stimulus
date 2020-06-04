@@ -14,14 +14,17 @@
       <div class="form">
       <div>
       <?php $sujet=$questions->title;?>
+        <label for="Sujet"> <strong>Sujet</strong>  </label>
           <input type="text" name="Sujet" id="sujet" placeholder="Sujet" value="<?=$sujet?>">
       </div>
       <div>
       <?php $question=$questions->subject;?>
+        <label for="Question"> <strong>Question</strong>  </label>
           <input type="text" name="Question" id="question" value="<?=$question?>">
       </div>
       <div>
       <?php $title=$questions->answer;?>
+        <label for="Message"> <strong>Message</strong>  </label>
           <textarea name="Message" id="message" cols="100" rows="20" placeholder="Message"><?=$title?></textarea>
       </div>
       </div>
@@ -32,13 +35,15 @@
     <form class="form" method="post" >
     <div class="form">
     <div>
-    
+        <label for="Sujet"> <strong>Sujet</strong>  </label>
         <input type="text" name="Sujet" id="sujet" placeholder="Sujet">
     </div>
     <div>
+        <label for="Question"> <strong>Question</strong>  </label>
         <input type="text" name="Question" id="question" placeholder="Question">
     </div>
     <div>
+        <label for="Message"> <strong>Message</strong>  </label>
         <textarea name="Message" id="message" cols="100" rows="20" placeholder="Message"></textarea>
     </div>
     </div>

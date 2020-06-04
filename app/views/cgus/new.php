@@ -14,6 +14,7 @@
             <tr>
                 <td>
                     <?php $cgu=$cgu->content;?>
+                    <label for="cgu"> <strong>CGU</strong>  </label>
                     <textarea name="cgu" id="cgu" cols="100" rows="20" placeholder="CGU"><?=$cgu?></textarea>
                 </td>
             </tr>
@@ -28,6 +29,7 @@ else{?>
         <table>
             <tr>
                 <td>
+                    <label for="cgu"> <strong>CGU</strong>  </label>
                     <textarea name="cgu" id="cgu" cols="100" rows="20" placeholder="CGU"></textarea>
                 </td>
             </tr>
