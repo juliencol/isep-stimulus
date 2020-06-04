@@ -59,12 +59,13 @@ class Users extends Controller {
           
           // Register user
           if ($this->userModel->sign_up($data)) {
+            flash('register_success', "Inscription réussie avec succès");
             redirect('users/sign_in');
             print_r('Compte créé avec succès');
           } else { 
             die("Une erreur est survenue");
           }
-          
+           
         } else {
           $this->view('users/sign_up', $data);
         }
@@ -159,8 +160,12 @@ class Users extends Controller {
       unset($_SESSION['user_email']);
       unset($_SESSION['user_name']);
       session_destroy();
-      redirect('users/sign_in');
+      redirect('');
     }
+
+    public function isLoggedIn() {
+      return isset($_SESSION['user_id']);
+    } 
 
     public function notifications() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
