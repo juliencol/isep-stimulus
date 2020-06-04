@@ -4,7 +4,7 @@
 <style> <?php include APPROOT . '/../public/css/users/sign_up.css'; ?> </style>
 
 
-<div class="main-container">
+<div class="container">
   <h1>Créer un compte</h1>
   <div class="sign-up-form-container">
     <form action="<?php echo URLROOT; ?>/users/sign_up" method="post">

@@ -1,43 +1,26 @@
+.tests {
+    display: flex;
+    justify-content: space-around;
+}
+
 .test {
-	margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-h1 {
-	margin-top: 130px;
-	color: rgb(115, 37, 214);
-	margin-bottom: 100px;
-	font-size: 50px;
-}
-
 
 .test img {
-	width: 100px;
-	height: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
 }
 
-.test a {
-	text-decoration: none;
-	color: rgb(115, 37, 214);
+.test {
+    text-decoration: none;
+    color: rgb(115, 37, 214);
 }
 
-.test img:hover
-{
-	width: 110px;
-	height: 110px;
-}
-
-#test_1 {
-	width: 300px;
-	margin-left: 320px;
-	float: left;
-}
-
-#test_2 {
-	width: 300px;
-	float: left;
-}
-
-#test_3 {
-	width: 300px;
-	float: left;
+.test:hover img {
+    transform: scale(1.1);
 }

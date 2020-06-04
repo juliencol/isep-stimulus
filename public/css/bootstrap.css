@@ -1,21 +1,31 @@
 /* useful bootstrap classes */
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .d-flex {
-  display: flex;
+    display: flex;
 }
 
 .justify-content-center {
-  justify-content: center;
+    justify-content: center;
 }
 
 .justify-content-between {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .align-items-center {
-  align-items: center;
+    align-items: center;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 1em;
 }

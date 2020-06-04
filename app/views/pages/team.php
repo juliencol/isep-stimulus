@@ -5,7 +5,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <section id="presentation-team-page">
-    <div class="container main-container">
+    <div class="container">
         <div class="titre-page">
             <h1>L'équipe Stimulus</h1>
         </div>

@@ -1,24 +1,25 @@
-/* Fonts */ 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif;
+/* Fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Open Sans", sans-serif;
+    color: var(--primary-color);
 }
 
 p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px !important;
 }
 
-
-/* CSS variables */ 
+/* CSS variables */
 :root {
-  --primary-color: #6D1ED1;
+    --primary-color: #6d1ed1;
 }
 
-
-/* Global CSS theme */ 
+/* Global CSS theme */
 body {
-  background: lightgrey;
+    background: whitesmoke;
 }
-
-
-

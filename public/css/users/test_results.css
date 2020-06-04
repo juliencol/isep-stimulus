@@ -1,14 +1,8 @@
-h1 {
-    margin: 80px;
-    font-size: 32px;
-    color: var(--primary-color);
-    text-align: center;
-
-}
 section {
     display: flex;
 }
-article, aside {
+article,
+aside {
     margin-left: 200px;
     background-color: white;
     border-radius: 10px 10px 10px 10px;
@@ -37,11 +31,14 @@ abbr {
     padding-top: 32px;
     padding-bottom: 32px;
 }
-table, th, td {
+table,
+th,
+td {
     border: 2px solid var(--primary-color);
     border-collapse: collapse;
 }
-th, td {
+th,
+td {
     padding-right: 24px;
 }
 caption {
