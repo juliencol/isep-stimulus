@@ -17,7 +17,7 @@
         </table>
         <div class="clear" style="clear:both"></div>
     <?php endforeach ; ?>
-    <a class="edit-link" href="<?php echo URLROOT; ?>/cgus/edit">Modifier les conditions générales d'utilisation</a>
+    <a class="edit-link" href="<?php echo URLROOT; ?>cgus/edit">Modifier les conditions générales d'utilisation</a>
 </div>
 
 

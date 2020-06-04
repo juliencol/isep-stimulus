@@ -7,7 +7,9 @@
 html {
      margin-bottom: 300px;
 }
-
+table{
+    float: left;
+}
 
 
 table, tbody{
@@ -16,7 +18,7 @@ table, tbody{
     margin: 30px;
     /*table-layout: auto;*/
     border-style: none;
-   
+    
 }
 thead,tfoot{
     background-color: rgba(187, 158, 224, 0.24);
@@ -59,7 +61,7 @@ td{
     right: 0px;
 }
 ul{
-    margin-top: 50px;
+    margin-top: 30px;
     list-style: none;
 }
 .buttonAjout{
