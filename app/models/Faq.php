@@ -19,12 +19,9 @@ class Faq {
         $this->db->bind('answer', $data['answer']);
         $this->db->bind('subject', $data['subject']);
         if($data['visible']==='0' || !empty($data['visible'])){
-            var_dump("oui");
-            var_dump($data['visible']);
             $this->db->bind('visible', $data['visible']);
         }
         else{
-            var_dump($data['visible']);
             $this->db->bind('visible', 1); 
         }
 
@@ -47,7 +44,6 @@ class Faq {
     public function modifQuestion($id){
         $this->db->query('SELECT * FROM faq_questions WHERE id= :id');
         $this->db->bind(':id',$id);
-        var_dump($id);
         return $question=$this->db->resultSet();
 
 

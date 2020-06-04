@@ -27,9 +27,9 @@ class Faqs extends Controller {
                 $data = [
                     'id'=> NULL,
                     'supervisor_id'=>NULL,
-                    'title' => trim($_POST['Sujet']),
-                    'subject' => trim($_POST['Question']),
-                    'answer' => trim($_POST['Message']),
+                    'title' => htmlspecialchars(trim($_POST['Sujet'])),
+                    'subject' => htmlspecialchars(trim($_POST['Question'])),
+                    'answer' => htmlspecialchars(trim($_POST['Message'])),
                 ];
 
 
