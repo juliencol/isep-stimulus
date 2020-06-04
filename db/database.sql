@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 01 juin 2020 à 14:22
--- Version du serveur :  10.4.10-MariaDB
--- Version de PHP :  7.3.12
+-- Host: localhost:8889
+-- Generation Time: Jun 04, 2020 at 09:18 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,43 +17,58 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `stimulus`
+-- Database: `isep-stimulus`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `admins`
+-- Table structure for table `admins`
 --
 
-DROP TABLE IF EXISTS `admins`;
-CREATE TABLE IF NOT EXISTS `admins` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `birthday_date` date DEFAULT NULL,
   `is_female` tinyint(1) DEFAULT NULL,
-  `profile_picture` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `profile_picture` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cgu`
+-- Table structure for table `banned`
 --
 
-DROP TABLE IF EXISTS `cgu`;
-CREATE TABLE IF NOT EXISTS `cgu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+CREATE TABLE `banned` (
+  `banned_id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `cgu`
+-- Dumping data for table `banned`
+--
+
+INSERT INTO `banned` (`banned_id`, `email`) VALUES
+(11, 'marie@anne.com'),
+(12, 'dupont@jean.fr');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cgu`
+--
+
+CREATE TABLE `cgu` (
+  `id` int(11) NOT NULL,
+  `content` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cgu`
 --
 
 INSERT INTO `cgu` (`id`, `content`) VALUES
@@ -64,23 +77,20 @@ INSERT INTO `cgu` (`id`, `content`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `faq_questions`
+-- Table structure for table `faq_questions`
 --
 
-DROP TABLE IF EXISTS `faq_questions`;
-CREATE TABLE IF NOT EXISTS `faq_questions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `faq_questions` (
+  `id` int(11) NOT NULL,
   `supervisor_id` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `answer` varchar(255) DEFAULT NULL,
   `subject` varchar(255) DEFAULT NULL,
-  `visible` tinyint(1) NOT NULL DEFAULT 1,
-  PRIMARY KEY (`id`),
-  KEY `supervisor_id` (`supervisor_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+  `visible` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `faq_questions`
+-- Dumping data for table `faq_questions`
 --
 
 INSERT INTO `faq_questions` (`id`, `supervisor_id`, `title`, `answer`, `subject`, `visible`) VALUES
@@ -92,23 +102,20 @@ INSERT INTO `faq_questions` (`id`, `supervisor_id`, `title`, `answer`, `subject`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `messages`
+-- Table structure for table `messages`
 --
 
-DROP TABLE IF EXISTS `messages`;
-CREATE TABLE IF NOT EXISTS `messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `object` varchar(255) DEFAULT NULL,
   `content` varchar(255) DEFAULT NULL,
-  `date` datetime DEFAULT current_timestamp(),
-  `id_Question` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `id_Question` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `messages`
+-- Dumping data for table `messages`
 --
 
 INSERT INTO `messages` (`id`, `user_id`, `object`, `content`, `date`, `id_Question`) VALUES
@@ -117,12 +124,11 @@ INSERT INTO `messages` (`id`, `user_id`, `object`, `content`, `date`, `id_Questi
 -- --------------------------------------------------------
 
 --
--- Structure de la table `supervisors`
+-- Table structure for table `supervisors`
 --
 
-DROP TABLE IF EXISTS `supervisors`;
-CREATE TABLE IF NOT EXISTS `supervisors` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `supervisors` (
+  `id` int(11) NOT NULL,
   `admin_id` int(11) DEFAULT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
@@ -132,20 +138,17 @@ CREATE TABLE IF NOT EXISTS `supervisors` (
   `company` varchar(255) DEFAULT NULL,
   `employee_number` int(11) DEFAULT NULL,
   `is_female` tinyint(1) DEFAULT NULL,
-  `profile_picture` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `admin_id` (`admin_id`)
+  `profile_picture` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tests`
+-- Table structure for table `tests`
 --
 
-DROP TABLE IF EXISTS `tests`;
-CREATE TABLE IF NOT EXISTS `tests` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tests` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
@@ -153,20 +156,17 @@ CREATE TABLE IF NOT EXISTS `tests` (
   `score` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `reaction_time` datetime DEFAULT NULL,
-  `result` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`)
+  `result` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `supervisor_id` int(11) DEFAULT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
@@ -175,14 +175,136 @@ CREATE TABLE IF NOT EXISTS `users` (
   `birthday_date` date DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
   `employee_number` int(11) DEFAULT NULL,
-  `is_female` tinyint(1) DEFAULT NULL,
+  `gender` varchar(1) DEFAULT NULL,
   `profile_picture` varchar(255) DEFAULT NULL,
   `number_of_tests_done` int(11) DEFAULT NULL,
   `needs_tests` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `supervisor_id` (`supervisor_id`)
+  `isBan` int(1) DEFAULT NULL,
+  `test1_to_do` int(11) DEFAULT NULL,
+  `test2_to_do` int(11) DEFAULT NULL,
+  `test3_to_do` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-COMMIT;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `supervisor_id`, `first_name`, `last_name`, `email`, `password`, `birthday_date`, `company`, `employee_number`, `gender`, `profile_picture`, `number_of_tests_done`, `needs_tests`, `isBan`, `test1_to_do`, `test2_to_do`, `test3_to_do`) VALUES
+(1, NULL, 'Caroline', 'Yan', 'ycaroline1999@gmail.com', '$2y$10$GqTIaPEL8jLOsI9UUkLZ0.Mgp5eDvyACm2pyyAzKBmMCbhi5m0jzW', '1999-12-23', NULL, NULL, 'A', NULL, NULL, NULL, 0, 0, 0, 0),
+(2, NULL, 'Cyprian', 'Cunin', 'ccunin@isep.fr', 'cypriancunin', '2020-06-01', 'Stimulus', 10111, 'M', NULL, NULL, NULL, 0, 0, 0, 0),
+(3, NULL, 'Julien', 'Colombain', 'jcolombain@isep.fr', 'jcolombain', '1999-11-11', 'Stimulus', 10222, 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, NULL, 'Célia', 'Houlette', 'choulette@isep.fr', 'choulette', '1999-01-01', 'Stimulus', 10333, 'F', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, NULL, 'Jean', 'Dupont', 'dupont@jean.fr', 'dupontjean', '1988-02-02', 'Dupont Corp', 12222, 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, NULL, 'Marie', 'Dupont', 'marie@anne.com', NULL, '1987-03-03', 'Dupont Corp', 33333, 'F', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `banned`
+--
+ALTER TABLE `banned`
+  ADD PRIMARY KEY (`banned_id`);
+
+--
+-- Indexes for table `cgu`
+--
+ALTER TABLE `cgu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `faq_questions`
+--
+ALTER TABLE `faq_questions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `supervisor_id` (`supervisor_id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `supervisors`
+--
+ALTER TABLE `supervisors`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `admin_id` (`admin_id`);
+
+--
+-- Indexes for table `tests`
+--
+ALTER TABLE `tests`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `supervisor_id` (`supervisor_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `banned`
+--
+ALTER TABLE `banned`
+  MODIFY `banned_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `cgu`
+--
+ALTER TABLE `cgu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `faq_questions`
+--
+ALTER TABLE `faq_questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `supervisors`
+--
+ALTER TABLE `supervisors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tests`
+--
+ALTER TABLE `tests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
