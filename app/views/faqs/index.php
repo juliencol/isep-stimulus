@@ -30,8 +30,8 @@
             </tbody>
             </table>
     <?php endforeach ; ?>
-    <a href="<?php echo URLROOT; ?>/faqs/new">Poser une question</a>
-    <a href="<?php echo URLROOT; ?>/faqs/edit">Gérer la FAQ</a>
+    <a href="<?php echo URLROOT; ?>faqs/new">Poser une question</a>
+    <a href="<?php echo URLROOT; ?>faqs/edit">Gérer la FAQ</a>
 </div>
 
 
