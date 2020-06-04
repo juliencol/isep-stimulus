@@ -1,4 +1,3 @@
-<?php session_start()?>
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/test_results.css'; ?> </style>
@@ -60,9 +59,9 @@
                 </table>
             </article>
                     <?php } else {
-                        if(isset($data['absence_reproduct_sound'])) {
-                            echo $data['absence_reproduct_sound'];
-                        }
+                        if(isset($data['absence_reproduct_sound'])) { ?>
+                            <?php echo $data['absence_reproduct_sound']; ?>
+                        <?php }
 
                     } ?>
 
@@ -84,14 +83,7 @@
                 }
 
             }?>
-            <spin>
 
-
-
-            </spin>
-            <article>
-                <br><br>
-            </article>
         </section>
     <footer>
 

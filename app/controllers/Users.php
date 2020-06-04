@@ -176,7 +176,7 @@ class Users extends Controller {
                 ];
                 $this->view('users/notifications', $data);
             } else {
-                if ($this->userModel->findUserByEmail($_SESSION['user_id'])) {
+                if ($this->userModel->findUserById($_SESSION['user_id'])) {
                     $notifications = $this->userModel->findNotificationsOfUser(trim($_SESSION['user_id']));
                     $data = [
                         'notifications' => $notifications,
@@ -213,7 +213,7 @@ class Users extends Controller {
                 ];
                 $this->view('users/test_results', $data);
             } else {
-                if ($this->userModel->findUserByEmail($_SESSION['user_id'])) {
+                if ($this->userModel->findUserById($_SESSION['user_id'])) {
                     $test_results1 = $this->userModel->findTests1OfUser(trim($_SESSION['user_id']));
                     $test_results2 = $this->userModel->findTests2OfUser(trim($_SESSION['user_id']));
                     $test_results3 = $this->userModel->findTests3OfUser(trim($_SESSION['user_id']));
