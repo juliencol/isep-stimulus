@@ -6,6 +6,12 @@
   margin-top: 120px;
 }
 
+.main-container {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 40px !important;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;

@@ -17,11 +17,21 @@ header .left-links {
     align-items: center;
 }
 
+header .right-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 header a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+header i {
+    font-size: 24px;
 }
 
 @media only screen and (max-width: 600px) {

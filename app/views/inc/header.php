@@ -20,16 +20,20 @@
         <i class="fas fa-home"></i>
         <p>Accueil</p>
       </a>
-      <a href="supervisors/search">
+      <a href="<?php echo URLROOT; ?>supervisors/search">
         <i class="fas fa-search"></i>
         <p>Rechercher</p>
       </a>
-      <a href="">
+      <a href="<?php echo URLROOT; ?>supervisors/add_user">
         <i class="fal fa-user-cog"></i>
         <p>Gestion</p>           
       </a>
     </div>
     <div class="right-links">
+      <a href="<?php echo URLROOT; ?>/users/notifications">
+        <i class="far fa-bell"></i>
+        <p>Notifications</p>
+      </a>
       <a href="<?php echo URLROOT; ?>/users/profile">
         <i class="fas fa-user-circle"></i>
         <p>Profil</p>

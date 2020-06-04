@@ -1,4 +1,10 @@
- <section id="add-user-page">
+<?php require_once APPROOT . '/../app/config/config.php';?>
+<?php require APPROOT . '/../public/css/style.php'; ?>
+<style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
+
+<?php require APPROOT . '/views/inc/header.php'; ?>
+
+<section class="container main-container" id="add-user-page">
     <div id="container">
       <div id="titre">
         <h1>Gestion des utilisateurs</h1>
@@ -49,6 +55,8 @@
       </div>      
   </div>
 </section>
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>
     
 
         

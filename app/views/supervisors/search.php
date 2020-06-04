@@ -1,5 +1,11 @@
-<section id="research-page">
-    <div class="container">
+<?php require_once APPROOT . '/../app/config/config.php';?>
+<?php require APPROOT . '/../public/css/style.php'; ?>
+<style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
+
+<?php require APPROOT . '/views/inc/header.php'; ?>
+
+<section class="container main-container" id="research-page">
+    <div class="">
         <h1>Page de recherche</h1>    
         <form method="post" action="">
             <h3>Qui voulez-vous rechercher ?</h3>
@@ -22,4 +28,6 @@
         </form>
     </div>
 </section>
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>
 

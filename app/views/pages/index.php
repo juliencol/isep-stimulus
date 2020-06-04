@@ -11,11 +11,11 @@
   <img src="https://www.assurementauto.fr/images/dossiers/2020-03/jeune-conducteur-145844.jpg" alt="">
   <div class="middle-container">
     <div class="container-left">
-      <p>Consulter vos résultats ?</p>
+      <p class="cta">Consulter vos résultats ?</p>
       <a href="<?php echo URLROOT; ?>pages/sign_in" class="btn-primary">Se connecter</a>
     </div>
      <div class="container-right">
-      <p>Pas encore de compte ?</p>
+      <p class="cta">Pas encore de compte ?</p>
       <a href="<?php echo URLROOT; ?>users/sign_up" class="btn-primary">S'inscrire</a>
     </div>
   </div>
