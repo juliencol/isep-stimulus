@@ -9,7 +9,7 @@
     <h3> Modification d'un utilisateur </h3>
  
     <?php
-        $bdd = new PDO('mysql:host=localhost;dbname=isep-stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         if (isset($_GET['modify']) AND !empty($_GET['modify'])) {
             $modify = $_GET['modify'];

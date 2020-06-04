@@ -34,7 +34,7 @@
         <i class="far fa-bell"></i>
         <p>Notifications</p>
       </a>
-      <a href="<?php echo URLROOT; ?>/users/profile/<?php echo $_SESSION['user_id']; ?>">
+      <a href="<?php echo URLROOT; ?>/users/profile/ ?>">
         <i class="fas fa-user-circle"></i>
         <p>Profil</p>
       </a>

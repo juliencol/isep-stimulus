@@ -12,7 +12,7 @@
         <h3> Ajouter un utilisateur</h3>
 
         <?php 
-            $bdd = new PDO('mysql:host=localhost;dbname=isep-stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $bdd = new PDO('mysql:host=localhost;dbname=stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
             if (isset($_POST['submit_add']) AND !empty($_POST['submit_add'])) {
                 $first_name = $_POST['first_name'];
