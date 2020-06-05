@@ -16,9 +16,6 @@
             </tr>
         </table>
     <?php endforeach ; ?>
-    <div class="links">
-        <a class="btn btn-primary" href="<?php echo URLROOT; ?>cgus/edit">Modifier les conditions générales d'utilisation</a>
-    </div>
 </div>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
