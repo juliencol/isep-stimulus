@@ -29,7 +29,7 @@
             ['Date', 'Temps'],
 
             <?php
-            $bdd = new PDO('mysql:host=localhost;dbname=isep-stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $bdd = new PDO('mysql:host=localhost;dbname=stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             $sql = "SELECT * FROM test_results WHERE test_type = '1'";
             foreach ($bdd->query($sql) as $graph) {
                 echo '["' . $graph['date'] . '", ' . $graph['score'] .'],';
