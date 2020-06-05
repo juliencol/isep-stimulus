@@ -2,14 +2,14 @@
 <?php require APPROOT . '/../public/css/style.php'; ?>
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 
-<?php require APPROOT . '/views/inc/header_supervisor.php'; ?>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
     <h1>Page de recherche</h1>
 
     <?php
 
-        $db = new PDO('mysql:host=localhost;dbname=stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $db = new PDO('mysql:host=localhost;dbname=isep-stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         if (isset($_POST['research']) AND !empty($_POST['research'])) {
             $research = htmlspecialchars($_POST['research']);
@@ -17,25 +17,25 @@
         
         
             if (isset($_POST['company']) AND !empty($_POST['company'])) {
-                echo '<br/><em>Affiner par : <strong>' . $company . '</strong></em>';
+                echo '<br/><em>Affiné par : <strong>' . $company . '</strong></em>';
             }
         
             else if (isset($_POST['gender']) AND !empty($_POST['gender'])) {
         
                 if($_POST['gender'] == 'female') { 
                     $results = $db->query('SELECT * FROM users WHERE (gender="F") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
-                    echo '<br/><em>Affiner par : <strong>Femme</strong></em>';
+                    echo '<br/><em>Affiné par : <strong>Femme</strong></em>';
                 }
           
                 else if ($_POST['gender'] == 'male') {
                     $results = $db->query('SELECT * FROM users WHERE (gender="M") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") ');
-                    echo '<br/><em>Affiner par : <strong>Homme</strong></em>';
+                    echo '<br/><em>Affiné par : <strong>Homme</strong></em>';
         
                 }
         
                 else if ($_POST['gender'] == 'other') {
                     $results = $db->query('SELECT * FROM users WHERE (gender="A") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") ');
-                    echo '<br/><em>Affiner par : <strong>Autre</strong></em>';
+                    echo '<br/><em>Affiné par : <strong>Autre</strong></em>';
         
                 }
         
@@ -45,18 +45,18 @@
             else if (isset($_POST['gender']) AND !empty($_POST['gender']) AND isset($_POST['company']) AND !empty($_POST['company'])) {
         
                 if($_POST['gender'] == 'female') { 
-                    $results = $db->query('SELECT * FROM users WHERE (gender="F") AND (company="' . $company . '") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
-                    echo '<br/><em>Affiner par : <strong>Femme</strong>, <strong>' . $company . '</strong></em>';
+                    $results = $db->query('SELECT * FROM users WHERE (gender="F") AND (company LIKE "' . $company . '%" OR company LIKE "'. $company . '%") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
+                    echo '<br/><em>Affiné par : <strong>Femme</strong>, <strong>' . $company . '</strong></em>';
                 }
         
                 else if($_POST['gender'] == 'male') { 
-                    $results = $db->query('SELECT * FROM users WHERE (gender="M") AND (company="' . $company . '") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
-                    echo '<br/><em>Affiner par : <strong>Homme</strong>, <strong>' . $company . '</strong></em>';
+                    $results = $db->query('SELECT * FROM users WHERE (gender="M") AND (company LIKE "' . $company . '%" OR company LIKE "'. $company . '%") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
+                    echo '<br/><em>Affiné par : <strong>Homme</strong>, <strong>' . $company . '</strong></em>';
                 }
                 
                 else if ($_POST['gender'] == 'other') {
-                    $results = $db->query('SELECT * FROM users WHERE (gender="A") AND (company="' . $company . '") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
-                    echo '<br/><em>Affiner par : <strong>Autre</strong>, <strong>' . $company . '</strong></em>';
+                    $results = $db->query('SELECT * FROM users WHERE (gender="A") AND (company LIKE "' . $company . '%" OR company LIKE "'. $company . '%") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
+                    echo '<br/><em>Affiné par : <strong>Autre</strong>, <strong>' . $company . '</strong></em>';
                 }
                 
             }
@@ -72,18 +72,18 @@
             $company = htmlspecialchars($_POST['company']);
         
             if($_POST['gender'] == 'female') { 
-                $results = $db->query('SELECT * FROM users WHERE (gender="F") AND (company="' . $company . '") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
-                echo '<br/><em>Affiner par : <strong>Femme</strong>, <strong>' . $company . '</strong></em>';
+                $results = $db->query('SELECT * FROM users WHERE (gender="F") AND (company LIKE "' . $company . '%" OR company LIKE "'. $company . '%") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
+                echo '<br/><em>Affiné par : <strong>Femme</strong>, <strong>' . $company . '</strong></em>';
             }
         
             else if($_POST['gender'] == 'male') { 
-                $results = $db->query('SELECT * FROM users WHERE (gender="M") AND (company="' . $company . '") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
-                echo '<br/><em>Affiner par : <strong>Homme</strong>, <strong>' . $company . '</strong></em>';
+                $results = $db->query('SELECT * FROM users WHERE (gender="M") AND (company LIKE "' . $company . '%" OR company LIKE "'. $company . '%") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
+                echo '<br/><em>Affiné par : <strong>Homme</strong>, <strong>' . $company . '</strong></em>';
             }
             
             else if ($_POST['gender'] == 'other') {
-                $results = $db->query('SELECT * FROM users WHERE (gender="A") AND (company="' . $company . '") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
-                echo '<br/><em>Affiner par : <strong>Autre</strong>, <strong>' . $company . '</strong></em>';
+                $results = $db->query('SELECT * FROM users WHERE (gender="A") AND (company LIKE "' . $company . '%" OR company LIKE "'. $company . '%") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") '); 
+                echo '<br/><em>Affiné par : <strong>Autre</strong>, <strong>' . $company . '</strong></em>';
             }
             
         }
@@ -94,17 +94,17 @@
         
             if($_POST['gender'] == 'female') { 
                 $results = $db->query('SELECT * FROM users WHERE (gender="F")'); 
-                echo '<br/><em>Affiner par : <strong>Femme</strong></em>';
+                echo '<br/><em>Affiné par : <strong>Femme</strong></em>';
             }
         
             else if ($_POST['gender'] == 'male') {
                 $results = $db->query('SELECT * FROM users WHERE (gender="M") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") ');
-                echo '<br/><em>Affiner par : <strong>Homme</strong></em>';
+                echo '<br/><em>Affiné par : <strong>Homme</strong></em>';
             }
         
             else if ($_POST['gender'] == 'other') {
                 $results = $db->query('SELECT * FROM users WHERE (gender="A") AND (first_name LIKE "' . $research . '%" OR last_name LIKE "' . $research . '%") ');
-                echo '<br/><em>Affiner par : <strong>Autre</strong></em>';
+                echo '<br/><em>Affiné par : <strong>Autre</strong></em>';
             }
         
         }
@@ -113,8 +113,8 @@
             $research = htmlspecialchars($_POST['research']);
             $company = htmlspecialchars($_POST['company']);
             
-            $results = $db->query('SELECT * FROM users WHERE (company="' . $company . '")'); 
-            echo '<br/><em>Affiner par : <strong>' . $company . '</strong></em>';
+            $results = $db->query('SELECT * FROM users WHERE (company LIKE "' . $company . '%" OR company LIKE "'. $company . '%")'); 
+            echo '<br/><em>Affiné par : <strong>' . $company . '</strong></em>';
         
         }
         
