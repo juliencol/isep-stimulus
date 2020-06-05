@@ -6,25 +6,27 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="container">
-  <h1>Se connecter en tant que gestionnaire </h1>
-  <div class="container sign-in-form-container">
-    <form action="<?php echo URLROOT; ?>/supervisors/add_user" method="post">
-      <div class="under-container">
-        <div>
-          <label for="name"><strong>Adresse email *</strong></label>
-          <input type="text" name="name" <?php echo (!empty($data['name_error'])) ? 'is-invalid' : ''; ?> value="<?php echo $data['name'] ?>" >
-          <span><?php echo $data['name_error']; ?></span>
-        </div>
-        <div>
-          <label for="name"><strong>Mot de passe *</strong></label>
-          <input type="password" name="name">
-        </div>
-      </div>
-      <div>
-        <input type="submit" class="btn-primary" value="Confirmer">
-      </div>
-    </form>
-  </div>
-</div> 
+    <p class="text-center"><?php flash('register_success'); ?></p>
+    <h1>Se connecter en tant qu'utilisateur</h1>
+    <div class="container sign-in-form-container">
+        <form action="" method="post">
+            <div class="under-container">
+                <div>
+                    <label for="name"><strong>Adresse email *</strong></label>
+                    <input type="email" name="email" class="<?php echo (!empty($data['email_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
+                    <p><span class="error-message"><?php echo $data['email_error']; ?></span></p>
+                </div>
+                <div>
+                    <label for="name"><strong>Mot de passe *</strong></label>
+                    <input type="password" name="password" class="<?php echo (!empty($data['password_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>">
+                    <p><span class="error-message"><?php echo $data['password_error']; ?></span></p>
+                </div>
+            </div> 
+            <div>
+                <a class="btn-primary" href="<?php echo URLROOT; ?>/supervisors/profile">Confirmer</a>
+            </div>
+        </form>
+    </div>
+</div>
 
-<?php require APPROOT . '/views/inc/footer.php'; ?>
+<?php require APPROOT . '/views/inc/footer.php'; ?>  

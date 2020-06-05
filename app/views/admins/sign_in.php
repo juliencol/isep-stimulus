@@ -20,7 +20,7 @@
         </div>
       </div>
       <div>
-        <input type="submit" class="btn-primary" value="Confirmer">
+        <a class="btn-primary" href="<?php echo URLROOT; ?>/admins/profile">Confirmer</a>
       </div>
     </form>
   </div>

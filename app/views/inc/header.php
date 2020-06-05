@@ -20,21 +20,13 @@
         <i class="fas fa-home"></i>
         <p>Accueil</p>
       </a>
-      <a href="<?php echo URLROOT; ?>supervisors/search">
-        <i class="fas fa-search"></i>
-        <p>Rechercher</p>
-      </a>
-      <a href="<?php echo URLROOT; ?>supervisors/add_user">
-        <i class="fal fa-user-cog"></i>
-        <p>Gestion</p>           
-      </a>
     </div>
     <div class="right-links">
       <a href="<?php echo URLROOT; ?>/users/notifications">
         <i class="far fa-bell"></i>
         <p>Notifications</p>
       </a>
-      <a href="<?php echo URLROOT; ?>/users/profile/ ?>">
+      <a href="<?php echo URLROOT; ?>/users/profile/<?php echo $_SESSION['user_id']; ?>">
         <i class="fas fa-user-circle"></i>
         <p>Profil</p>
       </a>
@@ -44,7 +36,7 @@
           <p>Se déconnecter</p>
         </a>
       <?php else : ?>
-        <a href="<?php echo URLROOT; ?>/users/sign_in">
+        <a href="<?php echo URLROOT; ?>/pages/sign_in">
           <i class="far fa-sign-in-alt"></i>
           <p>Se connecter</p>
         </a>
