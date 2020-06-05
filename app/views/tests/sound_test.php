@@ -13,7 +13,12 @@
 		Cependant, prenez garde à ne pas appuyer trop tôt. Si vous appuyez avant que le son ne se fasse entendre, vous devrez recommencer. 
 
 	</p>
-	<a class="btn-primary" href="<?php echo URLROOT; ?>tests/test_confirmation"">Commencer le test</a>	
+	<form method="post" action="<?php echo URLROOT; ?>tests/sound_test_doing">
+		<label>Veuillez rentrer le code du test : </label>
+		<input type="text" name="code" placeholder="Ex : 6248" maxlength="4" required></p> 
+		<input type="submit" value="Commencer le test" class="btn-primary">
+	</form>
+	
 </div>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

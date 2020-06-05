@@ -7,7 +7,7 @@
 
 <div class="container">
   <h1>Créer un compte</h1>
-  <div class="container sign-up-form-container">
+  <div class="sign-up-form-container">
     <form action="<?php echo URLROOT; ?>/users/sign_up" method="post">
       <div>
         <label for="last_name"><strong>Nom *</strong></label>
