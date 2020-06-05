@@ -7,7 +7,7 @@
 
 <div class="container">
     <p class="text-center"><?php flash('register_success'); ?></p>
-    <h1>Se connecter en tant qu'utilisateur</h1>
+    <h1>Se connecter en tant que gestionnaire</h1>
     <div class="container sign-in-form-container">
         <form action="" method="post">
             <div class="under-container">
