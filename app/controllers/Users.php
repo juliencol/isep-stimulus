@@ -90,7 +90,7 @@ class Users extends Controller {
       }
     }
 
-   public function sign_in() {
+    public function sign_in() {
       // Check for POST
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST data
@@ -195,7 +195,7 @@ class Users extends Controller {
         }
     }
 
-    public function profile() {
+    public function profile($id) {
       if (!isLoggedIn()) {
         redirect('users/sign_in');
       } else {

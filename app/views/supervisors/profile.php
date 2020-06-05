@@ -2,7 +2,7 @@
 <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
 <style> <?php include APPROOT . '/../public/css/users/profile.css'; ?> </style>
 
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header_supervisor.php'; ?>
 
 <div class="container">
     <div class="row">
@@ -14,17 +14,16 @@
             <?php } ?>
         </div>
         <div class="col-info">
-            <p>Nom: <?php echo ucfirst($data['user']->last_name); ?></p>
-            <p>Prénom: <?php echo ucfirst($data['user']->first_name); ?></p>
-            <p>Date de naissance : <?php echo $data['user']->birthday_date; ?></p>
+            <p>Nom: Yan</p>
+            <p>Prénom: Caroline</p>
+            <p>Date de naissance : 06/07/1999</p>
             <p>Entreprise : Isep</p>
-            <p>Rôle : Utilisateur</p>
+            <p>Rôle : Gestionnaire</p>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="profile-btn">
-            <a class="btn-primary"  href="<?php echo URLROOT; ?>tests">Tests</a>
-            <a class="btn-primary" href="<?php echo URLROOT; ?>/users/test_results">Résultats</a>
+            <a class="btn-primary"  href="<?php echo URLROOT; ?>supervisors/search">Rechercher utilisateurs</a>
         </div>
     </div>
 </div>

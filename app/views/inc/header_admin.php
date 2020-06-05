@@ -1,45 +1,42 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://use.fontawesome.com/1239367301.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css" >
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <title><?php echo SITENAME; ?></title>
+</head>
+<body>
 
-    <div id="container">
+  <?php require APPROOT . '/../public/css/style.php'; ?>
+  <style> <?php include APPROOT . '/../public/css/style.css'; ?> </style>
+  <style> <?php include APPROOT . '/../public/css/components/header.css'; ?> </style>
 
-            <div id="logo">
-                <a href="###">INFINITE MEASURES</a>
-            </div>
-
-            <div id="navbar">
-                <div id="navbar_menu">
-                    <a href="###">
-                    <img src="_img/home.png" alt ="home-icon" target ="_blank" title = "Accueil" class="home-icon"/>
-                    Accueil</a>
-
-                    <a href="equipe.php">
-                    <img src="_img/brain.png" alt ="brain-icon" target ="_blank" title = "Brain" class="brain-icon"/>
-                    Qui sommes-nous</a>
-    
-                    <a href="###">
-                    <img src="_img/FAQ.png" alt ="faq-icon" target ="_blank" title = "FAQ" class="faq-icon"/>
-                    FAQ</a>
-                    
-                    <a href="research.php">
-                    <img src="_img/research.png" alt ="research-icon" target ="_blank" title = "Research" class="research-icon"/>
-                    Rechercher</a>
-
-                    <a href="gestion.php">
-                    <img src="_img/gestion.png" alt ="gestion-icon" target ="_blank" title = "Gestion" class="gestion-icon"/>
-                    Gestion</a>
-                </div>
-
-                <div id="navbar_profil">
-                    <a href="../view/admin-messagerie.php">
-                    <img src="_img/message.png" alt ="message-icon" target ="_blank" title = "Messages" class="message-icon"/>
-                    Messagerie</a>
-
-                    <a href="../view/profile-admin.php">
-                    <img src="_img/profile.png" alt ="profile-icon" target ="_blank" title = "Profile" class="profile-icon"/>
-                    Profil</a>
-                </div>
-            </div>
-
-   
+  <header>
+    <div class="left-links">
+      <a href="<?php echo URLROOT; ?>">
+        <i class="fas fa-home"></i>
+        <p>Accueil</p>
+      </a>
+      <a href="<?php echo URLROOT; ?>supervisors/search">
+        <i class="fas fa-search"></i>
+        <p>Rechercher</p>
+      </a>
+      <a href="<?php echo URLROOT; ?>supervisors/add_user">
+        <i class="fal fa-user-cog"></i>
+        <p>Gestion</p>           
+      </a>
     </div>
-</header>
+    <div class="right-links">
+      <a href="<?php echo URLROOT; ?>/users/profile/<?php echo $_SESSION['user_id']; ?>">
+        <i class="fas fa-user-circle"></i>
+        <p>Profil</p>
+      </a>
+        <a href="<?php echo URLROOT; ?>/users/logout">
+          <i class="fad fa-sign-out"></i>
+          <p>Se déconnecter</p>
+        </a>
+    </div>
+  </header> 
