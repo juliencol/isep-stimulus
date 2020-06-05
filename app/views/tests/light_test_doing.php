@@ -15,7 +15,7 @@
 		<?php 
         $entered_code = $_POST['code'];
         
-        $bdd = new PDO('mysql:host=localhost;dbname=isep-stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=stimulus;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         $codes = $bdd->query('SELECT code from test_codes WHERE test_type = "3"');
 
         while ($c = $codes->fetch()) {
