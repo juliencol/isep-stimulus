@@ -13,7 +13,10 @@
 		Cependant, prenez garde à ne pas appuyer avant qu'une des trois LEDs ne s'allume et à ne pas vous tromper de bouton. Dans ce cas, votre score sera impacté ou vous devrez recommencer le test. 
 		
 	</p>	
-	<a class="btn-primary" href="<?php echo URLROOT; ?>tests/sound_test_doing" class="btn-primary">Commencer le test</a>	
-</div>
+	<form method="post" action="<?php echo URLROOT; ?>tests/light_test_doing">
+		<label>Veuillez rentrer le code du test : </label>
+		<input type="text" name="code" placeholder="Ex : 6248" maxlength="4" required></p> 
+		<input type="submit" value="Commencer le test" class="btn-primary">
+	</form></div>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

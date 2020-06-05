@@ -90,7 +90,7 @@ class Users extends Controller {
       }
     }
 
-    public function sign_in() {
+   public function sign_in(){
       // Check for POST
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST data
@@ -154,8 +154,7 @@ class Users extends Controller {
       $_SESSION['user_id'] = $user->id;
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
-      $route = 'users/profile/' . $_SESSION['user_id'];
-      redirect($route);  
+      redirect('users/profile');
     }
 
     public function logout(){
@@ -166,63 +165,63 @@ class Users extends Controller {
       redirect('');
     }
 
-    public function notifications()
-    {
-        if (!isLoggedIn()) {
-            redirect('users/sign_in');
+    public function notifications() {
+      if (!isLoggedIn()) { 
+        redirect('users/sign_in'); 
+      } else {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+          if(empty($_POST["email"])) {
+                  $data = [
+                      'error_email' =>"Vous n'avez pas entré d'adresse email"
+                  ];
+                  $this->view('users/notifications', $data);
+          } else {
+                  if ($this->userModel->findUserByEmail($_POST['email'])) {
+                      $notifications = $this->userModel->findNotificationsOfUser(trim($_POST['email']));
+                      $data= [
+                          'notifications' =>$notifications,
+                          'absence_notifications' => "Vous n'avez pas de notifications"
+                      ];
+                      $this->view('users/notifications', $data);
+                  } else {
+                      $data = [
+                          'error_email' => "Veuillez entrer une adresse email valide"
+                      ];
+                      $this->view('users/notifications', $data);
+                  }
+          }
         } else {
-            if (empty($_SESSION["user_id"])) {
-                $data = [
-                    'error_id' => "Vous n'avez pas de compte"
-                ];
-                $this->view('users/notifications', $data);
-            } else {
-                if ($this->userModel->findUserById($_SESSION['user_id'])) {
-                    $notifications = $this->userModel->findNotificationsOfUser(trim($_SESSION['user_id']));
-                    $data = [
-                        'notifications' => $notifications,
-                        'absence_notifications' => "Vous n'avez pas de notifications"
-                    ];
-                    $this->view('users/notifications', $data);
-                } else {
-                    $data = [
-                        'error_id' => "Il y a un problème avec votre compte utilisateur"
-                    ];
-                    $this->view('users/notifications', $data);
-                }
-            }
-
+              $data = [
+                  'debut' => ' '
+              ];
+              $this->view('users/notifications', $data);
         }
+      }
     }
 
-    public function profile($id) {
-      if (!isLoggedIn()) {
-        redirect('users/sign_in');
-      } else {
-        $user = $this->userModel->getUserById($id);
-        $data = [
-          'user' => $user
-        ];
-        $this->view('users/profile', $data);
-      }
-    }  
+    public function profile() {
+      if (!isLoggedIn()) { redirect('users/sign_in'); }
+      $this->view('users/profile');
+    }
 
-    public function test_results()
-    {
-        if (!isLoggedIn()) {
-            redirect('users/sign_in');
-        } else {
-            if (empty($_SESSION["user_id"])) {
+    public function test_results() {
+      if (!isLoggedIn()) { 
+        redirect('users/sign_in'); 
+      } else {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            if(empty($_POST["email"])) {
                 $data = [
-                    'error_id' => "Vous n'avez pas de compte"
+                    'error_email' =>"Vous n'avez pas entré d'adresse email"
                 ];
                 $this->view('users/test_results', $data);
             } else {
-                if ($this->userModel->findUserById($_SESSION['user_id'])) {
-                    $test_results1 = $this->userModel->findTests1OfUser(trim($_SESSION['user_id']));
-                    $test_results2 = $this->userModel->findTests2OfUser(trim($_SESSION['user_id']));
-                    $test_results3 = $this->userModel->findTests3OfUser(trim($_SESSION['user_id']));
-                    $data = [
+                if ($this->userModel->findUserByEmail($_POST['email'])) {
+                    $test_results1 = $this->userModel->findTests1OfUser(trim($_POST['email']));
+                    $test_results2 = $this->userModel->findTests2OfUser(trim($_POST['email']));
+                    $test_results3 = $this->userModel->findTests3OfUser(trim($_POST['email']));
+                    $data= [
                         'time_sound' => $test_results1,
                         'reproduct_sound' => $test_results2,
                         'time_light' => $test_results3,
@@ -233,12 +232,18 @@ class Users extends Controller {
                     $this->view('users/test_results', $data);
                 } else {
                     $data = [
-                        'error_id' => "Vous avez un problème avec votre compte"
+                        'error_email' => "Veuillez entrer une adresse email valide"
                     ];
                     $this->view('users/test_results', $data);
                 }
             }
+        } else {
+            $data = [
+                'debut' => ' '
+            ];
+            $this->view('users/test_results', $data);
         }
+      }
     }
 
     private

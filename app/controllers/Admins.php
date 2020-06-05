@@ -33,10 +33,6 @@ class Admins extends Controller {
     public function edit_user() {
       $this->view('admins/edit_user');
     }
-
-    public function profile() {
-      $this->view('admins/profile');
-    }
     
     /*
     public function add_user() {

@@ -9,7 +9,7 @@
 
 	<div id="bouton">
 		
-		<p><a href="#">Voir les résultats</a></p>
+		<p><a href="<?php echo URLROOT; ?>tests/microphone_test_results">Voir les résultats</a></p>
 
 		<br><br><br>
 
