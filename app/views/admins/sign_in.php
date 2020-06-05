@@ -20,7 +20,7 @@
         </div>
       </div>
       <div>
-        <a class="btn-primary" href="<?php echo URLROOT; ?>/admins/profile">Confirmer</a>
+         <a class="btn-primary"  href="<?php echo URLROOT; ?>admins/profile">Continuer</a>
       </div>
     </form>
   </div>

@@ -8,7 +8,7 @@
 <div class="container">
   <h1>Se connecter en tant que gestionnaire </h1>
   <div class="container sign-in-form-container">
-    <form action="<?php echo URLROOT; ?>/supervisors/add_user" method="post">
+    <form action="" method="post">
       <div class="under-container">
         <div>
           <label for="name"><strong>Adresse email *</strong></label>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div>
-        <input type="submit" class="btn-primary" value="Confirmer">
+        <a class="btn-primary" href="<?php echo URLROOT; ?>/supervisors/profile">Confirmer</a>
       </div>
     </form>
   </div>

@@ -26,7 +26,7 @@
       </a>
     </div>
     <div class="right-links">
-      <a href="<?php echo URLROOT; ?>/users/profile/<?php echo $_SESSION['user_id']; ?>">
+      <a href="<?php echo URLROOT; ?>/supervisors/profile/; ?>">
         <i class="fas fa-user-circle"></i>
         <p>Profil</p>
       </a>
